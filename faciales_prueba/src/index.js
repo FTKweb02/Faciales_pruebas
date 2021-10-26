@@ -8,7 +8,8 @@ const express = require('express'),
 const app = express();
 
 //importing routes 
-const loginRoutes = require('./routes/loginRoute');
+const ccenterRoutes = require('./routes/ccenterRoute');
+/*const loginRoutes = require('./routes/loginRoute');
 const agendarCRoutes = require('./routes/agendarCRoute');
 const calendarioRoutes = require('./routes/calendarioRoute');
 const ccenterRoutes = require('./routes/ccenterRoute');
@@ -23,12 +24,12 @@ const facialistaRoutes = require('./routes/facialistaRoute');
 const historialRoutes = require('./routes/historialRoute');
 const pendientesRoutes = require('./routes/pendientesRoute');
 const rClienteRoutes = require('./routes/rClienteRoute');
-const rVentaRoutes = require('./routes/rVentaRoute');
+const rVentaRoutes = require('./routes/rVentaRoute');*/
 
 //settings
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'react');
+app.set('view engine', 'js');
 
 //middlewares
 app.use(morgan('dev'));
@@ -42,7 +43,8 @@ app.use(myConnection(mysql, {
 app.use(express.urlencoded({extended: false}));
 
 //routes
-app.use('/', loginRoutes);
+app.use('/ccenter', ccenterRoutes);
+/*app.use('/', loginRoutes);
 app.use('/agendarC', agendarCRoutes);
 app.use('/calendario', calendarioRoutes);
 app.use('/ccenter', ccenterRoutes);
@@ -57,7 +59,7 @@ app.use('/facialista', facialistaRoutes);
 app.use('/historial', historialRoutes);
 app.use('/pendientes', pendientesRoutes);
 app.use('/rCliente', rClienteRoutes);
-app.use('/rVenta', rVentaRoutes);
+app.use('/rVenta', rVentaRoutes);*/
 
 
 //static files

@@ -1,7 +1,7 @@
 const controller = {};
 
-controller.home = (req, res) => {
-    res.render('/ccenter');
+controller.ccenter = (req, res) => {
+    res.render('ccenter');
 };
 
 controller.calendario = (req, res) => {
