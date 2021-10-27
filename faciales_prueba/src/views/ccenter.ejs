@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ventas</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="/public/Logo-FTK-new-negro.png">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+
+<body>
+    <div>
+    <nav class="color-nav">
+        <a href="/">
+            <input type="image" id="image" alt ="Home" src="/public/Logo-FTK-new-blanco.png" width="150px" />
+        </a>
+        <button role="link" class="buttonis" data-target="/">Cerrar Sesión</button>
+      </nav>
+    </div>
+    <br/>
+    <h1 align="center">Menú</h1>
+    <br/>
+    <br/>
+    <div class="botomnes">
+        <table align="center">
+            <tbody>
+              <tr>
+                <td><button role="link" href="../views/calendario.ejs" action="/calendario">Calendario</button></td>
+                <td><button action="/rcliente">Registrar Cliente</button></td>
+              </tr>
+              <tr>
+                <td><button action="/rventa">Registrar Membresia</button></td>
+                <td><button action="/consultarf">Consultar Folio</button></td>
+              </tr>
+              <tr>
+                <td><button action="/agendarc">Agendar cita</button></td>
+                <td><button action="/consultarc">Consultar Cita</button></td>
+              </tr>
+              <tr>
+                <td><button action="/historial">Mi Historial</button></td>
+                <td></td>
+              </tr>
+            </tbody>
+            </table>
+    </div>
+</body>
+</html>

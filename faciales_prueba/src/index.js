@@ -8,28 +8,27 @@ const express = require('express'),
 const app = express();
 
 //importing routes 
-const ccenterRoutes = require('./routes/ccenterRoute');
-/*const loginRoutes = require('./routes/loginRoute');
+//const loginRoutes = require('./routes/loginRoute');
 const agendarCRoutes = require('./routes/agendarCRoute');
 const calendarioRoutes = require('./routes/calendarioRoute');
 const ccenterRoutes = require('./routes/ccenterRoute');
-const citafacRoutes = require('./routes/citafacRoute');
+/*const citafacRoutes = require('./routes/citafacRoute');
 const citfacRoutes = require('./routes/citfacRoute');
 const clientesccRoutes = require('./routes/clientesccRoute');
-const configRoutes = require('./routes/configRoute');
+const configRoutes = require('./routes/configRoute');*/
 const consultarCRoutes = require('./routes/consultarCRoute');
 const consultarFRoutes = require('./routes/consultarFRoute');
-const contactcRoutes = require('./routes/contactcRoute');
-const facialistaRoutes = require('./routes/facialistaRoute');
+//const contactcRoutes = require('./routes/contactcRoute');
+//const facialistaRoutes = require('./routes/facialistaRoute');
 const historialRoutes = require('./routes/historialRoute');
-const pendientesRoutes = require('./routes/pendientesRoute');
+//const pendientesRoutes = require('./routes/pendientesRoute');
 const rClienteRoutes = require('./routes/rClienteRoute');
-const rVentaRoutes = require('./routes/rVentaRoute');*/
+const rVentaRoutes = require('./routes/rVentaRoute');
 
 //settings
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'js');
+app.set('view engine', 'ejs');
 
 //middlewares
 app.use(morgan('dev'));
@@ -43,23 +42,23 @@ app.use(myConnection(mysql, {
 app.use(express.urlencoded({extended: false}));
 
 //routes
-app.use('/ccenter', ccenterRoutes);
-/*app.use('/', loginRoutes);
+app.use('/', ccenterRoutes);
+//app.use('/login', loginRoutes);
 app.use('/agendarC', agendarCRoutes);
 app.use('/calendario', calendarioRoutes);
 app.use('/ccenter', ccenterRoutes);
-app.use('/citafac', citafacRoutes);
+/*app.use('/citafac', citafacRoutes);
 app.use('/citfac', citfacRoutes);
 app.use('/clientescc', clientesccRoutes);
-app.use('/config', configRoutes);
+app.use('/config', configRoutes);*/
 app.use('/consultarC', consultarCRoutes);
 app.use('/consultarF', consultarFRoutes);
-app.use('/contactc', contactcRoutes);
-app.use('/facialista', facialistaRoutes);
+//app.use('/contactc', contactcRoutes);
+//app.use('/facialista', facialistaRoutes);
 app.use('/historial', historialRoutes);
-app.use('/pendientes', pendientesRoutes);
+//app.use('/pendientes', pendientesRoutes);
 app.use('/rCliente', rClienteRoutes);
-app.use('/rVenta', rVentaRoutes);*/
+app.use('/rVenta', rVentaRoutes);
 
 
 //static files

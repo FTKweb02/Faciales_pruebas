@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+
+    <link rel="icon" href="/public/Logo-FTK-new-negro.png">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <div>
+        <nav class="color-nav">
+            <a href="/">
+                <input type="image" id="image" alt ="Home" src="/public/Logo-FTK-new-blanco.png" width="150px" />
+            </a>
+            <button role="link" class="buttonis" data-target="/">Cerrar Sesión</button>
+          </nav>
+        </div>
+        <br/>
+        <div>
+            <table>
+                <tbody>
+                  <tr>
+                    <td sm={10} align="center"><h1>Registrar Cliente</h1></td>
+                    <td><button class="menubutton">Menú</button></td>
+                  </tr>
+                </tbody>
+                </table>
+        </div>
+        <br>
+        <br>
+        <form method="post">
+            <div align="center">
+                <label><b>Marca: </b></label>
+              <br/>
+              <select>
+                <option selected="selected" value=""></option>
+                <option value="sucursal1">VV</option>
+                <option value="sucursal2">OG</option>
+                <option value="sucursal3">RC</option>
+                <option value="sucursal3">RS</option>
+                <option value="sucursal3">UMAF</option>
+                <option value="sucursal3">VVEXP</option>
+              </select>
+              <br>
+              <label><b>Sucursal: </b></label>
+              <br/>
+              <select>
+                <option selected="selected" value=""></option>
+                <option value="sucursal1">Sucursal 1</option>
+                <option value="sucursal2">Sucursal 2</option>
+                <option value="sucursal3">Sucursal 3</option>
+              </select>
+              <br>
+              <label><b>Asesor: </b></label>
+              <br>
+              <select>
+                <option selected="selected" value=""></option>
+                <option value="asesor1">Asesor 1</option>
+                <option value="asesor2">Asesor 2</option>
+                <option value="asesor3">Asesor 3</option>
+              </select>
+              <br>
+              <input type="text" placeholder="Nombre" required>
+              <br/>
+              <br/>
+              <input type="text" placeholder="Apellidos" required>
+              <br/>
+              <br/>
+              <label><b>Cumpleaños: </b></label>
+              <br/>
+              <input type="date" required>
+              <br/>
+              <br/>
+              <input type="tel" placeholder="Teléfono 10 digitos" required-pattern="[0-9]{10}">
+              <br/>
+              <br/>
+              <input type="email" placeholder="E-mail" required>
+              <br/>
+              <br/>
+              <div>
+                <button class="buttonis" type="submit" name="guardar">Guardar</button>
+                <button class="buttonis" type="submit" name="regyage">Guardar&nbsp;y&nbsp;Agendar</button>
+              </div>
+            </div>
+        </form>
+</body>
+</html>

@@ -1,7 +1,8 @@
 const controller = {};
 
 controller.ccenter = (req, res) => {
-    res.render('ccenter');
+    console.log("Prueba");
+    res.render('ccenter.ejs');
 };
 
 controller.calendario = (req, res) => {

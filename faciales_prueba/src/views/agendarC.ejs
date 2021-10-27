@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar</title>
+
+    <link rel="icon" href="/public/Logo-FTK-new-negro.png">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <div>
+    <nav class="color-nav">
+        <a href="/">
+            <input type="image" id="image" alt ="Home" src="/public/Logo-FTK-new-blanco.png" width="150px" />
+        </a>
+        <button role="link" class="buttonis" data-target="/">Cerrar Sesión</button>
+      </nav>
+    </div>
+    <br/>
+    <div>
+        <button class="menubutton">Menú</button>
+    </div>
+    <br/>
+    <h1 align="center">Agendar</h1>
+    <br/>
+    <form action="post">
+        <div align="center">
+            <input type="text" placeholder="Nombre" required>
+            <br/>
+            <input type="text" placeholder="Apellido" required>
+        </div>
+        <br>
+        <table>
+            <tbody>
+              <tr>
+                <td><label for="tec">Tecnologías</label><br/>
+                    <input type="radio" name="tratamiento" value="tec"></td>
+                <td><label for="faciales">Faciales</label><br/>
+                    <input type="radio" name="tratamiento" value="faciales"></td>
+                <td> <label for="mesvirt">Mesoterapia</label><br/>
+                    <input type="radio" name="tratamiento" value="meso"></td>
+                <td> <label for="ME">Medicina Estética</label><br/>
+                    <input type="radio" disabled name="tratamiento" value="ME"></td>
+              </tr>
+              <tr>
+                <td>
+                    <select>
+                        <option disabled selected>Tecnologías</option>
+                        <option value="">Reskin</option>
+                        <option value="">Reskin (Avanzado)</option>
+                        <option value="">Skin Glow</option>
+                        <option value=" ">Skin Glow (Avanzado)</option>
+                        <option value=" ">Diamond Lifting</option>
+                        <option value=" ">Diamond Lifting (Avanzado)</option>
+                        <option value=" ">Skin Renew</option>
+                        <option value=" ">Skin Renew (avanzado9</option>
+                        <option value=" ">Luxe Resurfacing</option>
+                        <option value=" ">A New Beginning</option>
+                      </select>
+                </td>
+                <td>
+                    <select>
+                        <option disabled selected>Faciales</option>
+                        <option value="">Facial Hydratance</option>
+                        <option value="">Facial Hydratance (Avanzado)</option>
+                        <option value="">Facial Lifting</option>
+                        <option value="">Facial Petal Peel</option>
+                        <option value=" ">Facial Aqua Lift</option>
+                        <option value=" ">Deep Cleanse</option>
+                        <option value=" ">Facial Magnetic Detox</option>
+                        <option value=" ">Nefertiti Experience</option>
+                      </select>
+                </td>
+                <td>
+                    <select>
+                        <option disabled selected>Mesoterapia</option>
+                        <option value="">D pigment</option>
+                        <option value="">Radiance Skin</option>
+                        <option value="">Skin Light</option>
+                        <option value="">Vitality Facial</option>
+                      </select>
+                </td>
+                <td>
+                    <select>
+                        <option disabled selected>Médicina Estética</option>
+                      </select>
+                </td>
+              </tr>
+            </tbody>
+            </table>
+            <br/>
+          <label for="date">Horario:</label><br/>
+          <input type="datetime-local" value="date" id="start"><br/>
+          <br/>
+          <input type="tel" placeholder="Teléfono" required-pattern="[0-9]{10}">
+          <br/>
+          <br/>
+          <input type="email" placeholder="E-Mail" required>
+          <br/>
+          <br/>
+          <textarea className="formutexto" type="text" placeholder="Comentarios" name="texto" required rows="5" cols="30"></textarea>
+          <br/>
+          <br/>
+          <label>Pagado:</label><br/>
+          <label for="si">Si</label>&nbsp;
+          <input type="radio" name="pagado" id="si">&nbsp;&nbsp;
+          <label for="no">No</label>&nbsp;
+          <input type="radio" name="pagado" id="no">&nbsp;
+          <br/>
+          <br/>
+          <button type="submit" value="agendar" className="buttonis">Agendar</button>
+          <br/>
+          <br/>
+    </form>
+</body>
+</html>
