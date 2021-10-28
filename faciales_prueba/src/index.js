@@ -41,9 +41,6 @@ app.use(myConnection(mysql, {
 }, 'single'));
 app.use(express.urlencoded({extended: false}));
 
-//Static files
-app.set(express.static(path.join(__dirname, 'public')));
-
 //routes
 app.use('/', ccenterRoutes);
 //app.use('/login', loginRoutes);
@@ -63,9 +60,8 @@ app.use('/historial', historialRoutes);
 app.use('/rCliente', rClienteRoutes);
 app.use('/rVenta', rVentaRoutes);
 
-
-//static files
-app.use(express.static(path.join(__dirname, 'public')));
+//Static files
+app.set(express.static(path.join(__dirname, 'public')));
 
 //starting the server
 app.listen(app.get('port'), () => {

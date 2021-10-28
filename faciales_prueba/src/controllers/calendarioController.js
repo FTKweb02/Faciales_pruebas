@@ -5,8 +5,4 @@ controller.calendario = (req, res) => {
     res.render('/calendario');
 };
 
-controller.home = (req, res) => {
-    res.redirect('/');
-}
-
 module.exports = controller;
