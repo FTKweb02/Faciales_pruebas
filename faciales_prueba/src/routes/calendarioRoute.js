@@ -2,6 +2,7 @@ const router = require('express').Router();
 
 const calendarioController = require('../controllers/calendarioController');
 
-router.get('/calendario', calendarioController.calendario);
+router.get('/', calendarioController.calendario);
+router.get('/ccenter', calendarioController.home);
 
 module.exports = router;

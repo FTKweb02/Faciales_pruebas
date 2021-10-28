@@ -41,6 +41,9 @@ app.use(myConnection(mysql, {
 }, 'single'));
 app.use(express.urlencoded({extended: false}));
 
+//Static files
+app.set(express.static(path.join(__dirname, 'public')));
+
 //routes
 app.use('/', ccenterRoutes);
 //app.use('/login', loginRoutes);
