@@ -1,3 +1,66 @@
+body{
+  margin: 0;
+}
+
+
+/*Navbar*/
+.color-nav {
+    
+  background-color: #5e1224;
+  width:100%;
+}
+
+nav input{
+  width: 25vh;
+}
+
+
+.btnCerrar{
+  float:right;
+  background-color: #a03f56;
+  color: white;
+  right: 0;
+  height: 5vh;
+margin: 2vh 2vh;
+}
+/*Fin Navbar*/
+/*Titulo y su boton*/
+.titulo{
+  text-align: center;
+  margin-bottom: 5vh;
+}
+
+.titulo h1{
+  display: block
+}
+
+.btnMenu {
+  margin-right: 20px;
+  background-color: #a03f56;
+  color: white;
+  float: right;
+}
+
+.btnMenu:hover{
+  background-color:white; 
+  color: #a03f56;
+  transition: 0.5s;
+}
+/*Titulo y su boton*/
+/*Formulario*/
+
+.formu form{
+  text-align: center;
+}
+/*Fin Formulario*/
+
+/*Cosas que no he usado*/
+.buttonis { 
+  background-color: #a03f56;
+  color: white;
+  right: 0;
+}
+
 /*Buttons Styles*/
 .buttonh { 
     width: 210px;
@@ -20,24 +83,7 @@
     transition: 0.5s;
   }
   
-  .menubutton {
-    margin-right: 20px;
-    background-color: #a03f56;
-    color: white;
-  }
-  
-  .menubutton:hover{
-    background-color:white; 
-    color: #a03f56;
-    transition: 0.5s;
-  }
-  
-  .buttonis { 
-    margin-right: 30px;
-    background-color: #a03f56;
-    color: white;
-  }
-  
+ 
   .buttonis:hover{
     background-color:white; 
     color: #a03f56;
@@ -66,12 +112,6 @@
     height: 50px;
   }
   
-  
-  /*Navbar*/
-  .color-nav {
-    background-color: #5e1224;
-    width:100%;
-  }
   
   /*Table Borders*/
   .table_border {
@@ -124,3 +164,4 @@
   
   
    
+/*Cosas que no he usado*/

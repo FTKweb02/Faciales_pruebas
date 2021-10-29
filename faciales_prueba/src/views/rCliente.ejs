@@ -1,91 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
 
-    <link rel="icon" href="/img/Logo-FTK-new-negro.png">
-    <link rel="stylesheet" href="/css/style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+
+  <link rel="icon" href="/img/Logo-FTK-new-negro.png">
+  <link rel="stylesheet" href="/css/style.css">
 
 </head>
+
 <body>
-    <div>
-        <nav class="color-nav">
-            <a href="/">
-                <input type="image" id="image" alt ="Home" src="/img/Logo-FTK-new-blanco.png" width="150px" />
-            </a>
-            <button role="link" class="buttonis" data-target="/">Cerrar Sesión</button>
-          </nav>
-        </div>
-        <br/>
-        <div>
-            <table>
-                <tbody>
-                  <tr>
-                    <td sm={10} align="center"><h1>Registrar Cliente</h1></td>
-                    <td><button class="menubutton">Menú</button></td>
-                  </tr>
-                </tbody>
-                </table>
-        </div>
-        <br>
-        <br>
-        <form action="/add" method="post">
-            <div align="center">
-                <label><b>Marca: </b></label>
-              <br/>
-              <select name="Marca" id="Marca" > 
-                <option selected="selected" value=""></option>
-                <option  value="VV">VV</option>
-                <option  value="OG">OG</option>
-                <option  value="RC">RC</option>
-                <option  value="RS">RS</option>
-                <option  value="VVEXP">VVEXP</option>
-              </select>
-              <br>
-              <label><b>Sucursal: </b></label>
-              <br/>
-              <select name="Sucursal" id="Sucursal">
-                <option selected="selected" value=""></option>
-                <option value="RS01">RS01</option>
-                <option value="RC01">RC01</option>
-                <option value="VV01">VV01</option>
-              </select>
-              <br>
-              <label><b>Asesor: </b></label>
-              <br>
-              <select name="Asesor" id="Asesor">
-                <option selected="selected" value=""></option>
-                <option value="Asesor 1">0001</option>
-                <option value="Asesor 2">0002</option>
-                <option value="Asesor 3">0003</option>
-              </select>
-              <br>
-              <br>
-              <input name="Nombre" id="Nombre" type="text" placeholder="Nombre" required>
-              <br/>
-              <br/>
-              <input name="Apellido" id="Apellido" type="text" placeholder="Apellidos" required>
-              <br/>
-              <br/>
-              <label><b>Cumpleaños: </b></label>
-              <br/>
-              <input name="Cumpleaños" id="Cumpleaños" type="date" required>
-              <br/>
-              <br/>
-              <input name="Teléfono" id="Teléfono" type="tel" placeholder="Teléfono 10 digitos" required-pattern="[0-9]{10}">
-              <br/>
-              <br/>
-              <input name="Email" id="Email" type="email" placeholder="E-mail" required>
-              <br/>
-              <br/>
-              <div>
-                <button class="buttonis" type="submit" >Guardar</button>
-                <button class="buttonis" type="submit" >Guardar&nbsp;y&nbsp;Agendar</button>
-              </div>
-            </div>
-        </form>
+  <!--Navbar-->
+  <div>
+    <nav class="color-nav">
+      <a href="/">
+        <input type="image" id="image" alt="Home" src="/img/Logo-FTK-new-blanco.png" />
+      </a>
+      <button role="link" class="btnCerrar" data-target="/">Cerrar Sesión</button>
+    </nav>
+  </div>
+  <br />
+  <!--Fin navbar-->
+  <!--Contenido-->
+  <button class="btnMenu">Menú</button>
+  <div class="titulo">
+    <h1>Registrar Cliente</h1>
+  </div>
+  <div class="formu">
+    <form action="/add" method="post">
+
+      <label><b>Marca: </b></label>
+      <br/>
+      <select name="Marca" id="Marca">
+        <option selected="selected" value=""></option>
+        <option value="VV">VV</option>
+        <option value="OG">OG</option>
+        <option value="RC">RC</option>
+        <option value="RS">RS</option>
+        <option value="VVEXP">VVEXP</option>
+      </select>
+      <br>
+      <label><b>Sucursal: </b></label>
+      <br />
+      <select name="Sucursal" id="Sucursal">
+        <option selected="selected" value=""></option>
+        <option value="RS01">RS01</option>
+        <option value="RC01">RC01</option>
+        <option value="VV01">VV01</option>
+      </select>
+      <br>
+      <label><b>Asesor: </b></label>
+      <br>
+      <select name="Asesor" id="Asesor">
+        <option selected="selected" value=""></option>
+        <option value="Asesor 1">0001</option>
+        <option value="Asesor 2">0002</option>
+        <option value="Asesor 3">0003</option>
+      </select>
+      <br>
+      <br>
+      <input name="Nombre" id="Nombre" type="text" placeholder="Nombre" required>
+      <br />
+      <br />
+      <input name="Apellido" id="Apellido" type="text" placeholder="Apellidos" required>
+      <br />
+      <br />
+      <label><b>Cumpleaños: </b></label>
+      <br />
+      <input name="Cumpleaños" id="Cumpleaños" type="date" required>
+      <br />
+      <br />
+      <input name="Teléfono" id="Teléfono" type="tel" placeholder="Teléfono 10 digitos" required-pattern="[0-9]{10}">
+      <br />
+      <br />
+      <input name="Email" id="Email" type="email" placeholder="E-mail" required>
+      <br />
+      <br />
+      <div>
+        <button class="buttonis" type="submit">Guardar</button>
+        <button class="buttonis" type="submit">Guardar&nbsp;y&nbsp;Agendar</button>
+      </div>
+    </form>
+  </div>
+  <!--Fin contenido-->
 </body>
+
 </html>
