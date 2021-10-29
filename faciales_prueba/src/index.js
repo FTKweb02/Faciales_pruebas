@@ -34,10 +34,10 @@ app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(myConnection(mysql, {
   host: 'localhost',
-  user: 'Admin',
-  password: '123456',
+  user: 'Admin_02',
+  password: 'L5u9aA-@m/C3DgsK',
   port: 3306,
-  database: 'faciales_db'
+  database: 'faciales'
 }, 'single'));
 app.use(express.urlencoded({extended: false}));
 
@@ -61,7 +61,7 @@ app.use('/', rClienteRoutes);
 app.use('/rVenta', rVentaRoutes);
 
 //Static files
-app.set(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //starting the server
 app.listen(app.get('port'), () => {

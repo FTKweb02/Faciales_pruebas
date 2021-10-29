@@ -14,7 +14,7 @@ controller.save = (req, res) => {
                 res.json(err);
             }else{
                 console.log(clientes);
-                res.redirect('/rCliente')
+                res.redirect('/')
             }
         });
     })
