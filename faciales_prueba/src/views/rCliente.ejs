@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
 
-    <link rel="icon" href="/public/Logo-FTK-new-negro.png">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="/Logo-FTK-new-negro.png">
+    <link rel="stylesheet" href="/css/style.css">
 
 </head>
 <body>
     <div>
         <nav class="color-nav">
             <a href="/">
-                <input type="image" id="image" alt ="Home" src="/public/Logo-FTK-new-blanco.png" width="150px" />
+                <input type="image" id="image" alt ="Home" src="/Logo-FTK-new-blanco.png" width="150px" />
             </a>
             <button role="link" class="buttonis" data-target="/">Cerrar Sesión</button>
           </nav>
@@ -32,7 +32,7 @@
         </div>
         <br>
         <br>
-        <form method="post">
+        <form action="/save" method="post">
             <div align="center">
                 <label><b>Marca: </b></label>
               <br/>
@@ -63,6 +63,7 @@
                 <option value="asesor2">Asesor 2</option>
                 <option value="asesor3">Asesor 3</option>
               </select>
+              <br>
               <br>
               <input type="text" placeholder="Nombre" required>
               <br/>

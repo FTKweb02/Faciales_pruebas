@@ -34,15 +34,15 @@ app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(myConnection(mysql, {
   host: 'localhost',
-  user: 'Admin_02',
-  password: 'L5u9aA-@m/C3DgsK',
+  user: 'Admin',
+  password: '123456',
   port: 3306,
   database: 'faciales_db'
 }, 'single'));
 app.use(express.urlencoded({extended: false}));
 
 //routes
-app.use('/', ccenterRoutes);
+app.use('/ccenter', ccenterRoutes);
 //app.use('/login', loginRoutes);
 app.use('/agendarC', agendarCRoutes);
 app.use('/calendario', calendarioRoutes);
@@ -57,7 +57,7 @@ app.use('/consultarF', consultarFRoutes);
 //app.use('/facialista', facialistaRoutes);
 app.use('/historial', historialRoutes);
 //app.use('/pendientes', pendientesRoutes);
-app.use('/rCliente', rClienteRoutes);
+app.use('/', rClienteRoutes);
 app.use('/rVenta', rVentaRoutes);
 
 //Static files
