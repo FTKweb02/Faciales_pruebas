@@ -42,11 +42,10 @@ app.use(myConnection(mysql, {
 app.use(express.urlencoded({extended: false}));
 
 //routes
-app.use('/ccenter', ccenterRoutes);
 //app.use('/login', loginRoutes);
 app.use('/agendarC', agendarCRoutes);
 app.use('/calendario', calendarioRoutes);
-app.use('/ccenter', ccenterRoutes);
+app.use('/', ccenterRoutes);
 /*app.use('/citafac', citafacRoutes);
 app.use('/citfac', citfacRoutes);
 app.use('/clientescc', clientesccRoutes);
@@ -57,7 +56,7 @@ app.use('/consultarF', consultarFRoutes);
 //app.use('/facialista', facialistaRoutes);
 app.use('/historial', historialRoutes);
 //app.use('/pendientes', pendientesRoutes);
-app.use('/', rClienteRoutes);
+app.use('/rCliente', rClienteRoutes);
 app.use('/rVenta', rVentaRoutes);
 
 //Static files

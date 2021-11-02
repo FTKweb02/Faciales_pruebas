@@ -1,23 +1,20 @@
 body{
   margin: 0;
 }
-
-
+h1, b{
+  font-family: Arial;
+}
 /*Navbar*/
 .color-nav {
-    
-  background-color: #5e1224;
+  background-color: #5E1224;
   width:100%;
 }
-
 nav input{
   width: 25vh;
 }
-
-
 .btnCerrar{
   float:right;
-  background-color: #a03f56;
+  background-color: #A03F56;
   color: white;
   right: 0;
   height: 5vh;
@@ -29,109 +26,112 @@ margin: 2vh 2vh;
   text-align: center;
   margin-bottom: 5vh;
 }
-
 .titulo h1{
   display: block
 }
-
 .btnMenu {
   margin-right: 20px;
-  background-color: #a03f56;
+  background-color: #A03F56;
   color: white;
   float: right;
 }
-
 .btnMenu:hover{
-  background-color:white; 
-  color: #a03f56;
+  background-color:white;
+  color: #A03F56;
   transition: 0.5s;
 }
 /*Titulo y su boton*/
 /*Formulario*/
-
 .formu form{
   text-align: center;
 }
+#Marca, #Sucursal, #Asesor, #Cumpleaños{
+  width: 180px;
+}
+input{
+  width: 173px;
+}
 /*Fin Formulario*/
 
+/*Texto Descuento*/
+.descuentoText h5{
+  display: none;
+}
+/*Fin Texto Descuento*/
+
+/*Caja de tratamientos*/
+.tratamientoBox{
+  display: inline-block;
+}
+/*Fin Caja de tratamientos*/
+
 /*Cosas que no he usado*/
-.buttonis { 
-  background-color: #a03f56;
+.buttonis {
+  background-color: #A03F56;
   color: white;
   right: 0;
 }
-
 /*Buttons Styles*/
-.buttonh { 
+.buttonh {
     width: 210px;
     height: 40px;
     border: 1px solid white;
     background-color: transparent !important;
   }
-  
   .botomnes button{
     width: 210px;
     height: 40px;
-    background-color: #a03f56;
-    color: white; 
-  }
-  
-  
-  .botomnes button:hover{
-    background-color:white; 
-    color: #a03f56;
-    transition: 0.5s;
-  }
-  
- 
-  .buttonis:hover{
-    background-color:white; 
-    color: #a03f56;
-    transition: 0.5s;
-  }
-  
-  .buttong {
-    background-color: #a03f56;
+    background-color: #A03F56;
     color: white;
   }
-  
-  .buttong:hover{
-    background-color:white; 
-    color: #a03f56;
+  .botomnes button:hover{
+    background-color:white;
+    color: #A03F56;
     transition: 0.5s;
   }
-  
+  .buttonis:hover{
+    background-color:white;
+    color: #A03F56;
+    transition: 0.5s;
+  }
+
+  .botomnes table{
+    border-spacing:100px 30px;
+  }
+  .buttong {
+    background-color: #A03F56;
+    color: white;
+  }
+  .buttong:hover{
+    background-color:white;
+    color: #A03F56;
+    transition: 0.5s;
+  }
   /*Texts*/
-  .texts { 
+  .texts {
     margin-left: 20px;
   }
-  
   /*Logos Styles*/
   .logos {
     width: 50px;
     height: 50px;
   }
-  
-  
   /*Table Borders*/
   .table_border {
     border: 1px solid black;
     width: 100%;
     padding: 10px;
   }
-  
   .magia td {
     border: 1px solid black;
     width: 50vw;
     padding: 10px;
   }
-  
   .magia th {
     border: 1px solid black;
     width: 50vw;
     padding: 10px;
   }
-  
   /* Tooltip container */
   .tooltip {
     position: absolute;
@@ -139,7 +139,6 @@ margin: 2vh 2vh;
     opacity: 1 !important;
     font-size: medium !important;
   }
-  
   /* Tooltip text */
   .tooltip .tooltiptext {
     visibility: hidden;
@@ -152,16 +151,11 @@ margin: 2vh 2vh;
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
-   
     /* Position the tooltip text*/
     position: absolute;
     z-index: 1;
   }
-  
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
-  
-  
-   
 /*Cosas que no he usado*/

@@ -14,7 +14,7 @@ controller.save = (req, res) => {
                 res.json(err);
             }else{
                 console.log(clientes);
-                res.redirect('/')
+                res.redirect('/');
             }
         });
     })
@@ -30,7 +30,7 @@ controller.agendar = (req, res) => {
                 res.json(err);
             }else{
                 console.log(clientes);
-                res.redirect('/agendarC')
+                res.redirect('/agendarC');
             }
         });
     })
