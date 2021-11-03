@@ -43,9 +43,9 @@ app.use(express.urlencoded({extended: false}));
 
 //routes
 //app.use('/login', loginRoutes);
-app.use('/agendarC', agendarCRoutes);
+app.use('/', agendarCRoutes);
 app.use('/calendario', calendarioRoutes);
-app.use('/', ccenterRoutes);
+app.use('/ccenter', ccenterRoutes);
 /*app.use('/citafac', citafacRoutes);
 app.use('/citfac', citfacRoutes);
 app.use('/clientescc', clientesccRoutes);

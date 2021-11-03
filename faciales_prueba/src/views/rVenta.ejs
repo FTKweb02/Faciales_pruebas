@@ -39,7 +39,7 @@
     <button class="btnMenu">Menú</button>
   </div>
   <form action="/addm" method="post">
-    <h1 align="center">Registrar Membresía</h1>
+    <h1 align="center">Registrar Tratamiento</h1>
     <br />
     <div align="center">
 
@@ -47,7 +47,7 @@
       <br><br>
       <input size="30" type="text" name="Folio_Membresia" id="Folio_Membresia" placeholder="Folio Membresía">
       <br><br>
-      <label for="idasesor"><b>ID Asesor: </b></label><br />
+      <label for="idasesor"><b>Asesor Venta: </b></label><br />
       <input size="30" type="text" name="Asesor" id="Asesor">
       <br><br>
       <label for="fechacompra"><b>Fecha Compra: </b></label><br />
@@ -55,14 +55,17 @@
       <br><br>
       <div>
         <div class="tratamientoBox">
-          <label for="cat">Categoría:</label>&nbsp;<input type="text" id="cat">
+          <label for=""><b>Tratamiento:</b></label><br><br>
+          <label for="cat">Nombre:</label>&nbsp;<input type="text" id="cat">
 
-          <label for="cant">Cantidad:</label>&nbsp;<input type="text" id="cant">
+          <label for="cant">Tipo:</label>&nbsp;<input type="text" id="cant">
 
-          <label for="notas">Notas:</label>&nbsp;<input type="textarea" id="notas">
+          <label for="notas">Precio:</label>&nbsp;<input type="textarea" id="notas">
+
+          <label for="clase">Clase:</label>&nbsp;<input type="textarea" id="clase">
         </div>
+        <!--img type="button" class="AddNew logos" src="img/icon_plus.jpg" alt="plus"-->
         <br>
-        <img type="button" class="AddNew logos" src="img/icon_plus.jpg" alt="plus">
         <br>
       </div>
       <label for="acompañante"><b># Acompañantes:</b></label><br />
@@ -74,11 +77,14 @@
       <label for="importep"><b>Importe Total (Ticket): </b></label><br />
       <input size="30" type="text" name="Importe" id="Importe">
       <br><br>
+      <div class="tooltip"><img class="tooltip logos" src="img/descuento_icono.png" alt="plus">
+        <span class="tooltiptext">Reglas&nbsp;Descuento<br>1. <br>2. <br>3. <br>4. </span>
+      </div>&nbsp;&nbsp;&nbsp;&nbsp;
+      <label for="descuento"><b>Descuento: </b></label><br>
+      <input size="30" type="text" name="Descuento" id="Descuento">
+      <br><br>
 
-      <label for="descuento"><b>Descuento: </b><h5 class="descuentoText">'Generado automáticamente con base al Importe Total'</h5></label>
-      
-
-      <label for="observaciones"><b>Observaciones: </b></label><br />
+      <label for="observaciones"><b>Notas: </b></label><br />
       <input size="30" type="text" name="Observaciones" id="Observaciones">
 
     </div>

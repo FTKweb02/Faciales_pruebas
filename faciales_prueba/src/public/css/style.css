@@ -45,19 +45,17 @@ margin: 2vh 2vh;
 .formu form{
   text-align: center;
 }
-#Marca, #Sucursal, #Asesor, #Cumpleaños{
+#Marca, #Sucursal, #Asesor{
   width: 180px;
+}
+
+#Cumpleaños{
+  width:50px;
 }
 input{
   width: 173px;
 }
 /*Fin Formulario*/
-
-/*Texto Descuento*/
-.descuentoText h5{
-  display: none;
-}
-/*Fin Texto Descuento*/
 
 /*Caja de tratamientos*/
 .tratamientoBox{
@@ -113,8 +111,9 @@ input{
   }
   /*Logos Styles*/
   .logos {
-    width: 50px;
-    height: 50px;
+    width: 17px;
+    height: 17px;
+    
   }
   /*Table Borders*/
   .table_border {
@@ -123,11 +122,6 @@ input{
     padding: 10px;
   }
   .magia td {
-    border: 1px solid black;
-    width: 50vw;
-    padding: 10px;
-  }
-  .magia th {
     border: 1px solid black;
     width: 50vw;
     padding: 10px;

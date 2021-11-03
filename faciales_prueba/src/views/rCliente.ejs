@@ -35,7 +35,16 @@
   </div>
   <div class="formu">
     <form action="/add" method="post">
-
+      <label><b>Asesor: </b></label>
+      <br>
+      <select name="Asesor" id="Asesor">
+        <option selected="selected" value=""></option>
+        <option value="Asesor 1">0001</option>
+        <option value="Asesor 2">0002</option>
+        <option value="Asesor 3">0003</option>
+      </select>
+      <br>
+      <br>
       <label><b>Marca: </b></label>
       <br/>
       <select name="Marca" id="Marca">
@@ -58,16 +67,7 @@
       </select>
       <br>
       <br>
-      <label><b>Asesor: </b></label>
-      <br>
-      <select name="Asesor" id="Asesor">
-        <option selected="selected" value=""></option>
-        <option value="Asesor 1">0001</option>
-        <option value="Asesor 2">0002</option>
-        <option value="Asesor 3">0003</option>
-      </select>
-      <br>
-      <br>
+      
       <input name="Nombre" id="Nombre" type="text" placeholder="Nombre" required>
       <br />
       <br />
@@ -75,8 +75,15 @@
       <br />
       <br />
       <label><b>Cumpleaños: </b></label>
+      <br>
       <br />
-      <input name="Cumpleaños" id="Cumpleaños" type="date" required>
+      <div class="tratamientoBox">
+        <label for="day">Día:</label>&nbsp;<input id="Cumpleaños" type="text" id="day">
+
+        <label for="month">Mes:</label>&nbsp;<input id="Cumpleaños" type="text" id="month" required>
+
+        <label for="year">Año:</label>&nbsp;<input id="Cumpleaños" type="text" id="year">
+      </div>
       <br />
       <br />
       <input name="Teléfono" id="Teléfono" type="tel" placeholder="Teléfono 10 digitos" required-pattern="[0-9]{10}">
@@ -85,13 +92,33 @@
       <input name="Email" id="Email" type="email" placeholder="E-mail" required>
       <br />
       <br />
+      <div class="col">
+        <label for="date"><b>Fecha de Registro:</b></label><br>
+        <input type="date" onload="getDate()" class="form-control" id="date" 
+          name="date">
+      </div>
+      <br>
+      <br>
+      <input name="notas" type="textarea" placeholder="Notas" required>
+      <br>
+      <br>
       <div>
         <button class="buttonis" type="submit">Guardar</button>
-        <button class="buttonis" type="submit"> Guardar&nbsp;y&nbsp;Agendar</button>
+        <button class="buttonis" type="submit"> Guardar&nbsp;y&nbsp;Registrar<br>Membresia</button>
       </div>
     </form>
   </div>
   <!--Fin contenido-->
+
+  <!--Scripts>
+  <script>
+    function getDate(){
+      var today = new Date();
+  
+  document.getElementById("date").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+  }
+  </script>
+  <--Fin Scripts-->
 </body>
 
 </html>
