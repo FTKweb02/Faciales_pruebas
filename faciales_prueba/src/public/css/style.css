@@ -110,10 +110,14 @@ input{
     margin-left: 20px;
   }
   /*Logos Styles*/
+  .logop {
+    width: 30px;
+    height: 30px;
+  }
+
   .logos {
     width: 17px;
     height: 17px;
-    
   }
   /*Table Borders*/
   .table_border {
@@ -123,9 +127,10 @@ input{
   }
   .magia td {
     border: 1px solid black;
-    width: 50vw;
+    width: 20vw;
     padding: 10px;
   }
+
   /* Tooltip container */
   .tooltip {
     position: absolute;

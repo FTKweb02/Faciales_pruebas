@@ -8,7 +8,7 @@ const express = require('express'),
 const app = express();
 
 //importing routes 
-//const loginRoutes = require('./routes/loginRoute');
+const loginRoutes = require('./routes/loginRoute');
 const agendarCRoutes = require('./routes/agendarCRoute');
 const calendarioRoutes = require('./routes/calendarioRoute');
 const ccenterRoutes = require('./routes/ccenterRoute');
@@ -42,8 +42,8 @@ app.use(myConnection(mysql, {
 app.use(express.urlencoded({extended: false}));
 
 //routes
-//app.use('/login', loginRoutes);
-app.use('/', agendarCRoutes);
+app.use('/login', loginRoutes);
+app.use('/agendarC', agendarCRoutes);
 app.use('/calendario', calendarioRoutes);
 app.use('/ccenter', ccenterRoutes);
 /*app.use('/citafac', citafacRoutes);
@@ -57,7 +57,7 @@ app.use('/consultarF', consultarFRoutes);
 app.use('/historial', historialRoutes);
 //app.use('/pendientes', pendientesRoutes);
 app.use('/rCliente', rClienteRoutes);
-app.use('/rVenta', rVentaRoutes);
+app.use('/', rVentaRoutes);
 
 //Static files
 app.use(express.static(path.join(__dirname, 'public')));
