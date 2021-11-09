@@ -14,7 +14,7 @@ controller.save = (req, res) => {
                 res.json(err);
             }else{
                 console.log(membresias);
-                res.redirect('/rVenta')
+                res.redirect('/rVenta');
             }
         });
     })
@@ -30,7 +30,7 @@ controller.agendar = (req, res) => {
                 res.json(err);
             }else{
                 console.log(membresias);
-                res.redirect('/agendarC')
+                res.redirect('/agendarC');
             }
         });
     })

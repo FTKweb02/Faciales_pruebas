@@ -20,15 +20,15 @@
         <input type="image" id="image" alt="Home" src="/img/Logo-FTK-new-blanco.png" />
       </a>
       <a href="/">
-      <button role="link" class="btnCerrar" data-target="/">Cerrar Sesión</button>
+        <button role="link" class="btnCerrar">Cerrar Sesión</button>
       </a>
     </nav>
   </div>
   <br />
   <!--Fin navbar-->
   <!--Contenido-->
-  <a href="/ccenter">
-  <button class="btnMenu">Menú</button>
+  <a href="/">
+    <button class="btnMenu">Menú</button>
   </a>
   <div class="titulo">
     <h1>Registrar Cliente</h1>
@@ -46,7 +46,7 @@
       <br>
       <br>
       <label><b>Marca: </b></label>
-      <br/>
+      <br />
       <select name="Marca" id="Marca">
         <option selected="selected" value=""></option>
         <option value="VV">VV</option>
@@ -67,7 +67,7 @@
       </select>
       <br>
       <br>
-      
+
       <input name="Nombre" id="Nombre" type="text" placeholder="Nombre" required>
       <br />
       <br />
@@ -78,48 +78,97 @@
       <br>
       <br />
       <div class="tratamientoBox">
-        <label for="day">Día:</label>&nbsp;<input id="Cumpleaños" type="text" id="day">
+        <label for="Día">Día:</label>&nbsp;<input id="Cumpleaños" type="text" id="Día">
 
-        <label for="month">Mes:</label>&nbsp;<input id="Cumpleaños" type="text" id="month" required>
+        <label for="Mes">Mes:</label>&nbsp;<input id="Cumpleaños" type="text" id="Mes" required>
 
-        <label for="year">Año:</label>&nbsp;<input id="Cumpleaños" type="text" id="year">
+        <label for="Año">Año:</label>&nbsp;<input id="Cumpleaños" type="text" id="Año">
       </div>
       <br />
       <br />
-      <input name="Teléfono" id="Teléfono" type="tel" placeholder="Teléfono 10 digitos" required-pattern="[0-9]{10}">
+      <input name="Telefono" id="Telefono" type="tel" placeholder="Teléfono 10 digitos" required-pattern="[0-9]{10}">
       <br />
       <br />
-      <input name="Email" id="Email" type="email" placeholder="E-mail" required>
+      <input name="Correo" id="Correo" type="email" placeholder="E-mail" required>
       <br />
       <br />
       <div class="col">
-        <label for="date"><b>Fecha de Registro:</b></label><br>
-        <input type="date" onload="getDate()" class="form-control" id="date" 
-          name="date">
+        <label for="Fecha_Registro"><b>Fecha de Registro:</b></label><br>
+        <input type="date" onload="getDate()" class="form-control" id="Fecha_Registro" name="Fecha_Registro">
       </div>
       <br>
-      <br>
-      <input name="notas" type="textarea" placeholder="Notas" required>
+      <input name="Notas" type="textarea" placeholder="Notas" required>
       <br>
       <br>
       <div>
+        
         <button class="buttonis" type="submit">Guardar</button>
+        <a href="/agendarC">
         <button class="buttonis" type="submit"> Guardar&nbsp;y&nbsp;Registrar<br>Membresia</button>
+        </a>
       </div>
     </form>
+    <button class="buttonis" id="myBtn">Resumen</button>
     <br><br>
   </div>
-  <!--Fin contenido-->
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
 
-  <!--Scripts>
+    <!-- Modal content -->
+    <div align="center" class="modal-content">
+      <span class="close">&times;</span>
+      <h2>RESUMEN</h2>
+      <p>Asesor:_____________________________________</p>
+      <p>Marca:______________________________________</p>
+      <p>Sucursal:____________________________________</p>
+      <p>Nombre:____________________________________ </p>
+      <p>Apellidos:__________________________________</p>
+      <p>Cumpleaños:________________________________</p>
+      <p>Teléfono:___________________________________</p>
+      <p>Correo:_____________________________________ </p>
+      <p>Fecha:______________________________________</p>
+      <p>Notas:______________________________________ </p>
+      <button class="buttonis">Guardar</button>
+      <button id="cancel" class="buttonis">Cancelar</button>
+    </div>
+
+  </div>
   <script>
-    function getDate(){
-      var today = new Date();
-  
-  document.getElementById("date").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
-  }
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    //Get the button that closes the modal
+    var cancelar = document.getElementById("cancel");
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function () {
+      modal.style.display = "block";
+    }
+
+    //When the user clicks the button, close the modal
+    cancelar.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
   </script>
-  <--Fin Scripts-->
+
 </body>
 
 </html>

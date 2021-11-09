@@ -1,83 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendar</title>
 
-    <link rel="icon" href="/img/Logo-FTK-new-negro.png">
-    <link rel="stylesheet" href="/css/style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendar</title>
+
+  <link rel="icon" href="/img/Logo-FTK-new-negro.png">
+  <link rel="stylesheet" href="/css/style.css">
 
 </head>
+
 <body>
-    <div>
+  <div>
     <nav class="color-nav">
-        <a href="/">
-            <input type="image" id="image" alt ="Home" src="/img/Logo-FTK-new-blanco.png" width="150px" />
-        </a>
-        <button role="link" class="btnCerrar" data-target="/">Cerrar Sesión</button>
-      </nav>
-    </div>
-    <br/>
-    <div>
-        <button class="btnMenu">Menú</button>
-    </div>
-    <br/>
-    <h1 align="center">Agendar</h1>
-    <br/>
-    <div align="center">
-        <table>
-    <tbody>
+      <a href="/">
+        <input type="image" id="image" alt="Home" src="/img/Logo-FTK-new-blanco.png" width="150px" />
+      </a>
+      <button role="link" class="btnCerrar" data-target="/">Cerrar Sesión</button>
+    </nav>
+  </div>
+  <br />
+  <div>
+    <a href="/">
+      <button class="btnMenu">Menú</button>
+    </a>
+  </div>
+  <br />
+  <h1 align="center">Agendar</h1>
+  <br />
+  <div align="center">
+    <table class="reemplazodelnbsp">
+      <tbody>
         <tr>
-            <td></td>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td>Nombre:</td>
+          <td></td>
+
+          <td>Nombre:</td>
         </tr>
         <tr>
-            <td><input type="search" name="searchId" placeholder="Buscar ID"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Apellidos:</td>
+          <td><input type="search" name="searchId" placeholder="Buscar ID"></td>
+          <td>Apellidos:</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Cumpleaños:</td>
+          <td></td>
+          <td>Cumpleaños:</td>
         </tr>
         <tr>
-            <td><button class="buttong" type="button">Buscar</button></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Teléfono:</td>
+          <td><button class="buttong" type="button">Buscar</button></td>
+          <td>Teléfono:</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Correo:</td>
+          <td></td>
+          <td>Correo:</td>
         </tr>
-    </tbody>
-</table>
-       <br><br>
-       <form action="post">
-    <table class="magia">
+        <tr>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Asesor:</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Tratamientos Totales:</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Tratamientos Restantes:</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Acompañantes: </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Acompañantes Restantes:</td>
+        </tr>
+      </tbody>
+    </table>
+    <br><br>
+    <form action="post">
+      <table class="magia">
         <tbody>
           <tr>
             <td>Checkbox</td>
             <td>ID Cliente</td>
             <td>Folio Membresia</td>
-            <td>Asesor Venta</td>
             <td>Fecha Compra</td>
             <td>Tratamiento</td>
-            <td>Acompañantes</td>
             <td>Ticket</td>
           </tr>
           <tr>
@@ -85,19 +95,18 @@
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td><div class="tooltip">Nombre Tratamiento
+            <td>
+              <div class="tooltip">Nombre Tratamiento
                 <span class="tooltiptext"><b>Detalles</b><br>Tipo: <br>Precio <br>Clase: </span>
               </div>
               <br>
-              </td>
-            <td></td>
+            </td>
             <td></td>
           </tr>
         </tbody>
-        </table>
-        <br><br>
-        <label><b>Sucursal: </b></label>
+      </table>
+      <br><br>
+      <label><b>Sucursal: </b></label>
       <br />
       <select name="Sucursal" id="Sucursal">
         <option selected="selected" value=""></option>
@@ -105,8 +114,8 @@
         <option value="RC01">RC01</option>
         <option value="VV01">VV01</option>
       </select>
-        <br><br>
-        <label for="fechacita"><b>Fecha: </b></label><br />
+      <br><br>
+      <label for="fechacita"><b>Fecha: </b></label><br />
       <input type="date" name="Fecha" id="fechacita">
       <br><br>
       <label for="Cabina"><b>Cabina: </b></label><br>
@@ -122,8 +131,64 @@
       <input type="textarea" id="notas" name="notas">
       <br><br>
       <button class="buttong" type="submit" name="agendar">Agendar</button>
+      
     </form>
+    <br>
+    <button class="buttonis" id="myBtn">Resumen</button>
     <br><br>
-</div>
+  </div>
+   <!-- The Modal -->
+   <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div align="center" class="modal-content">
+      <span class="close">&times;</span>
+      <h2>RESUMEN</h2>
+      <p>ID&nbsp;Cliente:_____________________________________</p>
+      <p>Folio&nbsp;Membresía:______________________________________</p>
+      <p>Asesor&nbsp;Venta:____________________________________</p>
+      <p>Fecha&nbsp;Compra:____________________________________ </p>
+      <p>Tratamiento:__________________________________</p>
+      <p>Ticket:________________________________</p>
+      <button class="buttonis">Guardar</button>
+      <button id="cancel" class="buttonis">Cancelar</button>
+    </div>
+
+  </div>
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    //Get the button that closes the modal
+    var cancelar = document.getElementById("cancel");
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function () {
+      modal.style.display = "block";
+    }
+    //When the user clicks the button, close the modal
+    cancelar.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </body>
+
 </html>

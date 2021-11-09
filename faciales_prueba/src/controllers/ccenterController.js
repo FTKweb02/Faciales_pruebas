@@ -6,31 +6,31 @@ controller.ccenter = (req, res) => {
 };
 
 controller.calendario = (req, res) => {
-    res.redirect('/calendario');
+    res.render('/calendario');
 }
 
 controller.rcliente = (req, res) => {
-    res.redirect('/rcliente');
+    res.render('rCliente.ejs');
 }
 
 controller.rventa = (req, res) => {
-    res.redirect('/rventa');
+    res.render('rVenta.ejs');
 }
 
 controller.consultarf = (req, res) => {
-    res.redirect('/consultarf');
+    res.render('consultarF.ejs');
 }
 
 controller.agendarc = (req, res) => {
-    res.redirect('/agendarc');
+    res.render('agendarc.ejs');
 }
 
 controller.consultarc = (req, res) => {
-    res.redirect('/consultarc');
+    res.render('consultarC.ejs');
 }
 
 controller.historial = (req, res) => {
-    res.redirect('/historial');
+    res.render('historial.ejs');
 }
 
 module.exports = controller;

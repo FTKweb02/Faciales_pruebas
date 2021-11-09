@@ -1,7 +1,7 @@
 const controller = {};
 
 controller.rcliente = (req, res) => {
-    res.render('rCliente.ejs')
+    res.render('rCliente.ejs');
 };
 
 controller.save = (req, res) => {
@@ -14,7 +14,7 @@ controller.save = (req, res) => {
                 res.json(err);
             }else{
                 console.log(clientes);
-                res.redirect('/');
+                res.render('/');
             }
         });
     })
@@ -30,7 +30,7 @@ controller.agendar = (req, res) => {
                 res.json(err);
             }else{
                 console.log(clientes);
-                res.redirect('/agendarC');
+                res.render('agendarC.ejs');
             }
         });
     })

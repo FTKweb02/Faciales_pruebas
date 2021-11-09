@@ -45,7 +45,7 @@ app.use(express.urlencoded({extended: false}));
 app.use('/login', loginRoutes);
 app.use('/agendarC', agendarCRoutes);
 app.use('/calendario', calendarioRoutes);
-app.use('/ccenter', ccenterRoutes);
+app.use('/', ccenterRoutes);
 /*app.use('/citafac', citafacRoutes);
 app.use('/citfac', citfacRoutes);
 app.use('/clientescc', clientesccRoutes);
@@ -57,7 +57,7 @@ app.use('/consultarF', consultarFRoutes);
 app.use('/historial', historialRoutes);
 //app.use('/pendientes', pendientesRoutes);
 app.use('/rCliente', rClienteRoutes);
-app.use('/', rVentaRoutes);
+app.use('/rVenta', rVentaRoutes);
 
 //Static files
 app.use(express.static(path.join(__dirname, 'public')));

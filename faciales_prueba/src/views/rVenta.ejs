@@ -36,7 +36,9 @@
   </div>
   <br />
   <div>
-    <button class="btnMenu">Menú</button>
+    <a href="/">
+      <button class="btnMenu">Menú</button>
+      </a>
   </div>
   <form action="/addm" method="post">
     <h1 align="center">Registrar Tratamiento</h1>
@@ -58,14 +60,23 @@
           <label for=""><b>Tratamiento:</b></label><br><br>
           <label for="nombre">Nombre:</label>&nbsp;<input type="text" id="nombre" required>&nbsp;
           <label for="cat">Categoría:</label>&nbsp;<input type="text" id="cat" required>&nbsp;
-          <label for="precio">Precio:</label>&nbsp;<input type="textarea" id="precio" required>&nbsp;
-          <label for="clase">Clase:</label>&nbsp;<input type="textarea" id="clase" required>
+          <label for="precio">Precio:</label>&nbsp;&nbsp;____________________
+          <label for="clase">Tiempo:</label>&nbsp;&nbsp;____________________
         </div>
         <br><br>
         <div>
           <img type="button" class="AddNew logop" src="img/icon_plus.jpg" alt="plus">
         </div>
         <br>
+        <label><b>Sucursal: </b></label>
+      <br />
+        <select name="Sucursal" id="Sucursal">
+          <option selected="selected" value=""></option>
+          <option value="RS01">RS01</option>
+          <option value="RC01">RC01</option>
+          <option value="VV01">VV01</option>
+        </select>
+        <br><br>
       </div>
       <label for="acompañante"><b># Acompañantes:</b></label><br />
       <input size="30" type="text" name="Acompañantes" id="Acompañantes" required>
@@ -73,8 +84,11 @@
       <label for="ticketnova"><b># Ticket: </b></label><br />
       <input size="30" type="text" name="Ticket" id="Ticket" required>
       <br><br>
-      <label for="importep"><b>Importe Total (Ticket): </b></label><br />
-      <input size="30" type="text" name="Importe" id="Importe" required>
+      <label for="importep"><b>Importe Total Ticket: </b></label><br />
+      <input size="30" type="text" name="Importe" id="importep" required>
+      <br><br>
+      <label for="importet"><b>Importe Total Tratamiento/s: </b></label><br />
+      <input size="30" type="text" name="Importe" id="importet" required>
       <br><br>
       <div class="tooltip"><img class="tooltip logos" src="img/descuento_icono.png" alt="plus">
         <span class="tooltiptext">Reglas&nbsp;Descuento<br>1. <br>2. <br>3. <br>4. </span>
