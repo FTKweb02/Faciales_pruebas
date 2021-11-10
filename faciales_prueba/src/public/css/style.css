@@ -102,6 +102,10 @@ margin: 2vh 2vh;
 input{
   width: 173px;
 }
+
+.chckbox {
+  width: 20px;
+}
 /*Fin Formulario*/
 .reemplazodelnbsp td{
   border-left: 75px solid transparent;
