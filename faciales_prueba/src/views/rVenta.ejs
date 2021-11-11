@@ -40,7 +40,7 @@
       <button class="btnMenu">Menú</button>
       </a>
   </div>
-  <form action="/addm" method="post">
+  <form action="/rVenta/addm" method="post">
     <h1 align="center">Registrar Tratamiento</h1>
     <br />
     <div align="center">
@@ -54,7 +54,7 @@
       <input size="30" type="text" name="Asesor" id="Asesor" required>
       <br><br>
       <label for="fechacompra"><b>Fecha Compra: </b></label><br />
-      <input type="date" name="Fecha" id="Fecha" required>
+      <input type="date" name="Fecha_Compra" id="Fecha_Compra" required>
       <br><br>
       <div>
         <div class="tratamientoBox">
@@ -86,10 +86,10 @@
       <input size="30" type="text" name="Ticket" id="Ticket" required>
       <br><br>
       <label for="importep"><b>Importe Total Ticket: </b></label><br />
-      <input size="30" type="text" name="Importe" id="importep" required>
+      <input size="30" type="text" name="Importep" id="Importep" required>
       <br><br>
       <label for="importet"><b>Importe Total Tratamiento/s: </b></label><br />
-      <input size="30" type="text" name="Importe" id="importet" required>
+      <input size="30" type="text" name="Importet" id="Importet" required>
       <br><br>
       <div class="tooltip"><img class="tooltip logos" src="img/descuento_icono.png" alt="plus">
         <span class="tooltiptext">Reglas&nbsp;Descuento<br>1. <br>2. <br>3. <br>4. </span>
@@ -104,8 +104,8 @@
     </div>
     <br />
     <div align="center">
-      <button class="buttong" type="submit" name="registrar">Registrar</button>&nbsp;&nbsp;&nbsp;&nbsp;
-      <button class="buttong" type="submit" name="registraryag">Registrar y Agendar</button>
+      <button class="buttong" type="submit">Registrar</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <button class="buttong" type="submit">Registrar y Agendar</button>
     </div>
     <br />
   </form>
@@ -119,6 +119,7 @@
       // If the checkbox is checked, display the output text
       if (checkBox.checked == true){
         inputchk.removeAttribute("disabled");
+        inputchk.setAttribute("required", "required");
       } else {
         inputchk.setAttribute("disabled", "disabled");
       }

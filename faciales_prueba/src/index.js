@@ -2,7 +2,9 @@ const express = require('express'),
       path = require('path'),
       morgan = require('morgan'),
       mysql = require('mysql'),
-      myConnection = require('express-myConnection');
+      myConnection = require('express-myConnection'),
+      flash = require('connect-flash');
+      session = require('express-session');
 
 
 const app = express();
@@ -30,6 +32,12 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(session({
+  secret: 'codeforgeek',
+  saveUninitialized: true,
+  resave: true
+}));
+
 //middlewares
 app.use(morgan('dev'));
 app.use(myConnection(mysql, {
@@ -40,6 +48,8 @@ app.use(myConnection(mysql, {
   database: 'faciales'
 }, 'single'));
 app.use(express.urlencoded({extended: false}));
+
+app.use(flash());
 
 //routes
 app.use('/login', loginRoutes);

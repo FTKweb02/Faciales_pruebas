@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const rClienteController = require('../controllers/rClienteController');
 
-router.get('/rcliente', rClienteController.rcliente);
+router.get('/rCliente', rClienteController.rcliente);
 router.post('/add', rClienteController.save);
 //router.post('/addag', rClienteController.agendar);
 

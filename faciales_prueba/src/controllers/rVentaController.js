@@ -1,7 +1,7 @@
 const controller = {};
 
 controller.rventa = (req, res) => {
-    res.render('rVenta.ejs');
+    res.render('rVenta');
 };
 
 controller.save = (req, res) => {
@@ -14,6 +14,7 @@ controller.save = (req, res) => {
                 res.json(err);
             }else{
                 console.log(membresias);
+                req.flash('success', `You've been successfully redirected to the Message route!`);
                 res.redirect('/rVenta');
             }
         });

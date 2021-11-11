@@ -1,7 +1,7 @@
 const controller = {};
 
 controller.rcliente = (req, res) => {
-    res.render('rCliente.ejs');
+    res.render('rCliente');
 };
 
 controller.save = (req, res) => {
@@ -14,7 +14,8 @@ controller.save = (req, res) => {
                 res.json(err);
             }else{
                 console.log(clientes);
-                res.render('/');
+                req.flash('success', `You've been successfully redirected to the Message route!`);
+                res.redirect('/rCliente');
             }
         });
     })
