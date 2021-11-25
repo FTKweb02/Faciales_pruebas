@@ -18,7 +18,9 @@
       <a href="/">
         <input type="image" id="image" alt="Home" src="/img/Logo-FTK-new-blanco.png" width="150px" />
       </a>
-      <button role="link" class="btnCerrar" data-target="/">Cerrar Sesión</button>
+      <a href="/">
+        <button role="link" class="btnCerrar">Cerrar Sesión</button>
+      </a>
     </nav>
   </div>
   <br />
@@ -36,6 +38,11 @@
         <tr>
           <td></td>
 
+          <td>ID Cliente:</td>
+        </tr>
+        <tr>
+          <td></td>
+
           <td>Nombre:</td>
         </tr>
         <tr>
@@ -44,15 +51,15 @@
         </tr>
         <tr>
           <td></td>
-          <td>Cumpleaños:</td>
-        </tr>
-        <tr>
-          <td><button class="buttong" type="button">Buscar</button></td>
           <td>Teléfono:</td>
         </tr>
         <tr>
-          <td></td>
+          <td><button class="buttong" type="submit">Buscar</button></td>
           <td>Correo:</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Cumpleaños:</td>
         </tr>
         <tr>
         </tr>
@@ -83,16 +90,15 @@
       <table class="magia">
         <tbody>
           <tr>
-            <td>Checkbox</td>
-            <td>ID Cliente</td>
+            <td id="teodioaquamugre">Agendar</td>
             <td>Folio Membresia</td>
             <td>Fecha Compra</td>
             <td>Tratamiento</td>
             <td>Ticket</td>
+            <td>Notas</td>
           </tr>
           <tr>
-            <td><input class="chckbox" type="checkbox"></td>
-            <td></td>
+            <td id="teodioaquamugre"><input name="citas" class="chckbox" type="radio"></td>
             <td></td>
             <td></td>
             <td>
@@ -102,6 +108,30 @@
               <br>
             </td>
             <td></td>
+            <td>
+              <div class="tooltip">Notas de Cita
+                <span class="tooltiptext"><b>Detalles de la cita</b></span>
+              </div>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td id="teodioaquamugre"><input name="citas" class="chckbox" type="radio"></td>
+            <td></td>
+            <td></td>
+            <td>
+              <div class="tooltip">Nombre Tratamiento
+                <span class="tooltiptext"><b>Detalles</b><br>Tipo: <br>Precio <br>Clase: </span>
+              </div>
+              <br>
+            </td>
+            <td></td>
+            <td>
+              <div class="tooltip">Notas de Cita
+                <span class="tooltiptext"><b>Detalles de la cita</b></span>
+              </div>
+              <br>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -144,17 +174,13 @@
     <div align="center" class="modal-content">
       <span class="close">&times;</span>
       <h2>RESUMEN</h2>
-      <p>ID&nbsp;Cliente:_____________________________________</p>
-      <p>Nombre:_____________________________________</p>
+      <p>Nombre:______________________________________</p>
       <p>Apellidos:_____________________________________</p>
-      <p>Teléfono:_____________________________________</p>
-      <p>Correo:_____________________________________</p>
-      <p>Folio&nbsp;Membresía:______________________________________</p>
-      <p>Tratamiento:______________________________________</p>
-      <p>Sucursal:____________________________________ </p>
-      <p>Fecha:__________________________________</p>
-      <p>Cabina:________________________________</p>
-      <p>Notas:________________________________</p>
+      <p>Tratamiento:___________________________________</p>
+      <p>Sucursal:______________________________________ </p>
+      <p>Fecha:________________________________________</p>
+      <p>Cabina:_______________________________________</p>
+      <p>Notas:________________________________________</p>
       <button class="buttonis">Guardar</button>
       <button id="cancel" class="buttonis">Cancelar</button>
     </div>

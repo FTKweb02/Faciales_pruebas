@@ -96,7 +96,7 @@ margin: 2vh 2vh;
   width: 180px;
 }
 
-#Cumpleaños{
+#Día, #Mes, #Año{
   width:50px;
 }
 input{
@@ -190,6 +190,21 @@ input{
     height: 17px;
   }
   /*Table Borders*/
+.calendar_buttons {
+  margin-left: 8vw;
+}
+
+.calendar_buttons button {
+  background-color: #A03F56;
+  color: white;
+}
+
+.calendar_buttons button:hover {
+  background-color:white;
+    color: #A03F56;
+    transition: 0.5s;
+}
+
   .table_border {
     border: 1px solid black;
     width: 100%;
@@ -197,8 +212,40 @@ input{
   }
   .magia td {
     border: 1px solid black;
-    width: 20vw;
+    width: 15vw;
+    padding-left: 10px;
+  }
+
+  .calendario_border {
+    border: 1px solid #790a24;
+    width: 80%;
+    margin-top: 2vw;
+    margin-left: 8vw;
+  }
+
+  .calendario_border td{
+    text-align: center;
+    border: 1px solid #790a24;
+    width: 15vw;
+    padding-left: 10px;
+  }
+
+  .sch_title {
+    margin-left: 8vw;
+  }
+
+  .scrolling {
+    overflow-y: scroll;
+    width: 100vw;
+    height: 60vh;
+    
+  }
+
+  #teodioaquamugre {
+    border: 1px solid black;
+    width: 4vw !important;
     padding: 10px;
+    align-items: center;
   }
 
   /* Tooltip container */

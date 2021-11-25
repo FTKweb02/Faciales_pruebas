@@ -47,6 +47,18 @@
 
       <input size="30" type="search" name="id_Cliente" id="id_Cliente" placeholder="ID Cliente" required>
       <br><br>
+      <label><b>Marca: </b></label>
+      <br />
+      <select name="Marca" id="Marca">
+        <option selected="selected" value=""></option>
+        <option value="VV">VV</option>
+        <option value="OG">OG</option>
+        <option value="RC">RC</option>
+        <option value="RS">RS</option>
+        <option value="VVEXP">VVEXP</option>
+      </select>
+      <br>
+      <br>
       <input type="checkbox" class="chckbox" id="myCheck" onclick="myFunction()">
       <input disabled size="30" type="text" name="Folio_Membresia" id="Folio_Membresia" placeholder="Folio Membresía">
       <br><br>
@@ -116,12 +128,13 @@
       // Get the output text
       var inputchk = document.getElementById("Folio_Membresia");
     
-      // If the checkbox is checked, display the output text
+      // If the checkbox is checked, display the output text and set required attribute
       if (checkBox.checked == true){
         inputchk.removeAttribute("disabled");
         inputchk.setAttribute("required", "required");
       } else {
         inputchk.setAttribute("disabled", "disabled");
+        inputchk.removeAttribute("required");
       }
     }
   </script>
