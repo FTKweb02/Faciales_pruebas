@@ -236,8 +236,9 @@ input{
 
   .scrolling {
     overflow-y: scroll;
-    width: 100vw;
+    width: 90vw;
     height: 60vh;
+    margin-left: 5vw;
     
   }
 

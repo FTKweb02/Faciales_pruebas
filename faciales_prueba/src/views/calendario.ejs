@@ -14,9 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  
   </head>
-  
   <body>
     <!--Navbar-->
     <div>
@@ -56,9 +54,9 @@
             </tr>
             <tr>
               <td>10:00-10:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>Prueba</td>
+              <td class="" id="" onclick="asignID()">Prueba 2</td>
+              <td>Prueba 3</td>
               <td></td>
             </tr>
             <tr>
@@ -1122,6 +1120,10 @@
           </table>
         </div>
     </div>
+    <br>
+    <button style="margin-left:8vw" onclick="mergeFunction()">Merge</button>
+    <button onclick="desmerge()">Cancel</button>
+    <br><br>
     <script>
       function openSchedule(scheduleName) {
         var i;
@@ -1130,6 +1132,24 @@
           x[i].style.display = "none";
         }
         document.getElementById(scheduleName).style.display = "block";
+      }
+
+      function asignID(newID){
+        console.log(document.getElementsByTagName("td").id);
+        document.getElementsByTagName("td").id = "myTd";
+        var newID = document.getElementsByTagName("td").id;
+        console.log(newID);
+        return newID;
+      }
+
+      function mergeFunction() {
+        document.getElementById("myTd").rowSpan = "4";
+      }
+
+      function desmerge() {
+        if(document.getElementById("myTd").rowSpan > 1){
+          document.getElementById("myTd").rowSpan = 1;
+        }
       }
     </script>
 </html>
