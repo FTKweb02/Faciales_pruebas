@@ -221,8 +221,9 @@ input{
     width: 80%;
     margin-top: 2vw;
     margin-left: 8vw;
+    border-spacing: 0;
   }
-
+  
   .calendario_border td{
     text-align: center;
     border: 1px solid #790a24;
@@ -237,9 +238,8 @@ input{
   .scrolling {
     overflow-y: scroll;
     width: 90vw;
-    height: 60vh;
+    height: 55vh;
     margin-left: 5vw;
-    
   }
 
   #teodioaquamugre {
