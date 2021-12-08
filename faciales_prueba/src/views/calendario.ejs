@@ -9,22 +9,9 @@
 
   <link rel="icon" href="/img/Logo-FTK-new-negro.png">
   <link rel="stylesheet" href="/css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+  <link type="text/css" href='/fullcalendar/main.css' rel='stylesheet' />
+  <script src='/fullcalendar/main.js'></script>
 
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
-
-
-  <link rel="stylesheet" href="/calendar-20/fonts/icomoon/style.css">
-
-  <link href='/calendar-20/fullcalendar/packages/core/main.css' rel='stylesheet' />
-  <link href='/calendar-20/fullcalendar/packages/daygrid/main.css' rel='stylesheet' />
-
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/calendar-20/css/bootstrap.min.css">
-
-  <!-- Style -->
-  <link rel="stylesheet" href="/calendar-20/css/style.css">
 </head>
 
 <body>
@@ -45,1225 +32,315 @@
   <a href="/">
     <button class="btnMenu">Menú</button>
   </a>
-  <br><br>
-
-  <div style="margin-top:6vw" id='calendar-container'>
-    <div id='calendar'></div>
+  <div class="calendar_buttons">
+    <button class="" onclick="openSchedule('VV')">Vine Vera</button>
+    <button class="" onclick="openSchedule('RS')">Resvera</button>
+    <button class="" onclick="openSchedule('RC')">Reserve Cut</button>
+    <button class="" onclick="openSchedule('OG')">Oro Gold</button>
+  </div>
+  <div id="VV" class="schedule">
+    <h2 class="sch_title">Vine Vera</h2>
+    <div style="margin-top:20vw" id='calendar'></div>
+  </div>
+  
+  <div id="RS" class="schedule" style="display:none">
+    <h2 class="sch_title">Resvera</h2>
+    <div style="margin-top:13vw" id='calendar1'></div>
+  </div>
+  
+  <div id="RC" class="schedule" style="display:none">
+    <h2 class="sch_title">Reserve Cut</h2>
+    <div style="margin-top:13vw" id='calendar2'></div>
   </div>
 
-  <script src="/calendar-20/js/jquery-3.3.1.min.js"></script>
-  <script src="/calendar-20/js/popper.min.js"></script>
-  <script src="/calendar-20/js/bootstrap.min.js"></script>
-  <script src='/calendar-20/fullcalendar/packages/core/main.js'></script>
-  <script src='/calendar-20/fullcalendar/packages/interaction/main.js'></script>
-  <script src='/calendar-20/fullcalendar/packages/daygrid/main.js'></script>
-  <script src='/calendar-20/fullcalendar/packages/timegrid/main.js'></script>
-  <script src='/calendar-20/fullcalendar/packages/list/main.js'></script>
-
-
-
+  <div id="OG" class="schedule" style="display:none">
+    <h2 class="sch_title">Oro Gold</h2>
+    <div style="margin-top:13vw" id='calendar3'></div>
+  </div>
+  <br><br>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
       var calendarEl = document.getElementById('calendar');
-
+    
       var calendar = new FullCalendar.Calendar(calendarEl, {
-        plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
-        height: 'parent',
-        header: {
-          left: 'prev,next today',
+        initialView: 'timeGridWeek',
+        initialDate: '2021-12-12',
+        navLinks: true,
+        headerToolbar: {
+          left: 'prev today next',
           center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+          right: 'dayGridMonth,timeGridWeek timeGridDay,listDay'
         },
-        defaultView: 'dayGridMonth',
-        defaultDate: '2021-12-01',
-        navLinks: true, // can click day/week names to navigate views
         editable: true,
-        eventLimit: true, // allow "more" link when too many events
+        lang: 'es',
         events: [
           {
-            title: 'Evento todo el día',
-            start: '2021-12-01',
+            title: 'All Day Event',
+            start: '2021-12-01'
           },
           {
-            title: 'Evento Largo',
-            start: '2021-12-07T10:00:00',
+            title: 'Long Event',
+            start: '2021-12-07',
             end: '2021-12-10'
           },
           {
-            groupId: 999,
-            title: 'Evento repetible',
-            start: '2021-12-10T16:00:00'
+            groupId: '999',
+            title: 'Repeating Event',
+            start: '2021-12-09T16:00:00'
           },
           {
-            groupId: 999,
-            title: 'Evento Repetible',
+            groupId: '999',
+            title: 'Repeating Event',
             start: '2021-12-16T16:00:00'
           },
           {
-            title: 'Conferencia',
-            start: '2021-12-11T12:00:00',
-            end: '2021-12-11T13:00:00'
+            title: 'Conference',
+            start: '2021-12-11',
+            end: '2021-12-13'
           },
           {
-            title: 'Reunión',
+            title: 'Meeting',
             start: '2021-12-12T10:30:00',
             end: '2021-12-12T12:30:00'
           },
           {
-            title: 'Comida',
+            title: 'Lunch',
             start: '2021-12-12T12:00:00'
           },
           {
-            title: 'Reunión',
+            title: 'Meeting',
             start: '2021-12-12T14:30:00'
           },
           {
-            title: 'Hora Feliz',
-            start: '2021-12-12T17:30:00'
-          },
-          {
-            title: 'Cena',
-            start: '2021-12-12T20:00:00'
-          },
-          {
-            title: 'Fiesta de Cumpleaños',
+            title: 'Birthday Party',
             start: '2021-12-13T07:00:00'
           },
           {
-            title: 'Link a: Google',
+            title: 'Click for Google',
             url: 'http://google.com/',
             start: '2021-12-28'
           }
         ]
       });
-
+    
       calendar.render();
     });
+</script>
 
-  </script>
-
-  <script src="/calendar-20/js/main.js"></script>
+<!--script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl1 = document.getElementById('calendar1');
+  
+    var calendar1 = new FullCalendar.Calendar(calendarEl1, {
+      initialView: 'timeGridWeek',
+      initialDate: '2021-12-12',
+      navLinks: true,
+      headerToolbar: {
+        left: 'prev today next',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek timeGridDay,listDay'
+      },
+      editable: true,
+      lang: 'es',
+      events: [
+        {
+          title: 'All Day Event',
+          start: '2021-12-01'
+        },
+        {
+          title: 'Long Event',
+          start: '2021-12-07',
+          end: '2021-12-10'
+        },
+        {
+          groupId: '999',
+          title: 'Repeating Event',
+          start: '2021-12-09T16:00:00'
+        },
+        {
+          groupId: '999',
+          title: 'Repeating Event',
+          start: '2021-12-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2021-12-11',
+          end: '2021-12-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2021-12-12T10:30:00',
+          end: '2021-12-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2021-12-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2021-12-12T14:30:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2021-12-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2021-12-28'
+        }
+      ]
+    });
+  
+    calendar1.render();
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl2 = document.getElementById('calendar2');
+  
+    var calendar2 = new FullCalendar.Calendar(calendarEl2, {
+      initialView: 'timeGridWeek',
+      initialDate: '2021-12-12',
+      navLinks: true,
+      headerToolbar: {
+        left: 'prev today next',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek timeGridDay,listDay'
+      },
+      editable: true,
+      lang: 'es',
+      events: [
+        {
+          title: 'All Day Event',
+          start: '2021-12-01'
+        },
+        {
+          title: 'Long Event',
+          start: '2021-12-07',
+          end: '2021-12-10'
+        },
+        {
+          groupId: '999',
+          title: 'Repeating Event',
+          start: '2021-12-09T16:00:00'
+        },
+        {
+          groupId: '999',
+          title: 'Repeating Event',
+          start: '2021-12-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2021-12-11',
+          end: '2021-12-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2021-12-12T10:30:00',
+          end: '2021-12-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2021-12-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2021-12-12T14:30:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2021-12-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2021-12-28'
+        }
+      ]
+    });
+  
+    calendar2.render();
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl3 = document.getElementById('calendar3');
+  
+    var calendar3 = new FullCalendar.Calendar(calendarEl3, {
+      initialView: 'timeGridWeek',
+      initialDate: '2021-12-12',
+      navLinks: true,
+      headerToolbar: {
+        left: 'prev today next',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek timeGridDay,listDay'
+      },
+      editable: true,
+      lang: 'es',
+      events: [
+        {
+          title: 'All Day Event',
+          start: '2021-12-01'
+        },
+        {
+          title: 'Long Event',
+          start: '2021-12-07',
+          end: '2021-12-10'
+        },
+        {
+          groupId: '999',
+          title: 'Repeating Event',
+          start: '2021-12-09T16:00:00'
+        },
+        {
+          groupId: '999',
+          title: 'Repeating Event',
+          start: '2021-12-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2021-12-11',
+          end: '2021-12-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2021-12-12T10:30:00',
+          end: '2021-12-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2021-12-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2021-12-12T14:30:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2021-12-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2021-12-28'
+        }
+      ]
+    });
+  
+    calendar3.render();
+  });
+</script-->
+<script>
+  function openSchedule(scheduleName) {
+    var i;
+    var x = document.getElementsByClassName("schedule");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    document.getElementById(scheduleName).style.display = "block";
+  }
+</script>
 </body>
 
 </html>
-
-
-<!--div class="calendar_buttons">
-      <button class="" onclick="openSchedule('VV')">Vine Vera</button>
-      <button class="" onclick="openSchedule('RS')">Resvera</button>
-      <button class="" onclick="openSchedule('RC')">Reserve Cut</button>
-      <button class="" onclick="openSchedule('OG')">Oro Gold</button>
-    </div>
-    <div id="VV" class="schedule">
-      <h2 class="sch_title">Vine Vera</h2>
-      <div class="scrolling">
-        <table id="tablita" class="calendario_border">
-          <tbody>
-            <tr>
-              <td>Horarios</td>
-              <td>Facialista 1</td>
-              <td>Facialista 2</td>
-              <td>Facialista 3</td>     
-              <td>Facialista 4</td>     
-            </tr>
-            <tr>
-              <td>10:00-10:15</td>
-              <td>Prueba</td>
-              <td id="myTd" onclick="asignID()">Prueba 2</td>
-              <td>Prueba 3</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>10:15-10:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>10:30-10:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>10:45-11:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>11:00-11:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>11:15-11:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>11:30-11:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>11:45-12:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>12:15-12:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>12:30-12:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>12:45-13:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>13:00-13:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>13:15-13:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>13:30-13:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>13:45-14:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>14:00-14:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>14:15-14:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>14:30-14:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>14:45-15:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>15:00-15:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>15:15-15:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>15:30-15:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>15:45-16:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>16:15-16:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>16:30-16:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>16:45-17:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>17:00-17:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>17:15-17:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>17:30-17:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>17:45-18:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>18:00-18:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>18:15-18:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>18:30-18:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>18:45-19:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-          </table>
-        </div>
-    </div>
-    
-    <div id="RS" class="schedule" style="display:none">
-      <h2 class="sch_title">Resvera</h2>
-      <div class="scrolling">
-      <table class="calendario_border">
-        <tbody>
-          <tr>
-            <td>Horarios</td>
-            <td>Sapphire</td>
-            <td>Emerald</td>
-            <td>Ruby</td>
-            <td>Starlight</td>       
-            <td>Opal</td>       
-            <td>Pearl</td>       
-          </tr>
-          <tr>
-            <td>9:00-9:15</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>9:15-9:30</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>9:30-9:45</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>10:00-10:15</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>10:15-10:30</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>10:30-10:45</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>10:45-11:00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>11:00-11:15</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>11:15-11:30</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>11:30-11:45</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>11:45-12:00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>12:15-12:30</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>12:30-12:45</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>12:45-13:00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>13:00-13:15</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>13:15-13:30</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>13:30-13:45</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>13:45-14:00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>14:00-14:15</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>14:15-14:30</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>14:30-14:45</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>14:45-15:00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>15:00-15:15</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>15:15-15:30</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>15:30-15:45</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>15:45-16:00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>16:15-16:30</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>16:30-16:45</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>16:45-17:00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>17:00-17:15</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>17:15-17:30</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>17:30-17:45</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>17:45-18:00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>18:00-18:15</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>18:15-18:30</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>18:30-18:45</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>18:45-19:00</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-        </table>
-      </div>
-    </div>
-    
-    <div id="RC" class="schedule" style="display:none">
-      <h2 class="sch_title">Reserve Cut</h2>
-      <div class="scrolling">
-        <table class="calendario_border">
-          <tbody>
-            <tr>
-              <td>Horarios</td>
-              <td>Espacio 1</td>
-              <td>Espacio 2</td>
-              <td>Boss Room</td>     
-            </tr>
-            <tr>
-              <td>10:00-10:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>10:15-10:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>10:30-10:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>10:45-11:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>11:00-11:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>11:15-11:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>11:30-11:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>11:45-12:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>12:15-12:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>12:30-12:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>12:45-13:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>13:00-13:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>13:15-13:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>13:30-13:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>13:45-14:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>14:00-14:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>14:15-14:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>14:30-14:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>14:45-15:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>15:00-15:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>15:15-15:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>15:30-15:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>15:45-16:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>16:15-16:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>16:30-16:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>16:45-17:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>17:00-17:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>17:15-17:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>17:30-17:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>17:45-18:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>18:00-18:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>18:15-18:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>18:30-18:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>18:45-19:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-          </table>
-        </div>
-    </div>
-    <div id="OG" class="schedule" style="display:none">
-      <h2 class="sch_title">Oro Gold</h2>
-      <div class="scrolling">
-        <table class="calendario_border">
-          <tbody>
-            <tr>
-              <td>Horarios</td>
-              <td>Facialista 1</td>
-              <td>Facialista 2</td>
-              <td>Facialista 3</td>     
-              <td>Facialista 4</td>     
-            </tr>
-            <tr>
-              <td>10:00-10:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>10:15-10:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>10:30-10:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>10:45-11:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>11:00-11:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>11:15-11:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>11:30-11:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>11:45-12:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>12:15-12:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>12:30-12:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>12:45-13:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>13:00-13:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>13:15-13:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>13:30-13:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>13:45-14:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>14:00-14:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>14:15-14:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>14:30-14:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>14:45-15:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>15:00-15:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>15:15-15:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>15:30-15:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>15:45-16:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>16:15-16:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>16:30-16:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>16:45-17:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>17:00-17:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>17:15-17:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>17:30-17:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>17:45-18:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>18:00-18:15</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>18:15-18:30</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>18:30-18:45</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>18:45-19:00</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-          </table>
-        </div>
-    </div>
-    <br>
-    <button style="margin-left:8vw" onclick="mergeFunction()">Merge</button>
-    <button onclick="desmerge()">Cancel</button>
-    <br><br>
-    <script>
-      function openSchedule(scheduleName) {
-        var i;
-        var x = document.getElementsByClassName("schedule");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-        }
-        document.getElementById(scheduleName).style.display = "block";
-      }
-
-      function asignID(){
-        
-        console.log(document.getElementsByTagName("td").id);
-        document.getElementsByTagName("td").id = "myTd";
-        var newID = document.getElementsByTagName("td").id;
-        console.log(newID);
-        return newID;
-      }
-
-      function mergeFunction() {
-        document.getElementById("myTd").rowSpan = "4";
-      }
-
-      function desmerge() {
-        if(document.getElementById("myTd").rowSpan > 1){
-          document.getElementById("myTd").rowSpan = 1;
-        }
-      }
-    </script-->
