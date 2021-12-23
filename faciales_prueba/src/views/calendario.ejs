@@ -9,8 +9,8 @@
 
   <link rel="icon" href="/img/Logo-FTK-new-negro.png">
   <link rel="stylesheet" href="/css/style.css">
-  <link type="text/css" href='/fullcalendar/main.css' rel='stylesheet' />
-  <script src='/fullcalendar/main.js'></script>
+  <link type="text/css" href='/fullcalendar_scheduler/lib/main.css' rel='stylesheet' />
+  <script src='/fullcalendar_scheduler/lib/main.js'></script>
 
 </head>
 
@@ -33,21 +33,21 @@
     <button class="btnMenu">Menú</button>
   </a>
   <div class="calendar_buttons">
-    <button class="" onclick="openSchedule('VV')">Vine Vera</button>
     <button class="" onclick="openSchedule('RS')">Resvera</button>
+    <button class="" onclick="openSchedule('VV')">Vine Vera</button>
     <button class="" onclick="openSchedule('RC')">Reserve Cut</button>
     <button class="" onclick="openSchedule('OG')">Oro Gold</button>
   </div>
-  <div id="VV" class="schedule">
-    <h2 class="sch_title">Vine Vera</h2>
+  <div id="RS" class="schedule">
+    <h2 class="sch_title">Resvera</h2>
     <div style="margin-top:20vw" id='calendar'></div>
   </div>
-  
-  <div id="RS" class="schedule" style="display:none">
-    <h2 class="sch_title">Resvera</h2>
+
+  <div id="VV" class="schedule" style="display:none">
+    <h2 class="sch_title">Vine Vera</h2>
     <div style="margin-top:13vw" id='calendar1'></div>
   </div>
-  
+
   <div id="RC" class="schedule" style="display:none">
     <h2 class="sch_title">Reserve Cut</h2>
     <div style="margin-top:13vw" id='calendar2'></div>
@@ -59,73 +59,119 @@
   </div>
   <br><br>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       var calendarEl = document.getElementById('calendar');
-    
+
       var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'timeGridWeek',
-        initialDate: '2021-12-12',
-        navLinks: true,
+        schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
+        locale: 'en',
+        timeZone: 'GMT',
         headerToolbar: {
-          left: 'prev today next',
-          center: 'title',
-          right: 'dayGridMonth,timeGridWeek timeGridDay,listDay'
+          month: 'short',
+          right: 'today prev,next resourceTimeGridDay,timeGridWeek resourceTimelineDay listDay',
+          left: 'title',
+        },
+        initialView: 'resourceTimeGridDay',
+        scrollTime: '8:00',
+        aspectRatio: 1.5,
+        views: {
+          resourceTimeGridDay: {
+            buttonText: 'Cabinas',
+            slotDuration: '00:15'
+          },
+          timeGridWeek: {
+            buttonText: 'Semana',
+            slotDuration: '00:15',
+          },
+          resourceTimelineDay: {
+            buttonText: 'Tecnologías',
+            slotDuration: '00:15'
+          },
+          listDay: {
+            buttonText: 'Resumen'
+          }
         },
         editable: true,
-        lang: 'es',
-        events: [
-          {
-            title: 'All Day Event',
-            start: '2021-12-01'
-          },
-          {
-            title: 'Long Event',
-            start: '2021-12-07',
-            end: '2021-12-10'
-          },
-          {
-            groupId: '999',
-            title: 'Repeating Event',
-            start: '2021-12-09T16:00:00'
-          },
-          {
-            groupId: '999',
-            title: 'Repeating Event',
-            start: '2021-12-16T16:00:00'
-          },
-          {
-            title: 'Conference',
-            start: '2021-12-11',
-            end: '2021-12-13'
-          },
-          {
-            title: 'Meeting',
-            start: '2021-12-12T10:30:00',
-            end: '2021-12-12T12:30:00'
-          },
-          {
-            title: 'Lunch',
-            start: '2021-12-12T12:00:00'
-          },
-          {
-            title: 'Meeting',
-            start: '2021-12-12T14:30:00'
-          },
-          {
-            title: 'Birthday Party',
-            start: '2021-12-13T07:00:00'
-          },
-          {
-            title: 'Click for Google',
-            url: 'http://google.com/',
-            start: '2021-12-28'
-          }
-        ]
+        selectable: true,
+        nowIndicator: true,
+        resourceAreaHeaderContent: 'Rooms',
+        resources: [
+          { "id": "a", "title": "Saphire"},
+          { "id": "b", "title": "Emerald", "eventColor": "rgb(0, 116, 217)" },
+          { "id": "c", "title": "Ruby", "eventColor": "rgb(240, 18, 190)" },
+          { "id": "d", "title": "Starlight", "eventColor": "rgb(136, 17, 85)" },
+          { "id": "e", "title": "Opal"},
+          { "id": "f", "title": "Pearl" }
+        ],
+        events: 'https://fullcalendar.io/demo-events.json?single-day&for-resource-timeline'
+
       });
-    
+
       calendar.render();
     });
-</script>
+  </script>
+
+  <script>
+    function openSchedule(scheduleName) {
+      var i;
+      var x = document.getElementsByClassName("schedule");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      document.getElementById(scheduleName).style.display = "block";
+    }
+  </script>
+  <script>
+    function changecolorEvent() {
+      var x = getElementsByClassName("fc-h-event").style.background;
+      console.log(x);
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar1');
+
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        timeZone: 'UTC',
+        headerToolbar: {
+          right: 'resourceTimeGridDay,timeGridWeek',
+          center: 'prev today next',
+          left: 'title',
+        },
+        initialView: 'resourceTimeGridDay',
+        scrollTime: '8:00',
+        aspectRatio: 1.5,
+        views: {
+          resourceTimelineDay: {
+            buttonText: ':15 slots',
+            slotDuration: '00:15'
+          },
+          resourceTimelineTenDay: {
+            type: 'resourceTimeline',
+            duration: { days: 10 },
+            buttonText: '10 days'
+          }
+        },
+        editable: true,
+        resourceAreaHeaderContent: 'Rooms',
+        resources: [
+          { "id": "a", "title": "Cabina 1" },
+          { "id": "b", "title": "Cabina 2", "eventColor": "rgb(0, 116, 217)" },
+          { "id": "c", "title": "Cabina 3", "eventColor": "rgb(240, 18, 190)" },
+          { "id": "d", "title": "Cabina 4", "eventColor": "rgb(136, 17, 85)" }
+        ],
+        events: 'https://fullcalendar.io/demo-events.json?single-day&for-resource-timeline'
+
+      });
+
+      calendar.render();
+    });
+  </script>
+
+</body>
+
+</html>
+
 
 <!--script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -331,16 +377,3 @@
     calendar3.render();
   });
 </script-->
-<script>
-  function openSchedule(scheduleName) {
-    var i;
-    var x = document.getElementsByClassName("schedule");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-    }
-    document.getElementById(scheduleName).style.display = "block";
-  }
-</script>
-</body>
-
-</html>
