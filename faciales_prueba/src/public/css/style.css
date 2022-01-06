@@ -275,4 +275,25 @@ input{
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
+/* Eventos móviles*/
+#external-events {
+  position: fixed;
+  z-index: 2;
+  top: 302px;
+  left: 20px;
+  width: 75px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  background: #eee;
+}
+
+#external-events .fc-event {
+  cursor: move;
+  margin: 3px 0;
+}
+/* Fin eventos móviles*/
 /*Cosas que no he usado*/
+
+.textarea_modal {
+  resize: none;
+}

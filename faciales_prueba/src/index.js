@@ -75,5 +75,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 //starting the server
 app.listen(app.get('port'), () => {
   console.log(`server on port ${app.get('port')}`);
+  console.log('Si servio!!')
 })
 

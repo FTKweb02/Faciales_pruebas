@@ -7,10 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calendario</title>
 
-  <link rel="icon" href="/img/Logo-FTK-new-negro.png">
+  <!--link rel="icon" href="/img/Logo-FTK-new-negro.png"-->
+  <link rel="icon" href="/img/tem.ico">
   <link rel="stylesheet" href="/css/style.css">
   <link type="text/css" href='/fullcalendar_scheduler/lib/main.css' rel='stylesheet' />
   <script src='/fullcalendar_scheduler/lib/main.js'></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 
@@ -39,8 +41,33 @@
     <button class="" onclick="openSchedule('OG')">Oro Gold</button>
   </div>
   <div id="RS" class="schedule">
-    <h2 class="sch_title">Resvera</h2>
-    <div style="margin-top:20vw" id='calendar'></div>
+    <h2 align="center" class="sch_title">Resvera</h2><button style="margin-right:41.5%" class="btnCerrar" id="myBtn">Agregar
+      Evento</button>
+      <br>
+    <div id='external-events'>
+      <p align="center">
+        <strong>Tecnologías</strong>
+      </p>
+
+      <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+        <div class='fc-event-main'>Tecnología 1</div>
+      </div>
+      <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+        <div class='fc-event-main'>Tecnología 2</div>
+      </div>
+      <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+        <div class='fc-event-main'>Tecnología 3</div>
+      </div>
+      <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+        <div class='fc-event-main'>Tecnología 4</div>
+      </div>
+      <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+        <div class='fc-event-main'>Tecnología 5</div>
+      </div>
+    </div>
+    <div id='calendar-container'>
+      <div style="margin-top:20vw" id='calendar'></div>
+    </div>
   </div>
 
   <div id="VV" class="schedule" style="display:none">
@@ -58,322 +85,31 @@
     <div style="margin-top:13vw" id='calendar3'></div>
   </div>
   <br><br>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var calendarEl = document.getElementById('calendar');
+  <div id="myModal" class="modal">
 
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-        locale: 'en',
-        timeZone: 'GMT',
-        headerToolbar: {
-          month: 'short',
-          right: 'today prev,next resourceTimeGridDay,timeGridWeek resourceTimelineDay listDay',
-          left: 'title',
-        },
-        initialView: 'resourceTimeGridDay',
-        scrollTime: '8:00',
-        aspectRatio: 1.5,
-        views: {
-          resourceTimeGridDay: {
-            buttonText: 'Cabinas',
-            slotDuration: '00:15'
-          },
-          timeGridWeek: {
-            buttonText: 'Semana',
-            slotDuration: '00:15',
-          },
-          resourceTimelineDay: {
-            buttonText: 'Tecnologías',
-            slotDuration: '00:15'
-          },
-          listDay: {
-            buttonText: 'Resumen'
-          }
-        },
-        editable: true,
-        selectable: true,
-        nowIndicator: true,
-        resourceAreaHeaderContent: 'Rooms',
-        resources: [
-          { "id": "a", "title": "Saphire"},
-          { "id": "b", "title": "Emerald", "eventColor": "rgb(0, 116, 217)" },
-          { "id": "c", "title": "Ruby", "eventColor": "rgb(240, 18, 190)" },
-          { "id": "d", "title": "Starlight", "eventColor": "rgb(136, 17, 85)" },
-          { "id": "e", "title": "Opal"},
-          { "id": "f", "title": "Pearl" }
-        ],
-        events: 'https://fullcalendar.io/demo-events.json?single-day&for-resource-timeline'
+    <!-- Modal content -->
+    <div align="center" class="modal-content">
+      <span class="close">&times;</span>
+      <h2>AGREGAR EVENTO</h2>
+      <br>
+      <form method="post">
+      <input style="width:220px" id="adddate" type="datetime-local" required>
+      <br><br>
+      <input placeholder="Titulo" style="width:220px" id="titleevent" type="text" required>
+      <br><br>
+      <textarea placeholder="Detalles" class="textarea_modal" type="text" rows="5" cols="28" required></textarea>
+      <br><br>
+      <button class="buttonis" type="submit">Agendar</button>
+      <button id="cancel" class="buttonis">Cancelar</button>
+    </form>
+    </div>
 
-      });
-
-      calendar.render();
-    });
-  </script>
-
-  <script>
-    function openSchedule(scheduleName) {
-      var i;
-      var x = document.getElementsByClassName("schedule");
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-      }
-      document.getElementById(scheduleName).style.display = "block";
-    }
-  </script>
-  <script>
-    function changecolorEvent() {
-      var x = getElementsByClassName("fc-h-event").style.background;
-      console.log(x);
-    }
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var calendarEl = document.getElementById('calendar1');
-
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        timeZone: 'UTC',
-        headerToolbar: {
-          right: 'resourceTimeGridDay,timeGridWeek',
-          center: 'prev today next',
-          left: 'title',
-        },
-        initialView: 'resourceTimeGridDay',
-        scrollTime: '8:00',
-        aspectRatio: 1.5,
-        views: {
-          resourceTimelineDay: {
-            buttonText: ':15 slots',
-            slotDuration: '00:15'
-          },
-          resourceTimelineTenDay: {
-            type: 'resourceTimeline',
-            duration: { days: 10 },
-            buttonText: '10 days'
-          }
-        },
-        editable: true,
-        resourceAreaHeaderContent: 'Rooms',
-        resources: [
-          { "id": "a", "title": "Cabina 1" },
-          { "id": "b", "title": "Cabina 2", "eventColor": "rgb(0, 116, 217)" },
-          { "id": "c", "title": "Cabina 3", "eventColor": "rgb(240, 18, 190)" },
-          { "id": "d", "title": "Cabina 4", "eventColor": "rgb(136, 17, 85)" }
-        ],
-        events: 'https://fullcalendar.io/demo-events.json?single-day&for-resource-timeline'
-
-      });
-
-      calendar.render();
-    });
-  </script>
+  </div>
+  <script src="/js/modal.js"></script>
+  <script src="/js/calendar.js"></script>
+  <script src="/js/open_schedule.js"></script>
+  <script src="/js/calendarvv.js"></script>
 
 </body>
 
 </html>
-
-
-<!--script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl1 = document.getElementById('calendar1');
-  
-    var calendar1 = new FullCalendar.Calendar(calendarEl1, {
-      initialView: 'timeGridWeek',
-      initialDate: '2021-12-12',
-      navLinks: true,
-      headerToolbar: {
-        left: 'prev today next',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek timeGridDay,listDay'
-      },
-      editable: true,
-      lang: 'es',
-      events: [
-        {
-          title: 'All Day Event',
-          start: '2021-12-01'
-        },
-        {
-          title: 'Long Event',
-          start: '2021-12-07',
-          end: '2021-12-10'
-        },
-        {
-          groupId: '999',
-          title: 'Repeating Event',
-          start: '2021-12-09T16:00:00'
-        },
-        {
-          groupId: '999',
-          title: 'Repeating Event',
-          start: '2021-12-16T16:00:00'
-        },
-        {
-          title: 'Conference',
-          start: '2021-12-11',
-          end: '2021-12-13'
-        },
-        {
-          title: 'Meeting',
-          start: '2021-12-12T10:30:00',
-          end: '2021-12-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2021-12-12T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2021-12-12T14:30:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2021-12-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2021-12-28'
-        }
-      ]
-    });
-  
-    calendar1.render();
-  });
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl2 = document.getElementById('calendar2');
-  
-    var calendar2 = new FullCalendar.Calendar(calendarEl2, {
-      initialView: 'timeGridWeek',
-      initialDate: '2021-12-12',
-      navLinks: true,
-      headerToolbar: {
-        left: 'prev today next',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek timeGridDay,listDay'
-      },
-      editable: true,
-      lang: 'es',
-      events: [
-        {
-          title: 'All Day Event',
-          start: '2021-12-01'
-        },
-        {
-          title: 'Long Event',
-          start: '2021-12-07',
-          end: '2021-12-10'
-        },
-        {
-          groupId: '999',
-          title: 'Repeating Event',
-          start: '2021-12-09T16:00:00'
-        },
-        {
-          groupId: '999',
-          title: 'Repeating Event',
-          start: '2021-12-16T16:00:00'
-        },
-        {
-          title: 'Conference',
-          start: '2021-12-11',
-          end: '2021-12-13'
-        },
-        {
-          title: 'Meeting',
-          start: '2021-12-12T10:30:00',
-          end: '2021-12-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2021-12-12T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2021-12-12T14:30:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2021-12-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2021-12-28'
-        }
-      ]
-    });
-  
-    calendar2.render();
-  });
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl3 = document.getElementById('calendar3');
-  
-    var calendar3 = new FullCalendar.Calendar(calendarEl3, {
-      initialView: 'timeGridWeek',
-      initialDate: '2021-12-12',
-      navLinks: true,
-      headerToolbar: {
-        left: 'prev today next',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek timeGridDay,listDay'
-      },
-      editable: true,
-      lang: 'es',
-      events: [
-        {
-          title: 'All Day Event',
-          start: '2021-12-01'
-        },
-        {
-          title: 'Long Event',
-          start: '2021-12-07',
-          end: '2021-12-10'
-        },
-        {
-          groupId: '999',
-          title: 'Repeating Event',
-          start: '2021-12-09T16:00:00'
-        },
-        {
-          groupId: '999',
-          title: 'Repeating Event',
-          start: '2021-12-16T16:00:00'
-        },
-        {
-          title: 'Conference',
-          start: '2021-12-11',
-          end: '2021-12-13'
-        },
-        {
-          title: 'Meeting',
-          start: '2021-12-12T10:30:00',
-          end: '2021-12-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2021-12-12T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2021-12-12T14:30:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2021-12-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2021-12-28'
-        }
-      ]
-    });
-  
-    calendar3.render();
-  });
-</script-->
