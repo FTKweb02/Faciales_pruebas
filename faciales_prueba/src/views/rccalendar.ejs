@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RS</title>
+  <title>RC</title>
 
   <!--link rel="icon" href="/img/Logo-FTK-new-negro.png"-->
   <link rel="icon" href="/img/tem.ico">
@@ -35,18 +35,18 @@
     <button class="btnMenu">Menú</button>
   </a>
   <div class="calendar_buttons">
-    <a style="text-decoration:none" href="/vvcalendar">
-      <button type="button">Vine Vera</button>
+    <a href="/calendario">
+      <button>Resvera</button>
     </a>
-    <a href="/rccalendar">
-      <button>Reserve Cut</button>
+    <a href="/vvcalendar">
+      <button type="button">Vine Vera</button>
     </a>
     <a href="/ogcalendar">
       <button class="" onclick="openSchedule('OG')">Oro Gold</button>
     </a>
   </div>
-  <div id="RS" class="schedule">
-    <h2 align="center" class="sch_title">Resvera</h2><button style="margin-right:41.5%" class="btnCerrar"
+  <div id="VV" class="schedule">
+    <h2 align="center" class="sch_title">Reserve Cut</h2><button style="margin-right:41.5%" class="btnCerrar"
       id="myBtn">Agregar
       Evento</button>
     <br>
@@ -72,24 +72,11 @@
       </div>
     </div>
     <div id='calendar-container'>
-      <div style="margin-top:20vw" id='calendar'></div>
+      <div style="margin-top:4vw; margin-left:10vw; margin-right:10vw" id='calendar3'></div>
     </div>
   </div>
 
-  <div id="VV" class="schedule" style="display:none">
-    <h2 class="sch_title">Vine Vera</h2>
-    <div style="margin-top:13vw" id='calendar1'></div>
-  </div>
 
-  <div id="RC" class="schedule" style="display:none">
-    <h2 class="sch_title">Reserve Cut</h2>
-    <div style="margin-top:13vw" id='calendar2'></div>
-  </div>
-
-  <div id="OG" class="schedule" style="display:none">
-    <h2 class="sch_title">Oro Gold</h2>
-    <div style="margin-top:13vw" id='calendar3'></div>
-  </div>
   <br><br>
   <div id="myModal" class="modal">
 
@@ -112,7 +99,7 @@
 
   </div>
   <script src="/js/modal.js"></script>
-  <script src="/js/calendar.js"></script>
+  <script src="/js/calendarrc.js"></script>
   <script src="/js/open_schedule.js"></script>
 
 </body>

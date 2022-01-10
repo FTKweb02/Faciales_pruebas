@@ -4,6 +4,10 @@ body{
 h1, b{
   font-family: Arial;
 }
+
+a {
+  text-decoration: none;
+}
 /*Navbar*/
 .color-nav {
   background-color: #5E1224;
