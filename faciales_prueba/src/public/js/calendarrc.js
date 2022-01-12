@@ -25,19 +25,21 @@ document.addEventListener('DOMContentLoaded', function () {
       aspectRatio: 1.4,
       droppable: true,
       views: {
-        resourceTimelineDay: {
-          buttonText: ':15 slots',
+        resourceTimeGridDay: {
+          buttonText: 'Sillas',
           slotDuration: '00:15'
         },
         resourceTimelineTenDay: {
           type: 'resourceTimeline',
           duration: { days: 10 },
-          buttonText: '10 days'
+          buttonText: '10 days',
+          slotDuration: '00:15'
         }
       },
       editable: true,
       selectable: true,
       nowIndicator: true,
+      allDaySlot: false,
       resourceAreaHeaderContent: 'Rooms',
       resources: [
         { "id": "a", "title": "Boss Room" },

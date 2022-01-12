@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
       editable: true,
       selectable: true,
       nowIndicator: true,
+      allDaySlot: false,
       resourceAreaHeaderContent: 'Rooms',
       resources: [
         { "id": "a", "title": "Saphire" },

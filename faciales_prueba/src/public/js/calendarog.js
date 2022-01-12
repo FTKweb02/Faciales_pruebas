@@ -25,22 +25,22 @@ document.addEventListener('DOMContentLoaded', function () {
       aspectRatio: 1.4,
       droppable: true,
       views: {
-        resourceTimelineDay: {
-          buttonText: ':15 slots',
+        resourceTimeGridDay: {
+          buttonText: 'Cabinas',
           slotDuration: '00:15'
         },
-        resourceTimelineTenDay: {
-          type: 'resourceTimeline',
-          duration: { days: 10 },
-          buttonText: '10 days'
+        timeGridWeek: {
+          buttonText: 'Semana',
+          slotDuration: '00:15'
         }
       },
       editable: true,
       selectable: true,
       nowIndicator: true,
+      allDaySlot: false,
       resourceAreaHeaderContent: 'Rooms',
       resources: [
-        { "id": "a", "title": "Cabina OG" },
+        { "id": "a", "title": "Cabina OG1" },
         { "id": "b", "title": "Cabina OG2", "eventColor": "rgb(0, 116, 217)" },
         { "id": "c", "title": "Cabina OG3", "eventColor": "rgb(240, 18, 190)" },
         { "id": "d", "title": "Cabina OG4", "eventColor": "rgb(136, 17, 85)" }
