@@ -15,16 +15,14 @@ document.addEventListener('DOMContentLoaded', function () {
     var calendar = new FullCalendar.Calendar(calendarEl, {
       schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
       locale: 'en',
-      timeZone: 'GMT-6',
       headerToolbar: {
         right: 'today prev,next resourceTimeGridDay,timeGridWeek resourceTimelineDay listDay',
         center: '',
         left: 'title'
       },
       initialView: 'resourceTimeGridDay',
-      scrollTime: '1:00',
+      scrollTime: '8:00',
       aspectRatio: 1.6,
-      droppable: true,
       views: {
         resourceTimeGridDay: {
           buttonText: 'Cabinas',
@@ -42,10 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
           buttonText: 'Resumen'
         }
       },
-      editable: true,
-      selectable: true,
-      nowIndicator: true,
-      allDaySlot: false,
+      
       resourceAreaHeaderContent: 'Rooms',
       resources: [
         { "id": "a", "title": "Saphire" },
@@ -55,16 +50,13 @@ document.addEventListener('DOMContentLoaded', function () {
         { "id": "e", "title": "Opal" },
         { "id": "f", "title": "Pearl" },
       ],
-      events: 'https://fullcalendar.io/demo-events.json?single-day&for-resource-timeline',
+      events: '/json/events.json',
       
-      select: function (start, end) {
-        $.getScript('/event/new', function () {
-          $('#event_date_range').val(moment(start).format("MM/DD/YYYY HH:mm") + ' - ' + moment(end).format("MM/DD/YYYY HH:mm"));
-          date_range_picker();
-          $('.start_hidden').val(moment(start).format('YYYY-MM-DD HH:mm'));
-          $('.end_hidden').val(moment(end).format('YYYY-MM-DD HH:mm'));
-        });
-      }
+      droppable: true,
+      editable: true,
+      selectable: true,
+      nowIndicator: true,
+      allDaySlot: false,
     });
 
     calendar.render();

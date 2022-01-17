@@ -2,8 +2,7 @@ const router = require('express').Router();
 
 const calendarioController = require('../controllers/calendarioController');
 
-router.get('/', calendarioController.calendario);
+router.get('/', calendarioController.list);
 router.post('/add', calendarioController.agendar);
-router.get('/update/:id_program', calendarioController.edit);
 
 module.exports = router;

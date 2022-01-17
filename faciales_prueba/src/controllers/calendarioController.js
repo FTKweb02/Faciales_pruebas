@@ -1,9 +1,19 @@
 const controller = {};
 
-controller.calendario = (req, res) => {
-    console.log('Estoy en calendario');
-    res.render('calendario.ejs');
-};
+controller.list = (req, res) => {
+    req.getConnection((err, conn) => {
+      conn.query('SELECT * FROM events', (err, events) => {
+       if (err) {
+        res.json(err);
+       }
+       res.render('calendario', {
+          data: events
+          
+       });
+       console.log(JSON.stringify(events));
+      });
+    });
+  };
 
 controller.agendar = (req, res) => {
     const data = req.body;
@@ -15,21 +25,10 @@ controller.agendar = (req, res) => {
                 res.json(err);
             }else{
                 console.log(eventos);
-                res.render('calendario.ejs');
+                res.render('ccenter');
             }
         });
     })
 };
-
-controller.edit = (req, res) => {
-    const { id_event } = req.params;
-    req.getConnection((err, conn) => {
-      conn.query("SELECT * FROM program WHERE id = ?", id_event, (err, rows) => {
-        res.render('calendario.ejs', {
-          data: rows[0]
-        })
-      });
-    });
-  };
 
 module.exports = controller;

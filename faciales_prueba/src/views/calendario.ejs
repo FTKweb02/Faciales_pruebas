@@ -35,7 +35,7 @@
     <button class="btnMenu">Menú</button>
   </a>
   <div class="calendar_buttons">
-    <a style="text-decoration:none" href="/vvcalendar">
+    <a href="/vvcalendar">
       <button type="button">Vine Vera</button>
     </a>
     <a href="/rccalendar">
@@ -46,9 +46,9 @@
     </a>
   </div>
   <div id="RS" class="schedule">
-    <h2 align="center" class="sch_title">Resvera</h2><button style="margin-right:41.5%" class="btnCerrar"
-      id="myBtn">Agregar
-      Evento</button>
+    <h2 align="center" class="sch_title">Resvera</h2><button style="margin-right:42.5%" class="btnCerrar"
+      id="myBtn">Nueva
+      Cita</button>
     <br>
     <div id='external-events'>
       <p align="center">
@@ -76,32 +76,27 @@
     </div>
   </div>
 
-  <div id="VV" class="schedule" style="display:none">
-    <h2 class="sch_title">Vine Vera</h2>
-    <div style="margin-top:13vw" id='calendar1'></div>
-  </div>
-
-  <div id="RC" class="schedule" style="display:none">
-    <h2 class="sch_title">Reserve Cut</h2>
-    <div style="margin-top:13vw" id='calendar2'></div>
-  </div>
-
-  <div id="OG" class="schedule" style="display:none">
-    <h2 class="sch_title">Oro Gold</h2>
-    <div style="margin-top:13vw" id='calendar3'></div>
-  </div>
   <br><br>
   <div id="myModal" class="modal">
     <!-- Modal content -->
     <div align="center" class="modal-content">
       <span class="close">&times;</span>
-      <h2>AGREGAR EVENTO</h2>
+      <h2>NUEVA CITA</h2>
       <br>
       <form action="/calendario/add" method="post">
         <input placeholder="Titulo" name="title" style="width:220px" id="titleevent" type="text" required>
         <br><br>
-        <label for="color">Selecciona el color:</label>
-        <input type="color" id="favcolor" name="color" value="#ff0000"><br><br>
+        <label for="Cabina"><b>Cabina: </b></label><br>
+        <select name="resourceId" id="Cabina" required>
+          <option selected="selected" value=""></option>
+          <option value="a">Saphire</option>
+          <option value="b">Emerald</option>
+          <option value="c">Ruby</option>
+          <option value="d">Starlight</option>
+          <option value="e">Opal</option>
+          <option value="f">Pearl</option>
+        </select>
+        <br><br>
         <input name="start" style="width:220px" id="adddate" type="datetime-local" required>
         <br><br>
         <input name="end" style="width:220px" id="adddate" type="datetime-local" required>
