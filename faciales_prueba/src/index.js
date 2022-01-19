@@ -17,16 +17,14 @@ const calendariovvRoutes = require('./routes/calendariovvRoute');
 const calendarioogRoutes = require('./routes/calendarioogRoute');
 const calendariorcRoutes = require('./routes/calendariorcRoute');
 const ccenterRoutes = require('./routes/ccenterRoute');
-/*const citafacRoutes = require('./routes/citafacRoute');
+const citafacRoutes = require('./routes/citafacRoute');
 const citfacRoutes = require('./routes/citfacRoute');
 const clientesccRoutes = require('./routes/clientesccRoute');
-const configRoutes = require('./routes/configRoute');*/
-const consultarCRoutes = require('./routes/consultarCRoute');
-const consultarFRoutes = require('./routes/consultarFRoute');
-//const contactcRoutes = require('./routes/contactcRoute');
-//const facialistaRoutes = require('./routes/facialistaRoute');
+const configRoutes = require('./routes/configRoute');
+const contactcRoutes = require('./routes/contactcRoute');
+const facialistaRoutes = require('./routes/facialistaRoute');
 const historialRoutes = require('./routes/historialRoute');
-//const pendientesRoutes = require('./routes/pendientesRoute');
+const pendientesRoutes = require('./routes/pendientesRoute');
 const rClienteRoutes = require('./routes/rClienteRoute');
 const rVentaRoutes = require('./routes/rVentaRoute');
 
@@ -48,30 +46,28 @@ app.use(myConnection(mysql, {
   user: 'Admin_02',
   password: 'L5u9aA-@m/C3DgsK',
   port: 3306,
-  database: 'faciales'
+  database: 'mydb'
 }, 'single'));
 app.use(express.urlencoded({extended: false}));
 
 app.use(flash());
 
 //routes
-app.use('/login', loginRoutes);
+app.use('/', loginRoutes);
 app.use('/agendarC', agendarCRoutes);
 app.use('/calendario', calendarioRoutes);
 app.use('/vvcalendar', calendariovvRoutes);
 app.use('/ogcalendar', calendarioogRoutes);
 app.use('/rccalendar', calendariorcRoutes);
-app.use('/', ccenterRoutes);
-/*app.use('/citafac', citafacRoutes);
+app.use('/ccenter', ccenterRoutes);
+app.use('/citafac', citafacRoutes);
 app.use('/citfac', citfacRoutes);
 app.use('/clientescc', clientesccRoutes);
-app.use('/config', configRoutes);*/
-app.use('/consultarC', consultarCRoutes);
-app.use('/consultarF', consultarFRoutes);
-//app.use('/contactc', contactcRoutes);
-//app.use('/facialista', facialistaRoutes);
+app.use('/config', configRoutes);
+app.use('/contactc', contactcRoutes);
+app.use('/facialista', facialistaRoutes);
 app.use('/historial', historialRoutes);
-//app.use('/pendientes', pendientesRoutes);
+app.use('/pendientes', pendientesRoutes);
 app.use('/rCliente', rClienteRoutes);
 app.use('/rVenta', rVentaRoutes);
 

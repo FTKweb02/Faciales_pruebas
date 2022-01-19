@@ -27,9 +27,7 @@
   <br />
   <!--Fin navbar-->
   <!--Contenido-->
-  <a href="/">
-    <button class="btnMenu">Menú</button>
-  </a>
+    <button onclick="back();" class="btnMenu">Menú</button>
   <div class="titulo">
     <h1>Registrar Cliente</h1>
   </div>
@@ -78,11 +76,11 @@
       <br>
       <br />
       <div class="tratamientoBox">
-        <label for="Día">Día:</label>&nbsp;<input type="text" id="Día">
+        <label for="Día">Día:</label>&nbsp;<input name="Dia" type="text" id="Día">
 
-        <label for="Mes">Mes:</label>&nbsp;<input type="text" id="Mes" required>
+        <label for="Mes">Mes:</label>&nbsp;<input name="Mes" type="text" id="Mes" required>
 
-        <label for="Año">Año:</label>&nbsp;<input type="text" id="Año">
+        <label for="Año">Año:</label>&nbsp;<input name="Año" type="text" id="Año">
       </div>
       <br />
       <br />
@@ -135,6 +133,7 @@
 
   </div>
   <script src="/js/modal.js"></script>
+  <script src="/js/back.js"></script>
 
 </body>
 

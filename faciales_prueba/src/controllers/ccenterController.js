@@ -10,27 +10,27 @@ controller.calendario = (req, res) => {
 }
 
 controller.rcliente = (req, res) => {
-    res.render('rCliente.ejs');
+    res.redirect('/rCliente');
 }
 
 controller.rventa = (req, res) => {
-    res.render('rVenta.ejs');
+    res.render('/rVenta');
 }
 
 controller.consultarf = (req, res) => {
-    res.render('consultarF.ejs');
+    res.render('/consultarF');
 }
 
 controller.agendarc = (req, res) => {
-    res.render('agendarc.ejs');
+    res.render('/agendarc');
 }
 
 controller.consultarc = (req, res) => {
-    res.render('consultarC.ejs');
+    res.render('/consultarC');
 }
 
 controller.historial = (req, res) => {
-    res.render('historial.ejs');
+    res.render('/historial');
 }
 
 module.exports = controller;

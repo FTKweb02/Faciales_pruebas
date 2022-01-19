@@ -11,19 +11,6 @@
   <link rel="stylesheet" href="/css/style.css">
 
 </head>
-<!--script>
-  $('.AddNew').click(function () {
-    var row = $(this).closest('Row').clone();
-    row.find('input').val('');
-    $(this).closest('tr').after(row);
-    $('input[type="button"]', row).removeClass('AddNew')
-      .addClass('RemoveRow').val('Remove item');
-  });
-
-  $('table').on('click', '.RemoveRow', function () {
-    $(this).closest('tr').remove();
-  });
-</script-->
 
 <body>
   <div>
@@ -31,14 +18,14 @@
       <a href="/">
         <input type="image" id="image" alt="Home" src="/img/Logo-FTK-new-blanco.png" width="150px" />
       </a>
-      <button role="link" class="btnCerrar" data-target="/">Cerrar Sesión</button>
+      <a href="/">
+        <button role="link" class="btnCerrar" data-target="/">Cerrar Sesión</button>
+      </a>
     </nav>
   </div>
   <br />
   <div>
-    <a href="/">
-      <button class="btnMenu">Menú</button>
-      </a>
+    <button onclick="back();" class="btnMenu">Menú</button>
   </div>
   <form action="/rVenta/addm" method="post">
     <h1 align="center">Registrar Tratamiento</h1>
@@ -71,18 +58,14 @@
       <div>
         <div class="tratamientoBox">
           <label for=""><b>Tratamiento:</b></label><br><br>
-          <label for="nombre">Nombre:</label>&nbsp;<input type="text" id="nombre" required>&nbsp;
-          <label for="cat">Categoría:</label>&nbsp;<input type="text" id="cat" required>&nbsp;
-          <label for="precio">Precio:</label>&nbsp;&nbsp;____________________
-          <label for="clase">Tiempo:</label>&nbsp;&nbsp;____________________
+          <label for="nombre">Nombre:</label>&nbsp;<input name="Nombre_T" type="text" id="nombre" required>&nbsp;
+          <label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" type="text" id="cat" required>&nbsp;
+          <label for="precio">Precio:</label><input name="Precio" value="2 barkdolares" disabled>
+          <label for="clase">Tiempo:</label><input name="Duracion" value="" disabled>
         </div>
         <br><br>
-        <div>
-          <img type="button" class="AddNew logop" src="img/icon_plus.jpg" alt="plus">
-        </div>
-        <br>
         <label><b>Sucursal: </b></label>
-      <br />
+        <br />
         <select name="Sucursal" id="Sucursal">
           <option selected="selected" value=""></option>
           <option value="RS01">RS01</option>
@@ -127,9 +110,9 @@
       var checkBox = document.getElementById("myCheck");
       // Get the output text
       var inputchk = document.getElementById("Folio_Membresia");
-    
+
       // If the checkbox is checked, display the output text and set required attribute
-      if (checkBox.checked == true){
+      if (checkBox.checked == true) {
         inputchk.removeAttribute("disabled");
         inputchk.setAttribute("required", "required");
       } else {
@@ -138,6 +121,8 @@
       }
     }
   </script>
+  <script src="/js/back.js"></script>
+
 </body>
 
 </html>

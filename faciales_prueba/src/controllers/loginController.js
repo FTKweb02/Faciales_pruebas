@@ -6,7 +6,19 @@ controller.login = (req, res) => {
 };
 
 controller.ccenter = (req, res) => {
-    res.redirect('/ccenter');
+    res.render('ccenter.ejs');
+}
+
+controller.contactc = (req, res) => {
+    res.render('contactc.ejs');
+}
+
+controller.facialista = (req, res) => {
+    res.render('facialista.ejs');
+}
+
+controller.config = (req, res) => {
+    res.render('config.ejs');
 }
 
 module.exports = controller;

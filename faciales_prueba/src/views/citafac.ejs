@@ -1,73 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citas</title>
 
-    <link rel="icon" href="/public/Logo-FTK-new-negro.png">
-    <link rel="stylesheet" href="../css/style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citas</title>
+
+  <link rel="icon" href="/img/Logo-FTK-new-negro.png">
+  <link rel="stylesheet" href="../css/style.css">
 
 </head>
+
 <body>
-    <div>
+  <div>
     <nav class="color-nav">
-        <a href="/">
-            <input type="image" id="image" alt ="Home" src="/public/Logo-FTK-new-blanco.png" width="150px" />
-        </a>
-        <button role="link" class="buttonis" data-target="/">Cerrar Sesión</button>
-      </nav>
-    </div>
-    <br/>
-    <div>
-        <button class="menubutton">Menú</button>
-    </div>
-    <br/>
-    <div class="bckgc">
-        <table>
-            <tbody>
-              <tr>
-                <td width="950px"><h2>Nombre Empleado</h2></td>
-                <td><button class="buttong">Nuevo Registro</button></td>
-              </tr>
-            </tbody>
-          </table>
-          <br/>
-          <table>
-            <thead>
-              <tr class="table_border">
-                <th>ID</th>
-                <th>Cliente</th>
-                <th>Teléfono</th>
-                <th>Tratamiento</th>
-                <th>Cabina</th>
-                <th>Estatus</th>
-                <th>Fecha&nbsp;Creación</th>
-                <th>Notas</th>
-              </tr>
-            </thead>
-  
-            <tbody class="table_border">
-              <tr>
-                <td>1</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                  <select>
-                    <option disabled selected="selected" value=""></option>
-                    <option value="asistiosv">Asistio s/Venta</option>
-                    <option value="asistiocv">Asistio c/Venta</option>
-                    <option value="noasistio">No Asistio</option>
-                  </select>
-                </td>
-                <td></td>
-                <td><textarea type="input"></textarea></td>
-              </tr>
-            </tbody>
-          </table>
-    </div>
+      <a href="/">
+        <input type="image" id="image" alt="Home" src="/img/Logo-FTK-new-blanco.png" width="150px" />
+      </a>
+      <a href="/">
+        <button role="link" class="btnCerrar" data-target="/">Cerrar Sesión</button>
+      </a>
+    </nav>
+  </div>
+  <br />
+  <div>
+    <button onclick="back();" class="btnMenu">Menú</button>
+  </div>
+  <br />
+  <div class="bckgc">
+    <table>
+      <tbody>
+        <tr>
+          <td width="950px">
+            <h2>Nombre Empleado</h2>
+          </td>
+          <td><button class="buttong">Nuevo Registro</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <table>
+      <thead>
+        <tr class="table_border">
+          <th>ID</th>
+          <th>Cliente</th>
+          <th>Teléfono</th>
+          <th>Tratamiento</th>
+          <th>Cabina</th>
+          <th>Estatus</th>
+          <th>Fecha&nbsp;Creación</th>
+          <th>Notas</th>
+        </tr>
+      </thead>
+
+      <tbody class="table_border">
+        <tr>
+          <td>1</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <select>
+              <option disabled selected="selected" value=""></option>
+              <option value="asistiosv">Asistio s/Venta</option>
+              <option value="asistiocv">Asistio c/Venta</option>
+              <option value="noasistio">No Asistio</option>
+            </select>
+          </td>
+          <td></td>
+          <td><textarea type="input"></textarea></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="/js/back.js"></script>
 </body>
+
 </html>
