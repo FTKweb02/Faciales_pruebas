@@ -214,7 +214,7 @@ input{
     width: 100%;
     padding: 10px;
   }
-  .magia td {
+  .magia td, th{
     border: 1px solid black;
     width: 15vw;
     padding-left: 10px;

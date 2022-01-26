@@ -31,109 +31,401 @@
   <div class="titulo">
     <h1>Registrar Cliente</h1>
   </div>
-  <div align="center" class="formu">
-    <form action="/rCliente/add" method="post">
-      <label><b>Asesor: </b></label>
-      <br>
-      <select name="Asesor" id="Asesor">
-        <option selected="selected" value=""></option>
-        <option value="Asesor 1">0001</option>
-        <option value="Asesor 2">0002</option>
-        <option value="Asesor 3">0003</option>
-      </select>
-      <br>
-      <br>
-      <label><b>Marca: </b></label>
-      <br />
-      <select name="Marca" id="Marca">
-        <option selected="selected" value=""></option>
-        <option value="VV">VV</option>
-        <option value="OG">OG</option>
-        <option value="RC">RC</option>
-        <option value="RS">RS</option>
-        <option value="VVEXP">VVEXP</option>
-      </select>
-      <br>
-      <br>
-      <label><b>Sucursal: </b></label>
-      <br />
-      <select name="Sucursal" id="Sucursal">
-        <option selected="selected" value=""></option>
-        <option value="RS01">RS01</option>
-        <option value="RC01">RC01</option>
-        <option value="VV01">VV01</option>
-      </select>
-      <br>
-      <br>
-
-      <input name="Nombre" id="Nombre" type="text" placeholder="Nombre" required>
-      <br />
-      <br />
-      <input name="Apellido" id="Apellido" type="text" placeholder="Apellidos" required>
-      <br />
-      <br />
-      <label><b>Cumpleaños: </b></label>
-      <br>
-      <br />
-      <div class="tratamientoBox">
-        <label for="Día">Día:</label>&nbsp;<input name="Dia" type="text" id="Día">
-
-        <label for="Mes">Mes:</label>&nbsp;<input name="Mes" type="text" id="Mes" required>
-
-        <label for="Año">Año:</label>&nbsp;<input name="Año" type="text" id="Año">
-      </div>
-      <br />
-      <br />
-      <input name="Telefono" id="Telefono" type="tel" placeholder="Teléfono 10 digitos" required-pattern="[0-9]{10}">
-      <br />
-      <br />
-      <input name="Correo" id="Correo" type="email" placeholder="E-mail" required>
-      <br />
-      <br />
-      <div class="col">
-        <label for="Fecha_Registro"><b>Fecha de Registro:</b></label><br>
-        <input type="date" onload="getDate()" class="form-control" id="Fecha_Registro" name="Fecha_Registro">
-      </div>
-      <br>
-      <input name="Notas" type="textarea" placeholder="Notas" required>
-      <br>
-      <br>
-      <div>
-        
-        <button class="buttonis" type="submit">Guardar</button>
-        <a href="/agendarC">
-        <button class="buttonis" type="submit"> Guardar&nbsp;y&nbsp;Registrar<br>Membresia</button>
-        </a>
-      </div>
-    </form>
-    <br>
-    <button class="buttonis" id="myBtn">Resumen</button>
-    <br><br>
+  <div class="calendar_buttons">
+    <button class="" onclick="openSchedule('RS')">Resvera</button>
+    <button class="" onclick="openSchedule('VV')">Vine Vera</button>
+    <button class="" onclick="openSchedule('RC')">Reserve Cut</button>
+    <button class="" onclick="openSchedule('OG')">Oro Gold</button>
   </div>
-  <!-- The Modal -->
-  <div id="myModal" class="modal">
-
-    <!-- Modal content -->
-    <div align="center" class="modal-content">
-      <span class="close">&times;</span>
-      <h2>RESUMEN</h2>
-      <p>Asesor:_____________________________________</p>
-      <p>Marca:______________________________________</p>
-      <p>Sucursal:____________________________________</p>
-      <p>Nombre:____________________________________ </p>
-      <p>Apellidos:__________________________________</p>
-      <p>Cumpleaños:________________________________</p>
-      <p>Teléfono:___________________________________</p>
-      <p>Correo:_____________________________________ </p>
-      <p>Fecha:______________________________________</p>
-      <p>Notas:______________________________________ </p>
-      <button class="buttonis">Guardar</button>
-      <button id="cancel" class="buttonis">Cancelar</button>
+  <br><br>
+  <div id="RS" class="schedule">
+    <h2 class="sch_title">Resvera</h2>
+    <div align="center" class="formu">
+      <form action="/rCliente/add" method="post">
+        <label><b>Asesor: </b></label>
+        <br>
+        <select name="Asesor" id="Asesor">
+          <option selected="selected" value=""></option>
+          <option value="Asesor 1">0001</option>
+          <option value="Asesor 2">0002</option>
+          <option value="Asesor 3">0003</option>
+        </select>
+        <br>
+        <br>
+        <label><b>Marca: </b></label>
+        <br />
+        <input type="text" text="Resvera" value="Resvera" name="Marca">
+        <br>
+        <br>
+        <label><b>Sucursal: </b></label>
+        <br />
+        <select name="Sucursal" id="Sucursal">
+          <option selected value="RS01">RS01</option>
+        </select>
+        <br>
+        <br>
+  
+        <input name="Nombre" id="Nombre" type="text" placeholder="Nombre" required>
+        <br />
+        <br />
+        <input name="Apellidos" id="Apellido" type="text" placeholder="Apellidos" required>
+        <br />
+        <br />
+        <label><b>Cumpleaños: </b></label>
+        <br>
+        <br />
+        <div class="tratamientoBox">
+          <label for="Día">Día:</label>&nbsp;<input name="Dia" type="text" id="Día">
+  
+          <label for="Mes">Mes:</label>&nbsp;<input name="Mes" type="text" id="Mes" required>
+  
+          <label for="Año">Año:</label>&nbsp;<input name="Año" type="text" id="Año">
+        </div>
+        <br />
+        <br />
+        <input name="Telefono" id="Telefono" type="tel" placeholder="Teléfono 10 digitos" required-pattern="[0-9]{10}">
+        <br />
+        <br />
+        <input name="Email" id="Correo" type="email" placeholder="E-mail" required>
+        <br />
+        <br />
+        <div class="col">
+          <label for="Fecha_registro"><b>Fecha de Registro:</b></label><br>
+          <input type="date" onload="getDate()" class="form-control" id="Fecha_Registro" name="Fecha_Registro">
+        </div>
+        <br>
+        <input name="Notas" type="textarea" placeholder="Notas" required>
+        <br>
+        <br>
+        <div>
+          
+          <button class="buttonis" type="submit">Guardar</button>
+          <a href="/agendarC">
+          <button class="buttonis" type="submit"> Guardar&nbsp;y&nbsp;Registrar<br>Membresia</button>
+          </a>
+        </div>
+      </form>
+      <br>
+      <button class="buttonis" id="myBtn">Resumen</button>
+      <br><br>
     </div>
-
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+  
+      <!-- Modal content -->
+      <div align="center" class="modal-content">
+        <span class="close">&times;</span>
+        <h2>RESUMEN</h2>
+        <p>Asesor:_____________________________________</p>
+        <p>Marca:______________________________________</p>
+        <p>Sucursal:____________________________________</p>
+        <p>Nombre:____________________________________ </p>
+        <p>Apellidos:__________________________________</p>
+        <p>Cumpleaños:________________________________</p>
+        <p>Teléfono:___________________________________</p>
+        <p>Correo:_____________________________________ </p>
+        <p>Fecha:______________________________________</p>
+        <p>Notas:______________________________________ </p>
+        <button class="buttonis">Guardar</button>
+        <button id="cancel" class="buttonis">Cancelar</button>
+      </div>
+  
+    </div>
   </div>
+
+  <div id="VV" class="schedule" style="display:none">
+    <h2 class="sch_title">Vine Vera</h2>
+    <div align="center" class="formu">
+      <form action="/rCliente/add" method="post">
+        <label><b>Asesor: </b></label>
+        <br>
+        <select name="Asesor" id="Asesor">
+          <option selected="selected" value=""></option>
+          <option value="Asesor 1">0001</option>
+          <option value="Asesor 2">0002</option>
+          <option value="Asesor 3">0003</option>
+        </select>
+        <br>
+        <br>
+        <label><b>Marca: </b></label>
+        <br />
+        <input type="text" value="Vine Vera" name="Marca" disabled>
+        <br>
+        <br>
+        <label><b>Sucursal: </b></label>
+        <br />
+        <select name="Sucursal" id="Sucursal">
+          <option selected="selected" value=""></option>
+          <option value="VV01">Pasaje Polanco</option>
+          <option value="VV02">Solesta</option>
+          <option value="VV03">Manacar</option>
+          <option value="VV04">Galerías Insurgentes</option>
+        </select>
+        <br>
+        <br>
+  
+        <input name="Nombre" id="Nombre" type="text" placeholder="Nombre" required>
+        <br />
+        <br />
+        <input name="Apellidos" id="Apellido" type="text" placeholder="Apellidos" required>
+        <br />
+        <br />
+        <label><b>Cumpleaños: </b></label>
+        <br>
+        <br />
+        <div class="tratamientoBox">
+          <label for="Día">Día:</label>&nbsp;<input name="Dia" type="text" id="Día">
+  
+          <label for="Mes">Mes:</label>&nbsp;<input name="Mes" type="text" id="Mes" required>
+  
+          <label for="Año">Año:</label>&nbsp;<input name="Año" type="text" id="Año">
+        </div>
+        <br />
+        <br />
+        <input name="Telefono" id="Telefono" type="tel" placeholder="Teléfono 10 digitos" required-pattern="[0-9]{10}">
+        <br />
+        <br />
+        <input name="Email" id="Correo" type="email" placeholder="E-mail" required>
+        <br />
+        <br />
+        <div class="col">
+          <label for="Fecha_registro"><b>Fecha de Registro:</b></label><br>
+          <input type="date" onload="getDate()" class="form-control" id="Fecha_Registro" name="Fecha_Registro">
+        </div>
+        <br>
+        <input name="Notas" type="textarea" placeholder="Notas" required>
+        <br>
+        <br>
+        <div>
+          
+          <button class="buttonis" type="submit">Guardar</button>
+          <a href="/agendarC">
+          <button class="buttonis" type="submit"> Guardar&nbsp;y&nbsp;Registrar<br>Membresia</button>
+          </a>
+        </div>
+      </form>
+      <br>
+      <button class="buttonis" id="myBtn">Resumen</button>
+      <br><br>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+  
+      <!-- Modal content -->
+      <div align="center" class="modal-content">
+        <span class="close">&times;</span>
+        <h2>RESUMEN</h2>
+        <p>Asesor:_____________________________________</p>
+        <p>Marca:______________________________________</p>
+        <p>Sucursal:____________________________________</p>
+        <p>Nombre:____________________________________ </p>
+        <p>Apellidos:__________________________________</p>
+        <p>Cumpleaños:________________________________</p>
+        <p>Teléfono:___________________________________</p>
+        <p>Correo:_____________________________________ </p>
+        <p>Fecha:______________________________________</p>
+        <p>Notas:______________________________________ </p>
+        <button class="buttonis">Guardar</button>
+        <button id="cancel" class="buttonis">Cancelar</button>
+      </div>
+  
+    </div>
+  </div>
+
+  <div id="RC" class="schedule" style="display:none">
+    <h2 class="sch_title">Reserve Cut</h2>
+    <div align="center" class="formu">
+      <form action="/rCliente/add" method="post">
+        <label><b>Asesor: </b></label>
+        <br>
+        <select name="Asesor" id="Asesor">
+          <option selected="selected" value=""></option>
+          <option value="Asesor 1">0001</option>
+          <option value="Asesor 2">0002</option>
+          <option value="Asesor 3">0003</option>
+        </select>
+        <br>
+        <br>
+        <label><b>Marca: </b></label>
+        <br />
+          <input type="text" value="Reserve Cut" name="Marca" disabled>
+        <br>
+        <br>
+        <label><b>Sucursal: </b></label>
+        <br />
+        <select name="Sucursal" id="Sucursal">
+          <option value="RC01">Pasaje Polanco</option>
+        </select>
+        <br>
+        <br>
+  
+        <input name="Nombre" id="Nombre" type="text" placeholder="Nombre" required>
+        <br />
+        <br />
+        <input name="Apellidos" id="Apellido" type="text" placeholder="Apellidos" required>
+        <br />
+        <br />
+        <label><b>Cumpleaños: </b></label>
+        <br>
+        <br />
+        <div class="tratamientoBox">
+          <label for="Día">Día:</label>&nbsp;<input name="Dia" type="text" id="Día">
+  
+          <label for="Mes">Mes:</label>&nbsp;<input name="Mes" type="text" id="Mes" required>
+  
+          <label for="Año">Año:</label>&nbsp;<input name="Año" type="text" id="Año">
+        </div>
+        <br />
+        <br />
+        <input name="Telefono" id="Telefono" type="tel" placeholder="Teléfono 10 digitos" required-pattern="[0-9]{10}">
+        <br />
+        <br />
+        <input name="Email" id="Correo" type="email" placeholder="E-mail" required>
+        <br />
+        <br />
+        <div class="col">
+          <label for="Fecha_registro"><b>Fecha de Registro:</b></label><br>
+          <input type="date" onload="getDate()" class="form-control" id="Fecha_Registro" name="Fecha_Registro">
+        </div>
+        <br>
+        <input name="Notas" type="textarea" placeholder="Notas" required>
+        <br>
+        <br>
+        <div>
+          
+          <button class="buttonis" type="submit">Guardar</button>
+          <a href="/agendarC">
+          <button class="buttonis" type="submit"> Guardar&nbsp;y&nbsp;Registrar<br>Membresia</button>
+          </a>
+        </div>
+      </form>
+      <br>
+      <button class="buttonis" id="myBtn">Resumen</button>
+      <br><br>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+  
+      <!-- Modal content -->
+      <div align="center" class="modal-content">
+        <span class="close">&times;</span>
+        <h2>RESUMEN</h2>
+        <p>Asesor:_____________________________________</p>
+        <p>Marca:______________________________________</p>
+        <p>Sucursal:____________________________________</p>
+        <p>Nombre:____________________________________ </p>
+        <p>Apellidos:__________________________________</p>
+        <p>Cumpleaños:________________________________</p>
+        <p>Teléfono:___________________________________</p>
+        <p>Correo:_____________________________________ </p>
+        <p>Fecha:______________________________________</p>
+        <p>Notas:______________________________________ </p>
+        <button class="buttonis">Guardar</button>
+        <button id="cancel" class="buttonis">Cancelar</button>
+      </div>
+  
+    </div>
+  </div>
+
+  <div id="OG" class="schedule" style="display:none">
+    <h2 class="sch_title">Oro Gold</h2>
+    <div align="center" class="formu">
+      <form action="/rCliente/add" method="post">
+        <label><b>Asesor: </b></label>
+        <br>
+        <select name="Asesor" id="Asesor">
+          <option selected="selected" value=""></option>
+          <option value="Asesor 1">0001</option>
+          <option value="Asesor 2">0002</option>
+          <option value="Asesor 3">0003</option>
+        </select>
+        <br>
+        <br>
+        <label><b>Marca: </b></label>
+        <br />
+          <input type="text" value="OroGold" name="Marca" disabled>
+        <br>
+        <br>
+        <label><b>Sucursal: </b></label>
+        <br />
+        <select name="Sucursal" id="Sucursal">
+          <option selected="selected" value=""></option>
+          <option value="OG01">Angelópolis</option>
+        </select>
+        <br>
+        <br>
+  
+        <input name="Nombre" id="Nombre" type="text" placeholder="Nombre" required>
+        <br />
+        <br />
+        <input name="Apellidos" id="Apellido" type="text" placeholder="Apellidos" required>
+        <br />
+        <br />
+        <label><b>Cumpleaños: </b></label>
+        <br>
+        <br />
+        <div class="tratamientoBox">
+          <label for="Día">Día:</label>&nbsp;<input name="Dia" type="text" id="Día">
+  
+          <label for="Mes">Mes:</label>&nbsp;<input name="Mes" type="text" id="Mes" required>
+  
+          <label for="Año">Año:</label>&nbsp;<input name="Año" type="text" id="Año">
+        </div>
+        <br />
+        <br />
+        <input name="Telefono" id="Telefono" type="tel" placeholder="Teléfono 10 digitos" required-pattern="[0-9]{10}">
+        <br />
+        <br />
+        <input name="Email" id="Correo" type="email" placeholder="E-mail" required>
+        <br />
+        <br />
+        <div class="col">
+          <label for="Fecha_registro"><b>Fecha de Registro:</b></label><br>
+          <input type="date" onload="getDate()" class="form-control" id="Fecha_Registro" name="Fecha_Registro">
+        </div>
+        <br>
+        <input name="Notas" type="textarea" placeholder="Notas" required>
+        <br>
+        <br>
+        <div>
+          
+          <button class="buttonis" type="submit">Guardar</button>
+          <a href="/agendarC">
+          <button class="buttonis" type="submit"> Guardar&nbsp;y&nbsp;Registrar<br>Membresia</button>
+          </a>
+        </div>
+      </form>
+      <br>
+      <button class="buttonis" id="myBtn">Resumen</button>
+      <br><br>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+  
+      <!-- Modal content -->
+      <div align="center" class="modal-content">
+        <span class="close">&times;</span>
+        <h2>RESUMEN</h2>
+        <p>Asesor:_____________________________________</p>
+        <p>Marca:______________________________________</p>
+        <p>Sucursal:____________________________________</p>
+        <p>Nombre:____________________________________ </p>
+        <p>Apellidos:__________________________________</p>
+        <p>Cumpleaños:________________________________</p>
+        <p>Teléfono:___________________________________</p>
+        <p>Correo:_____________________________________ </p>
+        <p>Fecha:______________________________________</p>
+        <p>Notas:______________________________________ </p>
+        <button class="buttonis">Guardar</button>
+        <button id="cancel" class="buttonis">Cancelar</button>
+      </div>
+  
+    </div>
+  </div>
+  
   <script src="/js/modal.js"></script>
   <script src="/js/back.js"></script>
+  <script src="/js/open_schedule.js"></script>
 
 </body>
 

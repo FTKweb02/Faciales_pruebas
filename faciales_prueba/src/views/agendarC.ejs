@@ -36,34 +36,34 @@
         <tr>
           <td></td>
 
-          <td>ID Cliente:</td>
+          <td>ID Cliente: <%= data.id_Cliente %></td>
         </tr>
         <tr>
           <td></td>
 
-          <td>Nombre:</td>
+          <td>Nombre: <%= data.Nombre %></td>
         </tr>
         <tr>
           <td><input type="search" name="searchId" placeholder="Buscar ID"></td>
-          <td>Apellidos:</td>
+          <td>Apellidos: <%= data.Apellidos %></td>
         </tr>
         <tr>
           <td></td>
-          <td>Teléfono:</td>
+          <td>Teléfono:<%= data.Telefono %></td>
         </tr>
         <tr>
-          <td><button class="buttong" type="submit">Buscar</button></td>
-          <td>Correo:</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Cumpleaños:</td>
-        </tr>
-        <tr>
+          <td><button class="buttong" type="submit" action="agrndarC/consultarc">Buscar</button></td>
+          <td>Correo: <%= data.Email %></td>
         </tr>
         <tr>
           <td></td>
-          <td>Asesor:</td>
+          <td>Cumpleaños: <%= data.Dia %> <%= data.Mes %> <%= data.Año %></td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Asesor: <%= data.Asesor %></td>
         </tr>
         <tr>
           <td></td>

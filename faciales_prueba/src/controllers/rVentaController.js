@@ -8,7 +8,7 @@ controller.save = (req, res) => {
     const data = req.body;
     console.log(req.body);
     req.getConnection((err, conn) => {
-        conn.query('INSERT INTO membresia set ?', data, (err, membresias) => {
+        conn.query('INSERT INTO membresia_rs set ?', data, (err, membresias) => {
             if(err){
                 console.log(err);
                 res.json(err);

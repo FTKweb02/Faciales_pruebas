@@ -28,20 +28,20 @@
     <button onclick="back();" class="btnMenu">Menú</button>
   </div>
   <form action="/rVenta/addm" method="post">
-    <h1 align="center">Registrar Tratamiento</h1>
+    <h1 align="center">Registrar Membresía</h1>
     <br />
     <div align="center">
 
-      <input size="30" type="search" name="id_Cliente" id="id_Cliente" placeholder="ID Cliente" required>
+      <input size="30" type="search" name="Cliente_idCliente" id="id_Cliente" placeholder="ID Cliente" required>
       <br><br>
       <label><b>Marca: </b></label>
       <br />
-      <select name="Marca" id="Marca">
+      <select name="Resvera_idResvera" id="Marca">
         <option selected="selected" value=""></option>
         <option value="VV">VV</option>
         <option value="OG">OG</option>
         <option value="RC">RC</option>
-        <option value="RS">RS</option>
+        <option value="1">RS</option>
         <option value="VVEXP">VVEXP</option>
       </select>
       <br>
@@ -50,7 +50,7 @@
       <input disabled size="30" type="text" name="Folio_Membresia" id="Folio_Membresia" placeholder="Folio Membresía">
       <br><br>
       <label for="idasesor"><b>Asesor Venta: </b></label><br />
-      <input size="30" type="text" name="Asesor" id="Asesor" required>
+      <input size="30" type="text" name="Asesor_Venta" id="Asesor" required>
       <br><br>
       <label for="fechacompra"><b>Fecha Compra: </b></label><br />
       <input type="date" name="Fecha_Compra" id="Fecha_Compra" required>
@@ -60,8 +60,8 @@
           <label for=""><b>Tratamiento:</b></label><br><br>
           <label for="nombre">Nombre:</label>&nbsp;<input name="Nombre_T" type="text" id="nombre" required>&nbsp;
           <label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" type="text" id="cat" required>&nbsp;
-          <label for="precio">Precio:</label><input name="Precio" value="2 barkdolares" disabled>
-          <label for="clase">Tiempo:</label><input name="Duracion" value="" disabled>
+          <label for="precio">Precio:</label><input name="Precio_T" value="" disabled>
+          <label for="clase">Tiempo:</label><input name="Duracion_T" value="" disabled>
         </div>
         <br><br>
         <label><b>Sucursal: </b></label>
@@ -81,10 +81,10 @@
       <input size="30" type="text" name="Ticket" id="Ticket" required>
       <br><br>
       <label for="importep"><b>Importe Total Ticket: </b></label><br />
-      <input size="30" type="text" name="Importep" id="Importep" required>
+      <input size="30" type="text" name="Importe_total" id="Importep" required>
       <br><br>
       <label for="importet"><b>Importe Total Tratamiento/s: </b></label><br />
-      <input size="30" type="text" name="Importet" id="Importet" required>
+      <input size="30" type="text" name="Importe_t_tratamiento" id="Importet" required>
       <br><br>
       <div class="tooltip"><img class="tooltip logos" src="img/descuento_icono.png" alt="plus">
         <span class="tooltiptext">Reglas&nbsp;Descuento<br>1. <br>2. <br>3. <br>4. </span>
@@ -94,7 +94,7 @@
       <br><br>
 
       <label for="observaciones"><b>Notas: </b></label><br />
-      <input size="30" type="text" name="Observaciones" id="Observaciones" required>
+      <input size="30" type="text" name="Notas" id="Observaciones" required>
 
     </div>
     <br />
