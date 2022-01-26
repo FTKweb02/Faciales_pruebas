@@ -11,6 +11,7 @@ controller.consultarc = (req, res) => {
             res.render('agendarC.ejs', {
                 data: rows[0]
             })
+            console.log(rows);
         })
     })
 }

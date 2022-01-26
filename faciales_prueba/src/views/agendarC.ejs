@@ -36,34 +36,34 @@
         <tr>
           <td></td>
 
-          <td>ID Cliente: <%= data.id_Cliente %></td>
+          <td>ID Cliente: <label value="<%= data.id_Cliente %>" name="id_Cliente"></label> </td>
         </tr>
         <tr>
           <td></td>
 
-          <td>Nombre: <%= data.Nombre %></td>
+          <td>Nombre: <label value="<%= data.Nombre %>" name="Nombre"></label> </td>
         </tr>
         <tr>
           <td><input type="search" name="searchId" placeholder="Buscar ID"></td>
-          <td>Apellidos: <%= data.Apellidos %></td>
+          <td>Apellidos: <label value="<%= data.Apellidos %>" name="Apellidos"></label> </td>
         </tr>
         <tr>
           <td></td>
-          <td>Teléfono:<%= data.Telefono %></td>
+          <td>Teléfono: <label value="<%= data.Telefono %>" name="Telefono"></label> </td>
         </tr>
         <tr>
-          <td><button class="buttong" type="submit" action="agrndarC/consultarc">Buscar</button></td>
-          <td>Correo: <%= data.Email %></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Cumpleaños: <%= data.Dia %> <%= data.Mes %> <%= data.Año %></td>
-        </tr>
-        <tr>
+          <td><button class="buttong" type="submit" action="agendarC/consultarc">Buscar</button></td>
+          <td>Correo: <label value="<%= data.Email %>" name="Email"></label> </td>
         </tr>
         <tr>
           <td></td>
-          <td>Asesor: <%= data.Asesor %></td>
+          <td>Cumpleaños: <label value="<%= data.Dia %>" name="Dia" />/<label value="<%= data.Mes %>" name="Mes" />/<label value="<%= data.Año %>" name="Año" /> </td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Asesor: <label value="<%= data.Asesor %>" name="Asesor"/> </td>
         </tr>
         <tr>
           <td></td>
