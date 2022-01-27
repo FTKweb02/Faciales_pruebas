@@ -31,58 +31,58 @@
   <h1 align="center">Agendar</h1>
   <br />
   <div align="center">
-    <table class="reemplazodelnbsp">
-      <tbody>
-        <tr>
-          <td></td>
-
-          <td>ID Cliente: <label value="<%= data.id_Cliente %>" name="id_Cliente"></label> </td>
-        </tr>
-        <tr>
-          <td></td>
-
-          <td>Nombre: <label value="<%= data.Nombre %>" name="Nombre"></label> </td>
-        </tr>
-        <tr>
-          <td><input type="search" name="searchId" placeholder="Buscar ID"></td>
-          <td>Apellidos: <label value="<%= data.Apellidos %>" name="Apellidos"></label> </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Teléfono: <label value="<%= data.Telefono %>" name="Telefono"></label> </td>
-        </tr>
-        <tr>
-          <td><button class="buttong" type="submit" action="agendarC/consultarc">Buscar</button></td>
-          <td>Correo: <label value="<%= data.Email %>" name="Email"></label> </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Cumpleaños: <label value="<%= data.Dia %>" name="Dia" />/<label value="<%= data.Mes %>" name="Mes" />/<label value="<%= data.Año %>" name="Año" /> </td>
-        </tr>
-        <tr>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Asesor: <label value="<%= data.Asesor %>" name="Asesor"/> </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Tratamientos Totales:</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Tratamientos Restantes:</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Acompañantes: </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Acompañantes Restantes:</td>
-        </tr>
-      </tbody>
-    </table>
+    <form action="/agendarC/<%= data.Telefono %>" method="get">
+      <input type="search" name="Telefono" placeholder="Buscar ID" required>
+      <button class="buttong" type="submit">Buscar</button>
+      <br><br>
+      <div class="inputs">
+        <div>
+          <label type="text">ID Cliente: </label>
+          <input type="text" name="idCliente" value="<%= data.idCliente %>" readonly>
+        </div>
+        <br>
+        <div>
+          <label type="text">Nombre: </label>
+          <input type="text" name="Nombre" value="<%= data.Nombre %>" readonly>
+        </div>
+        <br>
+        <div>
+          <label type="text">Apellidos: </label>
+          <input type="text" name="Apellidos" value="<%= data.Apellidos %>" readonly>
+        </div>
+        <br>
+        <div>
+          <label type="text">Teléfono: </label>
+          <input type="text" name="Telefono" value="<%= data.Telefono %>" readonly>
+        </div>
+        <br>
+        <div>
+          <label type="text">Correo: </label>
+          <input type="text" name="Email" value="<%= data.Email %>" readonly>
+        </div>
+        <br>
+        <div style="margin-right: 6vw">
+          <label type="text">Cumpleaños: </label>
+          <input id="dia" type="text" name="Dia" value="<%= data.Dia %>" readonly>/<input id="mes" type="text" name="Mes"
+            value="<%= data.Mes %>" readonly>/<input id="año" type="text" name="Año" value="<%= data.Año %>" readonly>
+        </div>
+        <br>
+        <div>
+          <label type="text">Asesor: </label>
+          <input type="text" name="Asesor" value="<%= data.Asesor %>" readonly>
+        </div>
+        <br>
+        <div>
+          <label type="text">Fecha Registro: </label>
+          <input type="text" name="Fecha_registro" value="<%= data.Fecha_registro %>" readonly>
+        </div>
+        <br>
+        <div>
+          <label type="text">Notas: </label>
+          <input type="text" name="Notas" value="<%= data.Notas %>" readonly>
+        </div>
+      </div>
+    </form>
     <br><br>
     <form action="post">
       <table class="magia">
@@ -144,7 +144,7 @@
       </select>
       <br><br>
       <label for="fechacita"><b>Fecha: </b></label><br />
-      <input type="datetime-local" name="Fecha" id="fechacita">
+      <input type="date" name="Fecha" id="fechacita">
       <br><br>
       <label for="Cabina"><b>Cabina: </b></label><br>
       <select name="Cabina" id="Cabina">

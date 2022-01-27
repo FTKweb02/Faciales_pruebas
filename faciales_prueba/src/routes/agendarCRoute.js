@@ -3,6 +3,6 @@ const router = require('express').Router();
 const agendarcController = require('../controllers/agendarcController');
 
 router.get('/', agendarcController.agendarC);
-router.get('/consultarc/:Telefono', agendarcController.consultarc)
+router.get('/consult/:Telefono', agendarcController.consult)
 
 module.exports = router;

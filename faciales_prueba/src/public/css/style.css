@@ -301,3 +301,12 @@ input{
 .textarea_modal {
   resize: none;
 }
+
+.inputs input{
+  border:0;
+  outline:none;
+}
+
+ #dia, #mes, #año {
+   width:25px;
+ }

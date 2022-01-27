@@ -27,101 +27,322 @@
   <div>
     <button onclick="back();" class="btnMenu">Menú</button>
   </div>
-  <form action="/rVenta/addm" method="post">
-    <h1 align="center">Registrar Membresía</h1>
-    <br />
-    <div align="center">
 
-      <input size="30" type="search" name="Cliente_idCliente" id="id_Cliente" placeholder="ID Cliente" required>
-      <br><br>
-      <label><b>Marca: </b></label>
-      <br />
-      <select name="Resvera_idResvera" id="Marca">
-        <option selected="selected" value=""></option>
-        <option value="VV">VV</option>
-        <option value="OG">OG</option>
-        <option value="RC">RC</option>
-        <option value="1">RS</option>
-        <option value="VVEXP">VVEXP</option>
-      </select>
-      <br>
-      <br>
-      <input type="checkbox" class="chckbox" id="myCheck" onclick="myFunction()">
-      <input disabled size="30" type="text" name="Folio_Membresia" id="Folio_Membresia" placeholder="Folio Membresía">
-      <br><br>
-      <label for="idasesor"><b>Asesor Venta: </b></label><br />
-      <input size="30" type="text" name="Asesor_Venta" id="Asesor" required>
-      <br><br>
-      <label for="fechacompra"><b>Fecha Compra: </b></label><br />
-      <input type="date" name="Fecha_Compra" id="Fecha_Compra" required>
-      <br><br>
-      <div>
-        <div class="tratamientoBox">
-          <label for=""><b>Tratamiento:</b></label><br><br>
-          <label for="nombre">Nombre:</label>&nbsp;<input name="Nombre_T" type="text" id="nombre" required>&nbsp;
-          <label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" type="text" id="cat" required>&nbsp;
-          <label for="precio">Precio:</label><input name="Precio_T" value="" disabled>
-          <label for="clase">Tiempo:</label><input name="Duracion_T" value="" disabled>
-        </div>
-        <br><br>
-        <label><b>Sucursal: </b></label>
-        <br />
-        <select name="Sucursal" id="Sucursal">
-          <option selected="selected" value=""></option>
-          <option value="RS01">RS01</option>
-          <option value="RC01">RC01</option>
-          <option value="VV01">VV01</option>
-        </select>
-        <br><br>
+  <h1 align="center">Registrar Membresía</h1>
+  <br />
+  <div class="calendar_buttons">
+    <button class="" onclick="openSchedule('RS')">Resvera</button>
+    <button class="" onclick="openSchedule('VV')">Vine Vera</button>
+    <button class="" onclick="openSchedule('RC')">Reserve Cut</button>
+    <button class="" onclick="openSchedule('OG')">Oro Gold</button>
+  </div>
+  <br>
+
+  <!-- Inicia Formulario Resvera -->  
+
+  <div id="RS" class="schedule">
+    <h2 class="sch_title">Resvera</h2>
+  <form action="/rVenta/addm" method="post"></form>
+  <div align="center">
+
+    <input size="30" type="search" name="Cliente_idCliente" id="id_Cliente" placeholder="ID Cliente" required>
+    <br><br>
+    <label><b>Marca: </b></label>
+    <br />
+    <select name="Resvera_idResvera" id="Marca">
+      <option selected value="1">Resvera</option>
+    </select>
+    <br>
+    <br>
+    <input type="checkbox" class="chckbox" id="myCheck" onclick="myFunction()">
+    <input disabled size="30" type="text" name="Folio_Membresia" id="Folio_Membresia" placeholder="Folio Membresía">
+    <br><br>
+    <label for="idasesor"><b>Asesor Venta: </b></label><br />
+    <input size="30" type="text" name="Asesor_Venta" id="Asesor" required>
+    <br><br>
+    <label for="fechacompra"><b>Fecha Compra: </b></label><br />
+    <input type="date" name="Fecha_Compra" id="Fecha_Compra" required>
+    <br><br>
+    <div>
+      <div class="tratamientoBox">
+        <label for=""><b>Tratamiento:</b></label><br><br>
+        <label for="nombre">Nombre:</label>&nbsp;<input name="Nombre_T" type="text" id="nombre" required>&nbsp;
+        <label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" type="text" id="cat" required>&nbsp;
+        <label for="precio">Precio:</label><input name="Precio_T" value="" readonly>
+        <label for="clase">Tiempo:</label><input name="Duracion_T" value="" readonly>
       </div>
-      <label for="acompañante"><b># Acompañantes:</b></label><br />
-      <input size="30" type="text" name="Acompañantes" id="Acompañantes" required>
       <br><br>
-      <label for="ticketnova"><b># Ticket: </b></label><br />
-      <input size="30" type="text" name="Ticket" id="Ticket" required>
+      <label><b>Sucursal: </b></label>
+      <br />
+      <select name="Sucursal" id="Sucursal">
+        <option selected="selected" value=""></option>
+        <option value="RS01">RS01</option>
+        <option value="RC01">RC01</option>
+        <option value="VV01">VV01</option>
+      </select>
       <br><br>
-      <label for="importep"><b>Importe Total Ticket: </b></label><br />
-      <input size="30" type="text" name="Importe_total" id="Importep" required>
-      <br><br>
-      <label for="importet"><b>Importe Total Tratamiento/s: </b></label><br />
-      <input size="30" type="text" name="Importe_t_tratamiento" id="Importet" required>
-      <br><br>
-      <div class="tooltip"><img class="tooltip logos" src="img/descuento_icono.png" alt="plus">
-        <span class="tooltiptext">Reglas&nbsp;Descuento<br>1. <br>2. <br>3. <br>4. </span>
-      </div>&nbsp;&nbsp;&nbsp;&nbsp;
-      <label for="descuento"><b>Descuento: </b></label><br>
-      <input size="30" type="text" name="Descuento" id="Descuento" required>
-      <br><br>
-
-      <label for="observaciones"><b>Notas: </b></label><br />
-      <input size="30" type="text" name="Notas" id="Observaciones" required>
-
     </div>
-    <br />
-    <div align="center">
-      <button class="buttong" type="submit">Registrar</button>&nbsp;&nbsp;&nbsp;&nbsp;
-      <button class="buttong" type="submit">Registrar y Agendar</button>
-    </div>
-    <br />
+    <label for="acompañante"><b># Acompañantes:</b></label><br />
+    <input size="30" type="text" name="Acompañantes" id="Acompañantes" required>
+    <br><br>
+    <label for="ticketnova"><b># Ticket: </b></label><br />
+    <input size="30" type="text" name="Ticket" id="Ticket" required>
+    <br><br>
+    <label for="importep"><b>Importe Total Ticket: </b></label><br />
+    <input size="30" type="text" name="Importe_total" id="Importep" required>
+    <br><br>
+    <label for="importet"><b>Importe Total Tratamiento/s: </b></label><br />
+    <input size="30" type="text" name="Importe_t_tratamiento" id="Importet" required>
+    <br><br>
+    <div class="tooltip"><img class="tooltip logos" src="img/descuento_icono.png" alt="plus">
+      <span class="tooltiptext">Reglas&nbsp;Descuento<br>1. <br>2. <br>3. <br>4. </span>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="descuento"><b>Descuento: </b></label><br>
+    <input size="30" type="text" name="Descuento" id="Descuento" required>
+    <br><br>
+
+    <label for="observaciones"><b>Notas: </b></label><br />
+    <input size="30" type="text" name="Notas" id="Observaciones" required>
+
+  </div>
+  <br />
+  <div align="center">
+    <button class="buttong" type="submit">Registrar</button>
+  </div>
+  <br />
   </form>
-  <script>
-    function myFunction() {
-      // Get the checkbox
-      var checkBox = document.getElementById("myCheck");
-      // Get the output text
-      var inputchk = document.getElementById("Folio_Membresia");
+  </div>
 
-      // If the checkbox is checked, display the output text and set required attribute
-      if (checkBox.checked == true) {
-        inputchk.removeAttribute("disabled");
-        inputchk.setAttribute("required", "required");
-      } else {
-        inputchk.setAttribute("disabled", "disabled");
-        inputchk.removeAttribute("required");
-      }
-    }
-  </script>
+  <!-- Inicia Formulario Vine Vera -->
+
+  <div id="VV" class="schedule" style="display:none">
+    <h2 class="sch_title">Vine Vera</h2>
+    <form action="/rVenta/addvv" method="post"></form>
+  <div align="center">
+
+    <input size="30" type="search" name="Cliente_idCliente" id="id_Cliente" placeholder="ID Cliente" required>
+    <br><br>
+    <label><b>Marca: </b></label>
+    <br />
+    <select name="VineVera_idVineVera" id="Marca">
+      <option selected value="VV">Vine Vera</option>
+    </select>
+    <br>
+    <br>
+    <input type="checkbox" class="chckbox" id="myCheck1" onclick="myFunction1()">
+    <input disabled size="30" type="text" name="Folio_Membresia" id="Folio_Membresia1" placeholder="Folio Membresía">
+    <br><br>
+    <label for="idasesor"><b>Asesor Venta: </b></label><br />
+    <input size="30" type="text" name="Asesor_Venta" id="Asesor" required>
+    <br><br>
+    <label for="fechacompra"><b>Fecha Compra: </b></label><br />
+    <input type="date" name="Fecha_Compra" id="Fecha_Compra" required>
+    <br><br>
+    <div>
+      <div class="tratamientoBox">
+        <label for=""><b>Tratamiento:</b></label><br><br>
+        <label for="nombre">Nombre:</label>&nbsp;<input name="Nombre_T" type="text" id="nombre" required>&nbsp;
+        <label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" type="text" id="cat" required>&nbsp;
+        <label for="precio">Precio:</label><input name="Precio_T" value="" readonly>
+        <label for="clase">Tiempo:</label><input name="Duracion_T" value="" readonly>
+      </div>
+      <br><br>
+      <label><b>Sucursal: </b></label>
+      <br />
+      <select name="Sucursal" id="Sucursal">
+        <option selected="selected" value=""></option>
+        <option value="RS01">RS01</option>
+        <option value="RC01">RC01</option>
+        <option value="VV01">VV01</option>
+      </select>
+      <br><br>
+    </div>
+    <label for="acompañante"><b># Acompañantes:</b></label><br />
+    <input size="30" type="text" name="Acompañantes" id="Acompañantes" required>
+    <br><br>
+    <label for="ticketnova"><b># Ticket: </b></label><br />
+    <input size="30" type="text" name="Ticket" id="Ticket" required>
+    <br><br>
+    <label for="importep"><b>Importe Total Ticket: </b></label><br />
+    <input size="30" type="text" name="Importe_total" id="Importep" required>
+    <br><br>
+    <label for="importet"><b>Importe Total Tratamiento/s: </b></label><br />
+    <input size="30" type="text" name="Importe_t_tratamiento" id="Importet" required>
+    <br><br>
+    <div class="tooltip"><img class="tooltip logos" src="img/descuento_icono.png" alt="plus">
+      <span class="tooltiptext">Reglas&nbsp;Descuento<br>1. <br>2. <br>3. <br>4. </span>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="descuento"><b>Descuento: </b></label><br>
+    <input size="30" type="text" name="Descuento" id="Descuento" required>
+    <br><br>
+
+    <label for="observaciones"><b>Notas: </b></label><br />
+    <input size="30" type="text" name="Notas" id="Observaciones" required>
+
+  </div>
+  <br />
+  <div align="center">
+    <button class="buttong" type="submit">Registrar</button>
+  </div>
+  <br />
+  </form>
+  </div>
+
+  <!-- inicia Formulario Reserve Cut -->
+
+  <div id="RC" class="schedule" style="display:none">
+    <h2 class="sch_title">Reserve Cut</h2>
+    <form action="/rVenta/addrc" method="post"></form>
+  <div align="center">
+
+    <input size="30" type="search" name="Cliente_idCliente" id="id_Cliente" placeholder="ID Cliente" required>
+    <br><br>
+    <label><b>Marca: </b></label>
+    <br />
+    <select name="ReserveCut_idReserveCut" id="Marca">
+      <option selected value="RC">Reserve Cut</option>
+    </select>
+    <br>
+    <br>
+    <input type="checkbox" class="chckbox" id="myCheck2" onclick="myFunction2()">
+    <input disabled size="30" type="text" name="Folio_Membresia" id="Folio_Membresia2" placeholder="Folio Membresía">
+    <br><br>
+    <label for="idasesor"><b>Asesor Venta: </b></label><br />
+    <input size="30" type="text" name="Asesor_Venta" id="Asesor" required>
+    <br><br>
+    <label for="fechacompra"><b>Fecha Compra: </b></label><br />
+    <input type="date" name="Fecha_Compra" id="Fecha_Compra" required>
+    <br><br>
+    <div>
+      <div class="tratamientoBox">
+        <label for=""><b>Tratamiento:</b></label><br><br>
+        <label for="nombre">Nombre:</label>&nbsp;<input name="Nombre_T" type="text" id="nombre" required>&nbsp;
+        <label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" type="text" id="cat" required>&nbsp;
+        <label for="precio">Precio:</label><input name="Precio_T" value="" readonly>
+        <label for="clase">Tiempo:</label><input name="Duracion_T" value="" readonly>
+      </div>
+      <br><br>
+      <label><b>Sucursal: </b></label>
+      <br />
+      <select name="Sucursal" id="Sucursal">
+        <option selected="selected" value=""></option>
+        <option value="RS01">RS01</option>
+        <option value="RC01">RC01</option>
+        <option value="VV01">VV01</option>
+      </select>
+      <br><br>
+    </div>
+    <label for="acompañante"><b># Acompañantes:</b></label><br />
+    <input size="30" type="text" name="Acompañantes" id="Acompañantes" required>
+    <br><br>
+    <label for="ticketnova"><b># Ticket: </b></label><br />
+    <input size="30" type="text" name="Ticket" id="Ticket" required>
+    <br><br>
+    <label for="importep"><b>Importe Total Ticket: </b></label><br />
+    <input size="30" type="text" name="Importe_total" id="Importep" required>
+    <br><br>
+    <label for="importet"><b>Importe Total Tratamiento/s: </b></label><br />
+    <input size="30" type="text" name="Importe_t_tratamiento" id="Importet" required>
+    <br><br>
+    <div class="tooltip"><img class="tooltip logos" src="img/descuento_icono.png" alt="plus">
+      <span class="tooltiptext">Reglas&nbsp;Descuento<br>1. <br>2. <br>3. <br>4. </span>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="descuento"><b>Descuento: </b></label><br>
+    <input size="30" type="text" name="Descuento" id="Descuento" required>
+    <br><br>
+
+    <label for="observaciones"><b>Notas: </b></label><br />
+    <input size="30" type="text" name="Notas" id="Observaciones" required>
+
+  </div>
+  <br />
+  <div align="center">
+    <button class="buttong" type="submit">Registrar</button>
+  </div>
+  <br />
+  </form>
+  </div>
+
+  <!-- Inicia Formulario OroGold -->
+
+  <div id="OG" class="schedule" style="display:none">
+    <h2 class="sch_title">OroGold</h2>
+    <form action="/rVenta/addog" method="post"></form>
+  <div align="center">
+
+    <input size="30" type="search" name="Cliente_idCliente" id="id_Cliente" placeholder="ID Cliente" required>
+    <br><br>
+    <label><b>Marca: </b></label>
+    <br />
+    <select name="OroGold_idOroGold" id="Marca">
+      <option selected value="OG">OroGold</option>
+    </select>
+    <br>
+    <br>
+    <input type="checkbox" class="chckbox" id="myCheck3" onclick="myFunction3()">
+    <input disabled size="30" type="text" name="Folio_Membresia" id="Folio_Membresia3" placeholder="Folio Membresía">
+    <br><br>
+    <label for="idasesor"><b>Asesor Venta: </b></label><br />
+    <input size="30" type="text" name="Asesor_Venta" id="Asesor" required>
+    <br><br>
+    <label for="fechacompra"><b>Fecha Compra: </b></label><br />
+    <input type="date" name="Fecha_Compra" id="Fecha_Compra" required>
+    <br><br>
+    <div>
+      <div class="tratamientoBox">
+        <label for=""><b>Tratamiento:</b></label><br><br>
+        <label for="nombre">Nombre:</label>&nbsp;<input name="Nombre_T" type="text" id="nombre" required>&nbsp;
+        <label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" type="text" id="cat" required>&nbsp;
+        <label for="precio">Precio:</label><input name="Precio_T" value="" readonly>
+        <label for="clase">Tiempo:</label><input name="Duracion_T" value="" readonly>
+      </div>
+      <br><br>
+      <label><b>Sucursal: </b></label>
+      <br />
+      <select name="Sucursal" id="Sucursal">
+        <option selected="selected" value=""></option>
+        <option value="RS01">RS01</option>
+        <option value="RC01">RC01</option>
+        <option value="VV01">VV01</option>
+      </select>
+      <br><br>
+    </div>
+    <label for="acompañante"><b># Acompañantes:</b></label><br />
+    <input size="30" type="text" name="Acompañantes" id="Acompañantes" required>
+    <br><br>
+    <label for="ticketnova"><b># Ticket: </b></label><br />
+    <input size="30" type="text" name="Ticket" id="Ticket" required>
+    <br><br>
+    <label for="importep"><b>Importe Total Ticket: </b></label><br />
+    <input size="30" type="text" name="Importe_total" id="Importep" required>
+    <br><br>
+    <label for="importet"><b>Importe Total Tratamiento/s: </b></label><br />
+    <input size="30" type="text" name="Importe_t_tratamiento" id="Importet" required>
+    <br><br>
+    <div class="tooltip"><img class="tooltip logos" src="img/descuento_icono.png" alt="plus">
+      <span class="tooltiptext">Reglas&nbsp;Descuento<br>1. <br>2. <br>3. <br>4. </span>
+    </div>&nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="descuento"><b>Descuento: </b></label><br>
+    <input size="30" type="text" name="Descuento" id="Descuento" required>
+    <br><br>
+
+    <label for="observaciones"><b>Notas: </b></label><br />
+    <input size="30" type="text" name="Notas" id="Observaciones" required>
+
+  </div>
+  <br />
+  <div align="center">
+    <button class="buttong" type="submit">Registrar</button>
+  </div>
+  <br />
+  </form>
+  </div>
+
+
+
+  <script src="/js/folio_membresia.js"></script>
   <script src="/js/back.js"></script>
+  <script src="/js/open_schedule.js"></script>
 
 </body>
 
