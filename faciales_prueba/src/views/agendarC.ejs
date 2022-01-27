@@ -31,9 +31,11 @@
   <h1 align="center">Agendar</h1>
   <br />
   <div align="center">
-    <form action="/agendarC/<%= data.Telefono %>" method="get">
-      <input type="search" name="Telefono" placeholder="Buscar ID" required>
+    <form action="agendarC/consult/" method="get">
+      <input id="telefonito" type="text" name="Telefono" placeholder="Buscar ID" required>
       <button class="buttong" type="submit">Buscar</button>
+      <!--a href="agendarC/consult" class="btn buttong">Botoncito</a-->
+    </form>
       <br><br>
       <div class="inputs">
         <div>
@@ -82,7 +84,6 @@
           <input type="text" name="Notas" value="<%= data.Notas %>" readonly>
         </div>
       </div>
-    </form>
     <br><br>
     <form action="post">
       <table class="magia">

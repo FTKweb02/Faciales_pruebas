@@ -16,13 +16,21 @@ controller.agendarC = (req, res) => {
 
 
 controller.consult = (req, res) => {
-    const { Telefono } = req.params;
+    const params = new URLSearchParams(req.url.split("?")[1]);
+    const telefonoA = params.get("Telefono");
+    console.log(req.url);
+    console.log(params);
     req.getConnection((err, conn) => {
-        conn.query("SELECT * FROM cliente WHERE Telefono = ?", Telefono, (err, rows) => {
+        conn.query("SELECT * FROM cliente WHERE Telefono = ?", telefonoA, (err, rows) => {
+            if(err){
+                res.json(err);
+            }else {
+            console.log(rows);
             res.render('agendarC.ejs', {
                 data: rows[0]
-            })
-            console.log(rows);
+            
+            });
+        }
         });
     });
 };
