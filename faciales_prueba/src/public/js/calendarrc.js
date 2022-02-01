@@ -43,8 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
       resourceAreaHeaderContent: 'Rooms',
       resources: [
         { "id": "a", "title": "Boss Room" },
-        { "id": "b", "title": "Silla 1", "eventColor": "rgb(0, 116, 217)" },
-        { "id": "c", "title": "Silla 2", "eventColor": "rgb(240, 18, 190)" }
+        { "id": "b", "title": "Sala Compartida", "eventColor": "rgb(0, 116, 217)" }
       ],
       events: 'https://fullcalendar.io/demo-events.json?single-day&for-resource-timeline'
   

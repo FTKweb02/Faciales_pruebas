@@ -263,7 +263,7 @@ input{
   /* Tooltip text */
   .tooltip .tooltiptext {
     visibility: hidden;
-    width: 120px;
+    width: 150px;
     bottom: 100%;
     left: 50%;
     margin-left: -60px;
@@ -280,22 +280,6 @@ input{
     visibility: visible;
   }
 /* Eventos móviles*/
-#external-events {
-  position: fixed;
-  z-index: 2;
-  top: 302px;
-  left: 20px;
-  width: 75px;
-  padding: 0 10px;
-  border: 1px solid #ccc;
-  background: #eee;
-}
-
-#external-events .fc-event {
-  cursor: move;
-  margin: 3px 0;
-}
-/* Fin eventos móviles*/
 /*Cosas que no he usado*/
 
 .textarea_modal {
@@ -305,6 +289,13 @@ input{
 .inputs input{
   border:0;
   outline:none;
+}
+
+.input_tooltip input{
+  border:0;
+  outline:none;
+  background: transparent;
+  color: white;
 }
 
  #dia, #mes, #año {
