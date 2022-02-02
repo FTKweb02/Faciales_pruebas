@@ -30,7 +30,7 @@
   </div>
   <br />
   <!--Fin navbar-->
-  <!--Contenido-->
+
   <button onclick="back();" class="btnMenu">Menú</button>
   <div style="margin-left: 10vw;" class="calendar_buttons">
     <a href="/calendario">
@@ -45,11 +45,11 @@
   </div>
 
   <div id="VV" class="schedule">
-    <h2 align="center" class="sch_title">Pasaje Polanco</h2><button style="margin-right:41.5%" class="btnCerrar"
+    <h2 align="center" class="sch_title">Insurgentes</h2><button style="margin-right:41.5%" class="btnCerrar"
       id="myBtn">Agregar
       Evento</button>
-    <a href="/vvcalendar_insurgentes">
-      <button class="btnCerrar">Insurgentes</button>
+    <a href="/vvcalendar">
+      <button class="btnCerrar">Pasaje Polanco</button>
     </a>
     <a href="/vvcalendar_manacar">
       <button class="btnCerrar">Manacar</button>
@@ -60,36 +60,16 @@
     <br>
 
     <div id='calendar-container'>
-      <div style="margin-top:4vw; margin-left:10vw; margin-right:10vw" id='calendar1'></div>
+      <div style="margin-top:4vw; margin-left:10vw; margin-right:10vw" id='calendar_ins'></div>
     </div>
   </div>
 
 
-  <br><br>
-  <div id="myModal" class="modal">
 
-    <!-- Modal content -->
-    <div align="center" class="modal-content">
-      <span class="close">&times;</span>
-      <h2>AGREGAR EVENTO</h2>
-      <br>
-      <form method="post">
-        <input style="width:220px" id="adddate" type="datetime-local" required>
-        <br><br>
-        <input placeholder="Titulo" style="width:220px" id="titleevent" type="text" required>
-        <br><br>
-        <textarea placeholder="Detalles" class="textarea_modal" type="text" rows="5" cols="28" required></textarea>
-        <br><br>
-        <button class="buttonis" type="submit">Agendar</button>
-        <button id="cancel" class="buttonis">Cancelar</button>
-      </form>
-    </div>
-
-  </div>
-  <script src="/js/modal.js"></script>
-  <script src="/js/calendarvv.js"></script>
-  <script src="/js/open_schedule.js"></script>
-  <script src="/js/back.js"></script>
+    <script src="/js/modal.js"></script>
+    <script src="/js/calendarvv_insurgentes.js"></script>
+    <script src="/js/open_schedule.js"></script>
+    <script src="/js/back.js"></script>
 
 </body>
 

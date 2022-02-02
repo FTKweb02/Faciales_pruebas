@@ -1,16 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var Draggable = FullCalendar.Draggable;
-    var containerEl = document.getElementById('external-events');
     var calendarrio = document.getElementById('calendar3');
   
-    new Draggable(containerEl, {
-      itemSelector: '.fc-event',
-      eventData: function (eventEl) {
-        return {
-          title: eventEl.innerText
-        };
-      }
-    });
   
     var calendarvv = new FullCalendar.Calendar(calendarrio, {
       schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',

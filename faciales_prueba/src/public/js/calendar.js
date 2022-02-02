@@ -38,9 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
       { "id": "e", "title": "Opal" },
       { "id": "f", "title": "Pearl" }
     ],
-    events: '/json/events.json',
+    events: "/json/events.json",
     
-    droppable: true,
     editable: true,
     selectable: true,
     nowIndicator: true,

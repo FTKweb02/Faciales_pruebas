@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var calendarrio = document.getElementById('calendar2');
-
+    var calendarrio = document.getElementById('calendar_ins');
+  
     var calendarvv = new FullCalendar.Calendar(calendarrio, {
       schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
       timeZone: 'UTC',
@@ -18,8 +18,10 @@ document.addEventListener('DOMContentLoaded', function () {
           buttonText: 'Cabinas',
           slotDuration: '00:15'
         },
-        timeGridWeek: {
-          buttonText: 'Semana',
+        resourceTimelineTenDay: {
+          type: 'resourceTimeline',
+          duration: { days: 10 },
+          buttonText: '10 days',
           slotDuration: '00:15'
         }
       },
@@ -29,10 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
       allDaySlot: false,
       resourceAreaHeaderContent: 'Rooms',
       resources: [
-        { "id": "a", "title": "Cabina OG1" },
-        { "id": "b", "title": "Cabina OG2", "eventColor": "rgb(0, 116, 217)" },
-        { "id": "c", "title": "Cabina OG3", "eventColor": "rgb(240, 18, 190)" },
-        { "id": "d", "title": "Cabina OG4", "eventColor": "rgb(136, 17, 85)" }
+        { "id": "a", "title": "Cabina 1" }
       ],
       events: 'https://fullcalendar.io/demo-events.json?single-day&for-resource-timeline'
   

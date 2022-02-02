@@ -1,51 +1,19 @@
 [
     {
-        "id": 17,
+        "idCalendario_RS": 2,
+        "title": "Prueba",
+        "resourceId": "b",
+        "start": "2022-02-01T20:00:00.000Z",
+        "end": "2022-02-01T22:00:00.000Z",
+        "Resvera_idResvera": 1
+    },
+
+    {
+        "idCalendario_RS": 3,
+        "title": "Prueba2",
         "resourceId": "c",
-        "title": "gh",
-        "start": "2022-01-14T20:14:00.000Z",
-        "end": "2022-01-14T20:20:00.000Z"
-    },
-    {
-        "id": 18,
-        "resourceId": "d",
-        "title": "Segundo_Intento",
-        "start": "2022-01-14T23:20:00.000Z",
-        "end": "2022-01-14T23:50:00.000Z"
-    },
-    {
-        "id": 19,
-        "resourceId": "f",
-        "title": "Verde",
-        "start": "2022-01-15T01:30:00.000Z",
-        "end": "2022-01-15T01:45:00.000Z"
-    },
-    {
-        "id": 20,
-        "resourceId": "c",
-        "title": "Evento_Redirect",
-        "start": "2022-01-14T21:40:00.000Z",
-        "end": "2022-01-14T22:40:00.000Z"
-    },
-    {
-        "id": 21,
-        "resourceId": "d",
-        "title": "Segundo_Redirect",
-        "start": "2022-01-14T21:50:00.000Z",
-        "end": "2022-01-14T22:30:00.000Z"
-    },
-    {
-        "id": 22,
-        "resourceId": "f",
-        "title": "Verde",
-        "start": "2022-01-15T01:30:00.000Z",
-        "end": "2022-01-15T01:45:00.000Z"
-    },
-    {
-        "id": 23,
-        "resourceId": "e",
-        "title": "Here we go again",
-        "start": "2022-01-14T22:50:00.000Z",
-        "end": "2022-01-14T23:50:00.000Z"
+        "start": "2022-02-01T20:00:00.000Z",
+        "end": "2022-02-01T22:00:00.000Z",
+        "Resvera_idResvera": 1
     }
 ]

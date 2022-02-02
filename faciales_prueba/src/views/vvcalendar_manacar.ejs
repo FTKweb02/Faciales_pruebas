@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VV</title>
+
+    <!--link rel="icon" href="/img/Logo-FTK-new-negro.png"-->
+    <link rel="icon" href="/img/tem.ico">
+    <link rel="stylesheet" href="/css/style.css">
+    <link type="text/css" href='/fullcalendar_scheduler/lib/main.css' rel='stylesheet' />
+    <script src='/fullcalendar_scheduler/lib/main.js'></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <!--Navbar-->
+    <div>
+        <nav class="color-nav">
+            <a href="/">
+                <input type="image" id="image" alt="Home" src="/img/Logo-FTK-new-blanco.png" />
+            </a>
+            <a href="/">
+                <button role="link" class="btnCerrar" data-target="/">Cerrar Sesión</button>
+            </a>
+        </nav>
+    </div>
+    <br />
+    <!--Fin navbar-->
+
+    <button onclick="back();" class="btnMenu">Menú</button>
+    <div style="margin-left: 10vw;" class="calendar_buttons">
+        <a href="/calendario">
+            <button type="button">Resvera</button>
+        </a>
+        <a href="/rccalendar">
+            <button>Reserve Cut</button>
+        </a>
+        <a href="/ogcalendar">
+            <button class="" onclick="openSchedule('OG')">Oro Gold</button>
+        </a>
+    </div>
+
+    <div id="VV" class="schedule">
+        <h2 align="center" class="sch_title">Manacar</h2><button style="margin-right:41.5%" class="btnCerrar"
+            id="myBtn">Agregar
+            Evento</button>
+        <a href="/vvcalendar">
+            <button class="btnCerrar">Pasaje Polanco</button>
+        </a>
+        <a href="/vvcalendar_insurgentes">
+            <button class="btnCerrar">Insurgentes</button>
+        </a>
+        <a href="/vvcalendar_solesta">
+            <button class="btnCerrar">Solesta</button>
+        </a>
+        <br>
+
+        <div id='calendar-container'>
+            <div style="margin-top:4vw; margin-left:10vw; margin-right:10vw" id='calendar_man'></div>
+          </div>
+        </div>
+      
+
+        <script src="/js/modal.js"></script>
+        <script src="/js/calendarvv_manacar.js"></script>
+        <script src="/js/open_schedule.js"></script>
+        <script src="/js/back.js"></script>
+
+</body>
+
+</html>
