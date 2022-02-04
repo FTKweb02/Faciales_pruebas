@@ -7,7 +7,7 @@ controller.list = (req, res) => {
         res.json(err);
        }
        res.render('calendario', {
-          data: events
+          data: events,
           
        });
        console.log(JSON.stringify(events));
