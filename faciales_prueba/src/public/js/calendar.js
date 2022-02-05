@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   var calendarEl = document.getElementById('calendar');
+  var horarios = calendarEl.getAttribute('data');
   var calendar = new FullCalendar.Calendar(calendarEl, {
     schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
     locale: 'en',
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         buttonText: 'Resumen'
       }
     },
-    
+
     resourceAreaHeaderContent: 'Cabinas',
     resources: [
       { "id": "a", "title": "Saphire" },
@@ -38,8 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
       { "id": "e", "title": "Opal" },
       { "id": "f", "title": "Pearl" }
     ],
-    events: "/json/events.json",
-    
+    events: JSON.parse(horarios),
+
     editable: true,
     selectable: true,
     nowIndicator: true,
