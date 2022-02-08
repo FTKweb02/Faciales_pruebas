@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     var calendarrio = document.getElementById('calendar3');
-  
-  
+    var horarios = calendarrio.getAttribute('data');
     var calendarvv = new FullCalendar.Calendar(calendarrio, {
       schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-      timeZone: 'UTC',
       headerToolbar: {
         right: 'resourceTimeGridDay,timeGridWeek',
         center: 'prev today next',
@@ -35,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { "id": "a", "title": "Boss Room" },
         { "id": "b", "title": "Sala Compartida", "eventColor": "rgb(0, 116, 217)" }
       ],
-      events: 'https://fullcalendar.io/demo-events.json?single-day&for-resource-timeline'
+      events: JSON.parse(horarios),
   
     });
   

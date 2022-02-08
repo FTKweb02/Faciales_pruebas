@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     var calendarrio = document.getElementById('calendar2');
-
+    var horarios = calendarrio.getAttribute('data');
     var calendarvv = new FullCalendar.Calendar(calendarrio, {
       schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
-      timeZone: 'UTC',
       headerToolbar: {
         right: 'resourceTimeGridDay,timeGridWeek',
         center: 'prev today next',
@@ -29,12 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
       allDaySlot: false,
       resourceAreaHeaderContent: 'Rooms',
       resources: [
-        { "id": "a", "title": "Cabina OG1" },
-        { "id": "b", "title": "Cabina OG2", "eventColor": "rgb(0, 116, 217)" },
-        { "id": "c", "title": "Cabina OG3", "eventColor": "rgb(240, 18, 190)" },
-        { "id": "d", "title": "Cabina OG4", "eventColor": "rgb(136, 17, 85)" }
+        { "id": "a", "title": "Cabina OG1" }
       ],
-      events: 'https://fullcalendar.io/demo-events.json?single-day&for-resource-timeline'
+      events: JSON.parse(horarios),
   
     });
   

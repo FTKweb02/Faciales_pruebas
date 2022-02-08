@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RC</title>
 
-  <!--link rel="icon" href="/img/Logo-FTK-new-negro.png"-->
+  <!--link rel="icon" href="/img/ftk-blanco_solo_logo.png"-->
   <link rel="icon" href="/img/tem.ico">
   <link rel="stylesheet" href="/css/style.css">
   <link type="text/css" href='/fullcalendar_scheduler/lib/main.css' rel='stylesheet' />
@@ -50,25 +50,41 @@
     <br>
     
     <div id='calendar-container'>
-      <div style="margin-top:4vw; margin-left:10vw; margin-right:10vw" id='calendar3'></div>
+      <div style="margin-top:4vw; margin-left:10vw; margin-right:10vw" id='calendar3' data="<%= data %>"></div>
     </div>
   </div>
 
 
   <br><br>
   <div id="myModal" class="modal">
-
     <!-- Modal content -->
     <div align="center" class="modal-content">
       <span class="close">&times;</span>
-      <h2>AGREGAR EVENTO</h2>
+      <h2>NUEVA CITA</h2>
       <br>
-      <form method="post">
-        <input style="width:220px" id="adddate" type="datetime-local" required>
+      <form action="/rccalendar/add" method="post">
+        <input placeholder="Titulo" name="title" style="width:220px" id="titleevent" type="text" required>
         <br><br>
-        <input placeholder="Titulo" style="width:220px" id="titleevent" type="text" required>
+        <select name="ReserveCut_idReserveCut" id="">
+          <option selected value="1">Reserve Cut</option>
+        </select>
         <br><br>
-        <textarea placeholder="Detalles" class="textarea_modal" type="text" rows="5" cols="28" required></textarea>
+        <select name="Sucursal_RC_idSucursal_RC" id="">
+          <option selected value="1">Pasaje Polanco</option>
+        </select>
+        <br><br>
+        <label for="Cabina"><b>Cabina: </b></label><br>
+        <select name="resourceId" id="Cabina" required>
+          <option selected="selected" value=""></option>
+          <option value="a">Boss Room</option>
+          <option value="b">Sala Compartida</option>
+        </select>
+        <br><br>
+        <input name="start" style="width:220px" id="adddate" type="datetime-local" required>
+        <br><br>
+        <input name="end" style="width:220px" id="adddate" type="datetime-local" required>
+        <br><br>
+        <!--textarea placeholder="Detalles" class="textarea_modal" type="text" rows="5" cols="28" required></textarea-->
         <br><br>
         <button class="buttonis" type="submit">Agendar</button>
         <button id="cancel" class="buttonis">Cancelar</button>
