@@ -5,14 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Facialista</title>
+  <title>Citas</title>
 
   <link rel="icon" href="/img/ftk-blanco_solo_logo.png">
   <link rel="stylesheet" href="../css/style.css">
   <link type="text/css" href='/fullcalendar_scheduler/lib/main.css' rel='stylesheet' />
   <script src='/fullcalendar_scheduler/lib/main.js'></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 
 </head>
 
@@ -27,20 +26,16 @@
       </a>
     </nav>
   </div>
-  <!-- Contenido -->
-  <div align="center" class="calendar_buttons">
-    <h1>Facialista</h1>
-    <a href="/fac_sucursal">
-      <button>Sucursal</button>
-    </a>
+  <br />
+  <div>
+    <button onclick="back();" class="btnMenu">Menú</button>
   </div>
-  <br>
-
-  <br>
   <div id='calendar-container'>
     <div style="margin-top:20vw" id='calendar'></div>
   </div>
+
+  <script src="/js/back.js"></script>
+  <script src="/js/calendar_suc.js"></script>
 </body>
-<script src="/js/calendar_fac.js"></script>
 
 </html>
