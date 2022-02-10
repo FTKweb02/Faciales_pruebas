@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var Calendar = FullCalendar.Calendar;
     var calendarEl = document.getElementById('calendar');
 
-
+    var sucursales = calendarEl.getAttribute('datas');
     // initialize the calendar
 
     var calendar = new Calendar(calendarEl, {
@@ -24,73 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
 
-        resourceGroupField: 'groupId',
-        resources: [
-            {
-                id: 'a',
-                groupId: 'Sucursal 1',
-                title: 'Facialista A',
-            },
-            {
-                id: 'b',
-                groupId: 'Sucursal 2',
-                title: 'Facialista B'
-            },
-            {
-                id: 'c',
-                groupId: 'Sucursal 3',
-                title: 'Facialista C'
-            },
-            {
-                id: 'd',
-                groupId: 'Sucursal 4',
-                title: 'Facialista D'
-            },
-            {
-                id: 'e',
-                groupId: 'Sucursal 5',
-                title: 'Facialista E'
-            }
-        ],
+        resourceGroupField: 'Nombre',
+        resources: JSON.parse(sucursales),
 
-        events: [
-            {
-                "resourceId": "b",
-                "title": "Prueba constante",
-                startTime: '10:00',
-                endTime: '18:00',
-
-
-                daysOfWeek: [1]
-            },
-            {
-                "resourceId": "b",
-                "title": "Comida",
-                startTime: '13:00',
-                endTime: '14:00',
-
-                daysOfWeek: [1]
-            },
-
-            {
-                "resourceId": "b",
-                "title": "Prueba constante",
-                startTime: '11:00',
-                endTime: '19:00',
-
-
-                daysOfWeek: [2]
-            },
-            {
-                "resourceId": "b",
-                title: "Comida",
-                startTime: '14:00',
-                endTime: '15:00',
-
-                daysOfWeek: [2]
-            },
-
-        ],
+        events: JSON.parse(sucursales),
 
         resourceAreaHeaderContent: 'Sucursales',
         nowIndicator: true,

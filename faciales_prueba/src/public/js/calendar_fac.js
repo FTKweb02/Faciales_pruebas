@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var Calendar = FullCalendar.Calendar;
   var calendarEl = document.getElementById('calendar');
 
-
+  var horarios = calendarEl.getAttribute('data');
   // initialize the calendar
 
   var calendar = new Calendar(calendarEl, {
@@ -23,35 +23,13 @@ document.addEventListener('DOMContentLoaded', function () {
         buttonText: 'Día'
       }
     },
-
-    resourceGroupField: 'groupId',
-    resources: [
-      {
-        id: 'A',
-        groupId: '1',
-        title: 'Resource A'
-      },
-      {
-        id: 'B',
-        groupId: '2',
-        title: 'Resource B'
-      },
-      {
-        id: 'C',
-        groupId: '3',
-        title: 'Resource C'
-      },
-      {
-        id: 'D',
-        groupId: '4',
-        title: 'Resource D'
-      },
-      {
-        id: 'E',
-        groupId: '5',
-        title: 'Resource E'
-      }
-    ],
+    eventClick: function(info) {
+      alert('Event: ' + info.event.title);
+      alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+    alert('View: ' + info.view.type);
+    info.el.style.borderColor = 'red';
+    },
+    events: JSON.parse(horarios),
 
     nowIndicator: true,
     allDaySlot: false,

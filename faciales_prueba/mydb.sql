@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-02-2022 a las 20:39:33
+-- Tiempo de generación: 10-02-2022 a las 01:16:45
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.10
 
@@ -77,7 +77,7 @@ CREATE TABLE `cabina_rs` (
 --
 
 INSERT INTO `cabina_rs` (`Sucursal_RS_idSucursal_RS`, `Nombre`, `idCabina_RS`) VALUES
-(1, 'Saphire', 1),
+(1, 'Sapphire', 1),
 (1, 'Emerald', 2),
 (1, 'Ruby', 3),
 (1, 'Starlight', 4),
@@ -126,6 +126,13 @@ CREATE TABLE `calendario_og` (
   `Sucursal_OG_idSucursal_OG` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `calendario_og`
+--
+
+INSERT INTO `calendario_og` (`idCalendario_OG`, `title`, `resourceId`, `start`, `end`, `OroGold_idOroGold`, `Sucursal_OG_idSucursal_OG`) VALUES
+(1, 'Prueba en OG', 'a', '2022-02-08 11:10:00', '2022-02-08 11:45:00', 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -141,6 +148,13 @@ CREATE TABLE `calendario_rc` (
   `ReserveCut_idReserveCut` int(11) NOT NULL,
   `Sucursal_RC_idSucursal_RC` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `calendario_rc`
+--
+
+INSERT INTO `calendario_rc` (`idCalendario_RC`, `title`, `resourceId`, `start`, `end`, `ReserveCut_idReserveCut`, `Sucursal_RC_idSucursal_RC`) VALUES
+(1, 'Prueba en RC', 'b', '2022-02-08 11:45:00', '2022-02-08 00:30:00', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -158,6 +172,15 @@ CREATE TABLE `calendario_rs` (
   `Sucursal_RS_idSucursal_RS` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `calendario_rs`
+--
+
+INSERT INTO `calendario_rs` (`idCalendario_RS`, `title`, `resourceId`, `start`, `end`, `Resvera_idResvera`, `Sucursal_RS_idSucursal_RS`) VALUES
+(1, 'Prueba', 'b', '2022-02-04 16:40:16', '2022-02-04 10:40:16', 1, 1),
+(3, 'Se la come esta cosa', 'd', '2022-02-04 16:40:00', '2022-02-04 16:20:00', 1, 1),
+(4, 'Otra prueba a ver si hace el post', 'b', '2022-02-08 11:05:00', '2022-02-08 11:30:00', 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -173,6 +196,17 @@ CREATE TABLE `calendario_vv` (
   `VineVera_idVineVera` int(11) NOT NULL,
   `Sucursal_VV_idSucursal_VV` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `calendario_vv`
+--
+
+INSERT INTO `calendario_vv` (`idCalendario_VV`, `title`, `resourceId`, `start`, `end`, `VineVera_idVineVera`, `Sucursal_VV_idSucursal_VV`) VALUES
+(2, 'Prueba VV Solesta', 'a', '2022-02-08 12:50:00', '2022-02-08 14:30:00', 1, 2),
+(3, 'Prueba VV P. Polanco', 'b', '2022-02-08 12:51:00', '2022-02-08 14:37:00', 1, 4),
+(4, 'Prueba VV Manacar', 'a', '2022-02-08 13:01:00', '2022-02-08 13:50:00', 1, 3),
+(5, 'Prueba VV Insurgentes', 'a', '2022-02-08 13:08:00', '2022-02-08 14:08:00', 1, 1),
+(6, 'Prueba de cabina A', 'a', '2022-02-08 13:12:00', '2022-02-08 14:12:00', 1, 4);
 
 -- --------------------------------------------------------
 
@@ -388,7 +422,7 @@ INSERT INTO `resvera` (`idResvera`, `Nombre`) VALUES
 
 CREATE TABLE `rol_og` (
   `idRol_OG` int(11) NOT NULL,
-  `Tipo` varchar(45) NOT NULL
+  `Tipo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -410,7 +444,7 @@ CREATE TABLE `rol_og_has_usuarios_og` (
 
 CREATE TABLE `rol_rc` (
   `idRol_RC` int(11) NOT NULL,
-  `Tipo` varchar(45) NOT NULL
+  `Tipo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -421,7 +455,7 @@ CREATE TABLE `rol_rc` (
 
 CREATE TABLE `rol_rs` (
   `idRol_RS` int(11) NOT NULL,
-  `Tipo` varchar(45) NOT NULL
+  `Tipo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -442,7 +476,7 @@ INSERT INTO `rol_rs` (`idRol_RS`, `Tipo`) VALUES
 
 CREATE TABLE `rol_vv` (
   `idRol_VV` int(11) NOT NULL,
-  `Tipo` varchar(45) NOT NULL
+  `Tipo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -466,7 +500,7 @@ CREATE TABLE `servicio_og` (
   `Nombre` varchar(255) NOT NULL,
   `Categoria` varchar(255) NOT NULL,
   `Precio` varchar(255) NOT NULL,
-  `Duracion` varchar(255) NOT NULL,
+  `Duracion` time NOT NULL,
   `idServicio_OG` int(11) NOT NULL,
   `Tecnologia_OG_idTecnologia_OG` int(11) DEFAULT NULL,
   `OroGold_idOroGold` int(11) NOT NULL,
@@ -521,7 +555,7 @@ CREATE TABLE `servicio_rc` (
   `Nombre` varchar(255) NOT NULL,
   `Cateogria` varchar(255) NOT NULL,
   `Precio` varchar(255) NOT NULL,
-  `Duracion` varchar(255) NOT NULL,
+  `Duracion` time NOT NULL,
   `idServicio_RC` int(11) NOT NULL,
   `Cabina_RC_idCabina_RC` int(11) DEFAULT NULL,
   `Tecnologia_RC_idTecnologia_RC` int(11) DEFAULT NULL,
@@ -564,7 +598,7 @@ CREATE TABLE `servicio_rs` (
   `Nombre` varchar(255) NOT NULL,
   `Categoria` varchar(255) NOT NULL,
   `Precio` varchar(255) NOT NULL,
-  `Duracion` varchar(255) NOT NULL,
+  `Duracion` time NOT NULL,
   `idServicio_RS` int(11) NOT NULL,
   `Resvera_idResvera` int(11) NOT NULL,
   `Tecnologia_RS_idTecnologia_RS` int(11) DEFAULT NULL,
@@ -610,7 +644,7 @@ CREATE TABLE `servicio_vv` (
   `Nombre` varchar(255) NOT NULL,
   `Categoria` varchar(255) NOT NULL,
   `Precio` varchar(255) NOT NULL,
-  `Duracion` varchar(255) NOT NULL,
+  `Duracion` time NOT NULL,
   `idServicio_VV` int(11) NOT NULL,
   `Cabina_VV_idCabina_VV` int(11) DEFAULT NULL,
   `Tecnologia_VV_idTecnologia_VV` int(11) DEFAULT NULL,
@@ -739,8 +773,28 @@ INSERT INTO `sucursal_vv` (`idSucursal_VV`, `VineVera_idVineVera`, `Nombre`, `Di
 CREATE TABLE `tecnologia_og` (
   `Nombre` varchar(255) NOT NULL,
   `idTecnologia_OG` int(11) NOT NULL,
-  `Cabina_OG_idCabina_OG` int(11) NOT NULL
+  `Cabina_OG_idCabina_OG` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tecnologia_og`
+--
+
+INSERT INTO `tecnologia_og` (`Nombre`, `idTecnologia_OG`, `Cabina_OG_idCabina_OG`) VALUES
+('Perfectio X', 2, NULL),
+('Sapphire X', 3, NULL),
+('Perfectio Silver Led', 4, NULL),
+('Perfectio Gold Plus Led', 5, NULL),
+('Relaxatio', 6, NULL),
+('Jelessi Photonix 2', 7, NULL),
+('Jelessi Photonix 3', 8, NULL),
+('Radio Frequency Regimen', 9, NULL),
+('Empire Derma Neck', 10, NULL),
+('Empire Derma Neck 4G', 11, NULL),
+('Empire Led Facial Mask 4G', 12, NULL),
+('Empire Led Eye 4G', 13, NULL),
+('3D Ultrasound Face and Body', 14, NULL),
+('Ultimate Infra Red Led Gorilla', 15, NULL);
 
 -- --------------------------------------------------------
 
@@ -751,7 +805,7 @@ CREATE TABLE `tecnologia_og` (
 CREATE TABLE `tecnologia_rc` (
   `Nombre` varchar(255) NOT NULL,
   `idTecnologia_RC` int(11) NOT NULL,
-  `Cabina_RC_idCabina_RC` int(11) NOT NULL
+  `Cabina_RC_idCabina_RC` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -761,9 +815,9 @@ CREATE TABLE `tecnologia_rc` (
 --
 
 CREATE TABLE `tecnologia_rs` (
-  `Nombre` varchar(255) NOT NULL,
   `idTecnologia_RS` int(11) NOT NULL,
-  `Cabina_RS_idCabina_RS` int(11) NOT NULL
+  `Nombre` varchar(255) NOT NULL,
+  `Cabina_RS_idCabina_RS` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -775,7 +829,7 @@ CREATE TABLE `tecnologia_rs` (
 CREATE TABLE `tecnologia_vv` (
   `Nombre` varchar(255) NOT NULL,
   `idTecnologia_VV` int(11) NOT NULL,
-  `Cabina_VV_idCabina_VV` int(11) NOT NULL
+  `Cabina_VV_idCabina_VV` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -789,7 +843,7 @@ CREATE TABLE `usuarios_og` (
   `Nombre` varchar(255) NOT NULL,
   `Usuario` varchar(45) NOT NULL,
   `Contraseña` varchar(100) NOT NULL,
-  `Horario` varchar(50) NOT NULL,
+  `Horario` varchar(50) DEFAULT NULL,
   `OroGold_idOroGold` int(11) NOT NULL,
   `Sucursal_OG_idSucursal_OG` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -805,7 +859,7 @@ CREATE TABLE `usuarios_rc` (
   `Nombre` varchar(255) NOT NULL,
   `Usuario` varchar(45) NOT NULL,
   `Contraseña` varchar(100) NOT NULL,
-  `Horario` varchar(50) NOT NULL,
+  `Horario` varchar(50) DEFAULT NULL,
   `ReserveCut_idReserveCut` int(11) NOT NULL,
   `Sucursal_RC_idSucursal_RC` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -832,10 +886,18 @@ CREATE TABLE `usuarios_rs` (
   `Nombre` varchar(255) NOT NULL,
   `Usuario` varchar(45) NOT NULL,
   `Contraseña` varchar(100) NOT NULL,
-  `Horario` varchar(50) NOT NULL,
+  `Horario` varchar(50) DEFAULT NULL,
   `Resvera_idResvera` int(11) NOT NULL,
   `Sucursal_RS_idSucursal_RS` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuarios_rs`
+--
+
+INSERT INTO `usuarios_rs` (`idUsuarios_RS`, `Nombre`, `Usuario`, `Contraseña`, `Horario`, `Resvera_idResvera`, `Sucursal_RS_idSucursal_RS`) VALUES
+(1, 'Karen Pruebas', 'KP_2005', 'KP_205555', NULL, 1, 1),
+(2, 'Brenda', 'Bren', 'BRE005', NULL, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -848,6 +910,14 @@ CREATE TABLE `usuarios_rs_has_rol_rs` (
   `Rol_RS_idRol_RS` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `usuarios_rs_has_rol_rs`
+--
+
+INSERT INTO `usuarios_rs_has_rol_rs` (`Usuarios_RS_idUsuarios_RS`, `Rol_RS_idRol_RS`) VALUES
+(1, 3),
+(2, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -859,7 +929,7 @@ CREATE TABLE `usuarios_vv` (
   `Nombre` varchar(255) NOT NULL,
   `Usuario` varchar(45) NOT NULL,
   `Contraseña` varchar(100) NOT NULL,
-  `Horario` varchar(50) NOT NULL,
+  `Horario` varchar(50) DEFAULT NULL,
   `VineVera_idVineVera` int(11) NOT NULL,
   `Sucursal_VV_idSucursal_VV` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -1225,25 +1295,25 @@ ALTER TABLE `cabina_vv`
 -- AUTO_INCREMENT de la tabla `calendario_og`
 --
 ALTER TABLE `calendario_og`
-  MODIFY `idCalendario_OG` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCalendario_OG` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `calendario_rc`
 --
 ALTER TABLE `calendario_rc`
-  MODIFY `idCalendario_RC` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCalendario_RC` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `calendario_rs`
 --
 ALTER TABLE `calendario_rs`
-  MODIFY `idCalendario_RS` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCalendario_RS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `calendario_vv`
 --
 ALTER TABLE `calendario_vv`
-  MODIFY `idCalendario_VV` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCalendario_VV` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `cliente`
@@ -1345,7 +1415,7 @@ ALTER TABLE `sucursal_vv`
 -- AUTO_INCREMENT de la tabla `tecnologia_og`
 --
 ALTER TABLE `tecnologia_og`
-  MODIFY `idTecnologia_OG` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTecnologia_OG` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `tecnologia_rc`
@@ -1381,7 +1451,7 @@ ALTER TABLE `usuarios_rc`
 -- AUTO_INCREMENT de la tabla `usuarios_rs`
 --
 ALTER TABLE `usuarios_rs`
-  MODIFY `idUsuarios_RS` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idUsuarios_RS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios_vv`
