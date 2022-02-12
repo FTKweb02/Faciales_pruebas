@@ -6,7 +6,6 @@ controller.list = (req, res) => {
        if (err) {
         res.json(err);
        }
-       console.log(events);
        res.render('calendario', {
           data: JSON.stringify(events), 
        });

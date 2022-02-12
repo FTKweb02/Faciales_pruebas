@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     eventClick: function(info) {
       alert('Event: ' + info.event.title);
-      alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
     alert('View: ' + info.view.type);
     info.el.style.borderColor = 'red';
     },
@@ -33,8 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     nowIndicator: true,
     allDaySlot: false,
-    editable: true,
-    droppable: true, // this allows things to be dropped onto the calendar
 
   });
 

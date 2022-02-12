@@ -2,7 +2,7 @@ const controller = {};
 
 controller.list = (req, res) => {
     req.getConnection((err, conn) => {
-      conn.query('SELECT horario_facialista_rs.startTime, horario_facialista_rs.endTime, horario_facialista_rs.daysOfWeek, facialista_rs.title FROM horario_facialista_rs INNER JOIN facialista_rs ON facialista_rs.id=horario_facialista_rs.Facialista_RS_idFacialista INNER JOIN usuarios_rs ON usuarios_rs.idUsuarios_RS=facialista_rs.Usuarios_RS_idUsuarios_RS;', (err, events) => {
+      conn.query('SELECT horario_facialista_vv.startTime, horario_facialista_vv.endTime, horario_facialista_vv.daysOfWeek, facialista_vv.title FROM horario_facialista_vv INNER JOIN facialista_vv ON horario_facialista_vv.Facialista_VV_idFacialista_VV = facialista_vv.id;', (err, events) => {
        if (err) {
         res.json(err);
        }
@@ -14,18 +14,5 @@ controller.list = (req, res) => {
     });
   };
 
-  controller.getf = (req, res) => {
-    req.getConnection((err, conn) => {
-      conn.query('SELECT horario_facialista_rs.startTime, horario_facialista_rs.endTime, horario_facialista_rs.daysOfWeek, facialista_rs.title FROM horario_facialista_rs INNER JOIN facialista_rs ON facialista_rs.id=horario_facialista_rs.Facialista_RS_idFacialista INNER JOIN usuarios_rs ON usuarios_rs.idUsuarios_RS=facialista_rs.Usuarios_RS_idUsuarios_RS;', (err, horarios) => {
-        if (err) {
-          res.json(err);
-        }
-        console.log(horarios);
-        res.redirect('fac_sucursal', {
-          datas: JSON.stringify(horarios),
-        });
-      });
-    });
-  };
 
 module.exports = controller;

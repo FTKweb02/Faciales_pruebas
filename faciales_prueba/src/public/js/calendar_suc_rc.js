@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
 
+        timeZone: 'local',
+
         resourceGroupField: 'Nombre',
         resources: JSON.parse(sucursales),
 

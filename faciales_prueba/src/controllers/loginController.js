@@ -1,7 +1,6 @@
 const controller = {};
 
 controller.login = (req, res) => {
-    console.log("Prueba");
     res.render('login.ejs');
 };
 
