@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
       center: '',
       left: 'title'
     },
-    initialView: 'resourceTimeGridDay',
+    initialView: 'dayGridMonth',
     scrollTime: '8:00',
     aspectRatio: 1.6,
     views: {
