@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
     schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
     locale: 'en',
     headerToolbar: {
-      right: 'today prev,next resourceTimeGridDay,timeGridWeek resourceTimelineDay listDay',
+      right: 'today prev,next resourceTimeGridDay,timeGridWeek listDay',
       center: '',
       left: 'title'
     },
-    initialView: 'dayGridMonth',
+    initialView: 'resourceTimeGridDay',
     scrollTime: '8:00',
     aspectRatio: 1.6,
     views: {
@@ -20,10 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       timeGridWeek: {
         buttonText: 'Semana',
-        slotDuration: '00:15',
-      },
-      resourceTimelineDay: {
-        buttonText: 'Tecnologías',
         slotDuration: '00:15',
       },
       listDay: {

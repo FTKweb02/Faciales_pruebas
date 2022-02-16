@@ -201,6 +201,7 @@ input{
 .calendar_buttons button {
   background-color: #A03F56;
   color: white;
+  margin-right: 0.5rem;
 }
 
 .calendar_buttons button:hover {
@@ -255,7 +256,7 @@ input{
 
   /* Tooltip container */
   .tooltip {
-    position: absolute;
+    position: relative;
     display: inline-block;
     opacity: 1 !important;
     font-size: medium !important;

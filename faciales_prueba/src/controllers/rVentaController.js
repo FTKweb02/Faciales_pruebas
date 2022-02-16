@@ -1,7 +1,44 @@
 const controller = {};
 
 controller.rventa = (req, res) => {
-    res.render('rVenta');
+    req.getConnection((err, conn) => {
+        conn.query('SELECT * FROM servicio_rs', (err, servrs) => {
+            if (err) {
+                res.json(err)
+            }else {
+                datars = servrs;
+                //console.log(datars);
+            }
+        });
+        conn.query('SELECT * FROM servicio_vv', (err, servvv) => {
+            if (err) {
+                res.json(err)
+            }else {
+                datavv = servvv
+                //console.log(datavv);
+            }
+        });
+        conn.query('SELECT * FROM servicio_rc', (err, servrc) => {
+            if (err) {
+                res.json(err)
+            }else {
+                datarc = servrc
+                //console.log(datarc);
+            }
+        });
+        conn.query('SELECT * FROM servicio_og', (err, servog) => {
+            if (err) {
+                res.json(err)
+            }else {
+                //console.log(servog)
+                res.render('rVenta', {
+                    dataog : servog
+                })
+                
+            }
+        });
+    })
+    
 };
 
 controller.save = (req, res) => {

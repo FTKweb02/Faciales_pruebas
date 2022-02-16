@@ -14,7 +14,6 @@ controller.save = (req, res) => {
                 res.json(err);
             }else{
                 console.log(clientes);
-                req.flash('success', `You've been successfully redirected to the Message route!`);
                 res.redirect('/rCliente');
             }
         });

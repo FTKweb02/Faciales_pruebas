@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
       center: 'title',
       right: 'timeGridWeek,timeGridDay'
     },
-
+    scrollTime: '9:00',
     initialView: 'timeGridWeek',
 
     views: {

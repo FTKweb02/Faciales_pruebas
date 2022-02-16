@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             center: 'title',
             right: ''
         },
-
+        scrollTime: '9:00',
         initialView: 'resourceTimelineDay',
 
         views: {
