@@ -28,7 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
     alert('View: ' + info.view.type);
     info.el.style.borderColor = 'red';
     },
-    events: JSON.parse(horarios),
+    events: [],
+
+    businessHours: JSON.parse(horarios),
 
     nowIndicator: true,
     allDaySlot: false,
