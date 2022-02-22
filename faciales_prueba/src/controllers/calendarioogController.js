@@ -2,6 +2,14 @@ const controller = {};
 
 controller.list = (req, res) => {
     req.getConnection((err, conn) => {
+        conn.query('SELECT * FROM facialista_og', (err, servog) => {
+            if (err) {
+                res.json(err)
+            }else {
+                dataog = servog;
+                //console.log(datars);
+            }
+        });
       conn.query('SELECT * FROM calendario_og', (err, events) => {
        if (err) {
         res.json(err);

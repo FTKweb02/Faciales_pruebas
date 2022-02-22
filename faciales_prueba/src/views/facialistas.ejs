@@ -38,7 +38,24 @@
 
   <br>
   <div id='calendar-container'>
-    <div style="margin-top:20vw" id="calendar" data="<%= data %>"></div>
+    <div style="margin-top:20vw" id="calendar" data="<%= data %>" datafac="<%= datafac %>"></div>
+  </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div align="center" class="modal-content inputs">
+      <span class="close">&times;</span>
+      <h2>DETALLES</h2>
+      <p>Facialista: <input type="text" name="title" value="<% datafac[0].title %>" readonly></p>
+      <p>Tratamiento: <input type="text" readonly></p>
+      <p>Cabina:<input type="text" name="Nombre" value="<%= datafac[0].Nombre %>" readonly></p>
+      <p>Sucursal: <input type="text" readonly></p>
+      <button class="buttonis">Guardar</button>
+      <button id="cancel" class="buttonis">Cancelar</button>
+    </div>
+
   </div>
   <script src="/js/calendar_fac.js"></script>
 </body>

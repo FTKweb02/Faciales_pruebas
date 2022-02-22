@@ -63,7 +63,17 @@
       <h2>NUEVA CITA</h2>
       <br>
       <form action="/rccalendar/add" method="post">
-        <input placeholder="Titulo" name="title" style="width:220px" id="titleevent" type="text" required>
+        <select name="title" type="text" id="nombre" required>
+          <option disabled selected>Seleccione Barbero</option>
+          <!--% console.log(JSON.stringify(datars)); %-->
+            <% if (datarc) { %>
+              <% for(var i=0; i < datarc.length; i++) { %>
+                <option value="<%= datarc[i].id_Servicio_RC %>">
+                  <%= datarc[i].title %>
+                </option>
+                <% } %>
+                  <% } %>
+        </select>
         <br><br>
         <select name="ReserveCut_idReserveCut" id="">
           <option selected value="1">Reserve Cut</option>

@@ -73,7 +73,7 @@
               <!--% console.log(JSON.stringify(datars)); %-->
                 <% if (datars) { %>
                   <% for(var i=0; i < datars.length; i++) { %>
-                    <option value="<%= datars[i].id_Servicio_RS %>">
+                    <option value="<%= datars[i].Nombre %>">
                       <%= datars[i].Nombre %> -
                         <%= datars[i].Categoria %>
                     </option>
@@ -158,7 +158,7 @@
               <!--% console.log(JSON.stringify(datavv)); %-->
                 <% if (datavv) { %>
                   <% for(var i=0; i < datavv.length; i++) { %>
-                    <option value="<%= datavv[i].id_Servicio_VV %>">
+                    <option value="<%= datavv[i].Nombre %>">
                       <%= datavv[i].Nombre %> -
                         <%= datavv[i].Categoria %>
                     </option>
@@ -247,7 +247,7 @@
               <!--% console.log(JSON.stringify(datarc)); %-->
                 <% if (datarc) { %>
                   <% for(var i=0; i < datarc.length; i++) { %>
-                    <option value="<%= datarc[i].id_Servicio_RC %>">
+                    <option value="<%= datarc[i].Nombre %>">
                       <%= datarc[i].Nombre %>
                     </option>
                     <% } %>
@@ -331,7 +331,7 @@
               <!--% console.log(JSON.stringify(dataog)); %-->
                 <% if (dataog) { %>
                   <% for(var i=0; i < dataog.length; i++) { %>
-                    <option value="<%= dataog[i].id_Servicio_OG %>">
+                    <option value="<%= dataog[i].Nombre %>">
                       <%= dataog[i].Nombre %> -
                       <%= dataog[i].Categoria %>
                     </option>

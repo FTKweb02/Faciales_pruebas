@@ -60,7 +60,17 @@
       <h2>NUEVA CITA</h2>
       <br>
       <form action="/calendario/add" method="post">
-        <input placeholder="Titulo" name="title" style="width:220px" id="titleevent" type="text" required>
+        <select name="title" type="text" id="" required>
+              <option disabled selected>Seleccione facialista</option>
+              <!--% console.log(JSON.stringify(datars)); %-->
+                <% if (datars) { %>
+                  <% for(var i=0; i < datars.length; i++) { %>
+                    <option value="<%= datars[i].title %>">
+                      <%= datars[i].title %>
+                    </option>
+                    <% } %>
+                      <% } %>
+            </select>
         <br><br>
         <select name="Resvera_idResvera" id="">
           <option selected value="1">Resvera</option>
@@ -73,12 +83,12 @@
         <label for="Cabina"><b>Cabina: </b></label><br>
         <select name="resourceId" id="Cabina" required>
           <option selected="selected" value=""></option>
-          <option value="a">Saphire</option>
-          <option value="b">Emerald</option>
-          <option value="c">Ruby</option>
-          <option value="d">Starlight</option>
-          <option value="e">Opal</option>
-          <option value="f">Pearl</option>
+          <option value="1">Saphire</option>
+          <option value="2">Emerald</option>
+          <option value="3">Ruby</option>
+          <option value="4">Starlight</option>
+          <option value="5">Opal</option>
+          <option value="6">Pearl</option>
         </select>
         <br><br>
         <input name="start" style="width:220px" id="adddate" type="datetime-local" required>

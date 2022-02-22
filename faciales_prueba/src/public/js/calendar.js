@@ -29,20 +29,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     resourceAreaHeaderContent: 'Cabinas',
     resources: [
-      { "id": "a", "title": "Saphire" },
-      { "id": "b", "title": "Emerald", "eventColor": "rgb(0, 116, 217)" },
-      { "id": "c", "title": "Ruby", "eventColor": "rgb(240, 18, 190)" },
-      { "id": "d", "title": "Starlight", "eventColor": "rgb(136, 17, 85)" },
-      { "id": "e", "title": "Opal" },
-      { "id": "f", "title": "Pearl" }
+      { "id": "1", "title": "Saphire" },
+      { "id": "2", "title": "Emerald", "eventColor": "rgb(0, 116, 217)" },
+      { "id": "3", "title": "Ruby", "eventColor": "rgb(240, 18, 190)" },
+      { "id": "4", "title": "Starlight", "eventColor": "rgb(136, 17, 85)" },
+      { "id": "5", "title": "Opal" },
+      { "id": "6", "title": "Pearl" }
     ],
     events: JSON.parse(horarios),
 
-    editable: true,
-    selectable: true,
     nowIndicator: true,
     allDaySlot: false,
   });
 
   calendar.render();
+
 });

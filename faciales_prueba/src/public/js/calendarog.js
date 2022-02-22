@@ -22,8 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
           slotDuration: '00:15'
         }
       },
-      editable: true,
-      selectable: true,
       nowIndicator: true,
       allDaySlot: false,
       resourceAreaHeaderContent: 'Rooms',

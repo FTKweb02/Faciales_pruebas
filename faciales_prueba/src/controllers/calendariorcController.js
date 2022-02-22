@@ -2,6 +2,14 @@ const controller = {};
 
 controller.list = (req, res) => {
     req.getConnection((err, conn) => {
+        conn.query('SELECT * FROM barberos_rc', (err, servrc) => {
+            if (err) {
+                res.json(err)
+            }else {
+                datarc = servrc
+                //console.log(datarc);
+            }
+        });
       conn.query('SELECT * FROM calendario_rc', (err, events) => {
        if (err) {
         res.json(err);

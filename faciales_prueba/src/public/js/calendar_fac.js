@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var calendarEl = document.getElementById('calendar');
 
   var horarios = calendarEl.getAttribute('data');
+  var horario_fac = calendarEl.getAttribute('datafac');
   // initialize the calendar
 
   var calendar = new Calendar(calendarEl, {
@@ -23,12 +24,30 @@ document.addEventListener('DOMContentLoaded', function () {
         buttonText: 'Día'
       }
     },
-    eventClick: function(info) {
-      alert('Event: ' + info.event.title);
-    alert('View: ' + info.view.type);
-    info.el.style.borderColor = 'red';
+    eventClick: function () {
+      var modal = document.getElementById("myModal");
+      var span = document.getElementsByClassName("close")[0];
+      var cancelar = document.getElementById("cancel");
+      modal.style.display = "block";
+
+      cancelar.onclick = function () {
+        modal.style.display = "none";
+        hide.style.display = "block";
+      };
+
+      span.onclick = function () {
+        modal.style.display = "none";
+        hide.style.display = "block";
+      };
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+          hide.style.display = "block";
+        }
+      };
     },
-    events: [],
+    events: JSON.parse(horario_fac),
 
     businessHours: JSON.parse(horarios),
 
