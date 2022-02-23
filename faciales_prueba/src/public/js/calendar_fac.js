@@ -32,20 +32,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
       cancelar.onclick = function () {
         modal.style.display = "none";
-        hide.style.display = "block";
       };
 
       span.onclick = function () {
         modal.style.display = "none";
-        hide.style.display = "block";
       };
 
       window.onclick = function (event) {
         if (event.target == modal) {
           modal.style.display = "none";
-          hide.style.display = "block";
         }
       };
+      
     },
     events: JSON.parse(horario_fac),
 
