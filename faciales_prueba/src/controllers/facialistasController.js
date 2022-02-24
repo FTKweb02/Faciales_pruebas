@@ -2,7 +2,7 @@ const controller = {};
 
 controller.list = (req, res) => {
     req.getConnection((err, conn) => {
-      conn.query('SELECT calendario_rs.start, calendario_rs.end, facialista_rs.title, cabina_rs.Nombre FROM calendario_rs  INNER JOIN facialista_rs ON calendario_rs.title = facialista_rs.title INNER JOIN cabina_rs ON calendario_rs.resourceId = cabina_rs.idCabina_RS WHERE facialista_rs.title LIKE "%Brenda%"', (err, citfac) => {
+      conn.query('SELECT calendario_rs.start, calendario_rs.end, facialista_rs.title, cabina_rs.Nombre FROM calendario_rs  INNER JOIN facialista_rs ON calendario_rs.title = facialista_rs.title INNER JOIN cabina_rs ON calendario_rs.resourceId = cabina_rs.idCabina_RS WHERE facialista_rs.title = "Brenda"', (err, citfac) => {
         if (err) {
             res.json(err)
         }else {
@@ -21,6 +21,18 @@ controller.list = (req, res) => {
       });
     });
   };
+
+  controller.mostrar = (req, res) => {
+    req.getConnection((err, connection) => {
+      conn.query('SELECT calendario_rs.start, calendario_rs.end, facialista_rs.title, cabina_rs.Nombre FROM calendario_rs  INNER JOIN facialista_rs ON calendario_rs.title = facialista_rs.title INNER JOIN cabina_rs ON calendario_rs.resourceId = cabina_rs.idCabina_RS WHERE facialista_rs.title = "?"', (err, result) => {
+        if (err) {
+          res.json(err);
+        }else {
+          mostrar = result;
+        }
+      })
+    })
+  }
 
 
 module.exports = controller;

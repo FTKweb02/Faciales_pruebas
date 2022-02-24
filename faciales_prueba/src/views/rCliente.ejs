@@ -45,10 +45,14 @@
         <label><b>Asesor: </b></label>
         <br>
         <select name="Asesor" id="Asesor">
-          <option selected="selected" value=""></option>
-          <option value="Asesor 1">0001</option>
-          <option value="Asesor 2">0002</option>
-          <option value="Asesor 3">0003</option>
+          <option disabled selected>Seleccione un asesor</option>
+          <% if (rsAs) { %>
+            <% for(var i=0; i < rsAs.length; i++) { %>
+              <option value="<%= rsAs[i].Nombre %>">
+                <%= rsAs[i].Nombre %>
+              </option>
+              <% } %>
+                <% } %>
         </select>
         <br>
         <br>
@@ -142,10 +146,14 @@
         <label><b>Asesor: </b></label>
         <br>
         <select name="Asesor" id="Asesor">
-          <option selected="selected" value=""></option>
-          <option value="Asesor 1">0001</option>
-          <option value="Asesor 2">0002</option>
-          <option value="Asesor 3">0003</option>
+          <option disabled selected>Seleccione un asesor</option>
+          <% if (vvAs) { %>
+            <% for(var i=0; i < vvAs.length; i++) { %>
+              <option value="<%= vvAs[i].Nombre %>">
+                <%= vvAs[i].Nombre %>
+              </option>
+              <% } %>
+                <% } %>
         </select>
         <br>
         <br>
@@ -243,10 +251,14 @@
         <label><b>Asesor: </b></label>
         <br>
         <select name="Asesor" id="Asesor">
-          <option selected="selected" value=""></option>
-          <option value="Asesor 1">0001</option>
-          <option value="Asesor 2">0002</option>
-          <option value="Asesor 3">0003</option>
+          <option disabled selected>Seleccione un asesor</option>
+          <% if (rcAs) { %>
+            <% for(var i=0; i < rcAs.length; i++) { %>
+              <option value="<%= rcAs[i].Nombre %>">
+                <%= rcAs[i].Nombre %>
+              </option>
+              <% } %>
+                <% } %>
         </select>
         <br>
         <br>
@@ -340,10 +352,14 @@
         <label><b>Asesor: </b></label>
         <br>
         <select name="Asesor" id="Asesor">
-          <option selected="selected" value=""></option>
-          <option value="Asesor 1">0001</option>
-          <option value="Asesor 2">0002</option>
-          <option value="Asesor 3">0003</option>
+          <option disabled selected>Seleccione un asesor</option>
+          <% if (ogAs) { %>
+            <% for(var i=0; i < ogAs.length; i++) { %>
+              <option value="<%= ogAs[i].Nombre %>">
+                <%= ogAs[i].Nombre %>
+              </option>
+              <% } %>
+                <% } %>
         </select>
         <br>
         <br>

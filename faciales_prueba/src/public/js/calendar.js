@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   var calendarEl = document.getElementById('calendar');
   var horarios = calendarEl.getAttribute('data');
-  
   var calendar = new FullCalendar.Calendar(calendarEl, {
     schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
     locale: 'en',
+    defaultTimedEventDuration: '01:15:00',
     headerToolbar: {
       right: 'today prev,next resourceTimeGridDay,timeGridWeek listDay',
       center: '',
@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     nowIndicator: true,
     allDaySlot: false,
+    editable:true
   });
 
   calendar.render();

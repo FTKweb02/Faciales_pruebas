@@ -66,23 +66,24 @@
         <br><br>
         <div>
           <div class="tratamientoBox">
-            <label for=""><b>Tratamiento:</b></label><br><br>
-            <label for="nombre">Nombre:</label>&nbsp;
+            <label for=""><b>Tratamiento:</b></label><br>
             <select name="Nombre_T" type="text" id="nombre" required>
               <option disabled selected>Seleccione un tratamiento</option>
               <!--% console.log(JSON.stringify(datars)); %-->
                 <% if (datars) { %>
                   <% for(var i=0; i < datars.length; i++) { %>
                     <option value="<%= datars[i].Nombre %>">
-                      <%= datars[i].Nombre %> -
-                        <%= datars[i].Categoria %>
+                      <%= datars[i].Nombre %> /
+                        <%= datars[i].Categoria %> /
+                        <%= datars[i].Precio %> /
+                        <%= datars[i].Duracion %> 
                     </option>
                     <% } %>
                       <% } %>
             </select>
-            <label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" value="" readonly>&nbsp;
+            <!--label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" value="" readonly>&nbsp;
             <label for="precio">Precio:</label><input name="Precio_T" value="" readonly>
-            <label for="clase">Tiempo:</label><input name="Duracion_T" value="" readonly>
+            <label for="clase">Tiempo:</label><input name="Duracion_T" value="" readonly-->
           </div>
           <br><br>
           <label><b>Sucursal: </b></label>
@@ -151,23 +152,24 @@
         <br><br>
         <div>
           <div class="tratamientoBox">
-            <label for=""><b>Tratamiento:</b></label><br><br>
-            <label for="nombre">Nombre:</label>
+            <label for=""><b>Tratamiento:</b></label><br>
             <select name="Nombre_T" type="text" id="nombre" required>
               <option disabled selected>Seleccione un tratamiento</option>
               <!--% console.log(JSON.stringify(datavv)); %-->
                 <% if (datavv) { %>
                   <% for(var i=0; i < datavv.length; i++) { %>
                     <option value="<%= datavv[i].Nombre %>">
-                      <%= datavv[i].Nombre %> -
-                        <%= datavv[i].Categoria %>
+                      <%= datavv[i].Nombre %> /
+                        <%= datavv[i].Categoria %> /
+                        <%= datavv[i].Precio %> / 
+                        <%= datavv[i].Duracion %>
                     </option>
                     <% } %>
                       <% } %>
             </select>
-            <label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" value="" readonly>&nbsp;
+            <!--label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" value="" readonly>&nbsp;
             <label for="precio">Precio:</label><input name="Precio_T" value="" readonly>
-            <label for="clase">Tiempo:</label><input name="Duracion_T" value="" readonly>
+            <label for="clase">Tiempo:</label><input name="Duracion_T" value="" readonly-->
           </div>
           <br><br>
           <label><b>Sucursal: </b></label>
@@ -240,22 +242,23 @@
         <br><br>
         <div>
           <div class="tratamientoBox">
-            <label for=""><b>Tratamiento:</b></label><br><br>
-            <label for="nombre">Nombre:</label>
+            <label for=""><b>Tratamiento:</b></label><br>
             <select name="Nombre_T" type="text" id="nombre" required>
               <option disabled selected>Seleccione un tratamiento</option>
               <!--% console.log(JSON.stringify(datarc)); %-->
                 <% if (datarc) { %>
                   <% for(var i=0; i < datarc.length; i++) { %>
                     <option value="<%= datarc[i].Nombre %>">
-                      <%= datarc[i].Nombre %>
+                      <%= datarc[i].Nombre %> / 
+                      <%= datarc[i].Precio %> /
+                      <%= datarc[i].Duracion %>
                     </option>
                     <% } %>
                       <% } %>
             </select>
-            <label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" value="" readonly>&nbsp;
+            <!--label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" value="" readonly>&nbsp;
             <label for="precio">Precio:</label><input name="Precio_T" value="" readonly>
-            <label for="clase">Tiempo:</label><input name="Duracion_T" value="" readonly>
+            <label for="clase">Tiempo:</label><input name="Duracion_T" value="" readonly-->
           </div>
           <br><br>
           <label><b>Sucursal: </b></label>
@@ -324,23 +327,24 @@
         <br><br>
         <div>
           <div class="tratamientoBox">
-            <label for=""><b>Tratamiento:</b></label><br><br>
-            <label for="nombre">Nombre:</label>
+            <label for=""><b>Tratamiento:</b></label><br>
             <select name="Nombre_T" type="text" id="nombre" required>
               <option disabled selected>Seleccione un tratamiento</option>
               <!--% console.log(JSON.stringify(dataog)); %-->
                 <% if (dataog) { %>
                   <% for(var i=0; i < dataog.length; i++) { %>
                     <option value="<%= dataog[i].Nombre %>">
-                      <%= dataog[i].Nombre %> -
-                      <%= dataog[i].Categoria %>
+                      <%= dataog[i].Nombre %> /
+                      <%= dataog[i].Categoria %> /
+                      <%= dataog[i].Precio %> /
+                      <%= dataog[i].Duracion %>
                     </option>
                     <% } %>
                       <% } %>
             </select>
-            <label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" value="" readonly>&nbsp;
+            <!--label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" value="" readonly>&nbsp;
             <label for="precio">Precio:</label><input name="Precio_T" value="" readonly>
-            <label for="clase">Tiempo:</label><input name="Duracion_T" value="" readonly>
+            <label for="clase">Tiempo:</label><input name="Duracion_T" value="" readonly-->
           </div>
           <br><br>
           <label><b>Sucursal: </b></label>

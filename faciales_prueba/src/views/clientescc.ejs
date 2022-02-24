@@ -38,22 +38,22 @@
           </td>
           <td>
             <form action="clientescc/consult" method="get"></form>
-            
+            <a href="/rCliente">
               <button type="submit" class="buttong">Nuevo Registro</button>
-          
-          </form>
+            </a>
+            </form>
           </td>
         </tr>
       </tbody>
     </table>
     <br />
-    <table>
+    <table style="width:100%">
       <thead>
         <tr class="magia">
           <th>Nombre</th>
           <th>Asesor</th>
           <th>Sucursal</th>
-          <th>Cumpleaños</th>
+          <th>Cumpleaños<br><i>(Día/Mes/Año)</i></th>
           <th>Teléfono</th>
           <th>Correo</th>
           <th>Fecha&nbsp;Registro</th>
@@ -61,17 +61,23 @@
         </tr>
       </thead>
 
-      <tbody class="magia">
-        <tr>
-          <td><input name="Nombre" value="<%= data.Nombre %>" type="text"></td>
-          <td><input name="Asesor" value="<%= data.Asesor %>" type="text"></td>
-          <td><input name="Sucursal" value="<%= data.Sucursal %>" type="text"></td>
-          <td><input name="Mes" value="<%= data.Mes %>" type="text"></td>
-          <td><input name="Telefono" value="<%= data.Telefono %>" type="text"></td>
-          <td><input name="Email" value="<%= data.Email %>" type="text"></td>
-          <td><input name="Fecha_registro" value="<%= data.Fecha_registro %>" type="text"></td>
-          <td><input name="Notas" value="<%= data.Notas %>" type="text"></td>
-        </tr>
+      <tbody class="magia inputs">
+        <% if (data) { %>
+          <% for(var i=0; i < data.length; i++) { %>
+            <tr>
+              <td><input name="Nombre" value="<%= data[i].Nombre %>" type="text"><input name="Apellidos"
+                  value="<%= data[i].Apellidos %>" type="text"></td>
+              <td><input name="Asesor" value="<%= data[i].Asesor %>" type="text"></td>
+              <td><input name="Sucursal" value="<%= data[i].Sucursal %>" type="text"></td>
+              <td class="input_birth"><input name="Dia" value="<%= data[i].Dia %>" type="text">/<input name="Mes"
+                  value="<%= data[i].Mes %>" type="text">/<input name="Año" value="<%= data[i].Año %>" type="text"></td>
+              <td><input name="Telefono" value="<%= data[i].Telefono %>" type="text"></td>
+              <td><input name="Email" value="<%= data[i].Email %>" type="text"></td>
+              <td><input name="Fecha_registro" value="<%= data[i].Fecha_registro %>" type="text"></td>
+              <td><input name="Notas" value="<%= data[i].Notas %>" type="text"></td>
+            </tr>
+            <% } %>
+              <% } %>
       </tbody>
     </table>
   </div>
