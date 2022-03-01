@@ -130,10 +130,7 @@
     <br><br>
     <label><b>Sucursal: </b></label>
     <br />
-    <select name="Sucursal">
-      <option selected disabled>Seleccione sucursal</option>
-      <option value="<%= data.idSucursal_RS %>"></option>
-    </select>
+    <input type="text" name="Sucursal" value="<%= data.Sucursal %>" readonly/>
     <br><br>
     <label for="fechacita"><b>Fecha: </b></label><br />
     <input type="date" name="Fecha" id="fechacita">

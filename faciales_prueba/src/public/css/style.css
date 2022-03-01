@@ -22,7 +22,7 @@ nav input{
   color: white;
   right: 0;
   height: 5vh;
-margin: 2vh 2vh;
+  margin: 2vh 2vh;
 }
 
 .btnCerrar:hover{
@@ -137,67 +137,64 @@ input{
 }
 /*Fin Calendario*/
 
-/*Cosas que no he usado*/
+/*Buttons Styles*/
 .buttonis {
   background-color: #A03F56;
   color: white;
   right: 0;
 }
-/*Buttons Styles*/
-.buttonh {
-    width: 210px;
-    height: 40px;
-    border: 1px solid white;
-    background-color: transparent !important;
-  }
-  .botomnes button{
-    width: 210px;
-    height: 40px;
-    background-color: #A03F56;
-    color: white;
-  }
-  .botomnes button:hover{
-    background-color:white;
-    color: #A03F56;
-    transition: 0.5s;
-  }
-  .buttonis:hover{
-    background-color:white;
-    color: #A03F56;
-    transition: 0.5s;
-  }
 
-  .botomnes table{
-    border-spacing:100px 30px;
-  }
-  .buttong {
-    background-color: #A03F56;
-    color: white;
-  }
-  .buttong:hover{
-    background-color:white;
-    color: #A03F56;
-    transition: 0.5s;
-  }
-  /*Texts*/
-  .texts {
-    margin-left: 20px;
-  }
-  /*Logos Styles*/
-  .logop {
-    width: 30px;
-    height: 30px;
-  }
+.buttonis:hover{
+  background-color:white;
+  color: #A03F56;
+  transition: 0.5s;
+}
 
-  .logos {
-    width: 17px;
-    height: 17px;
-  }
-  /*Table Borders*/
+/* Menu Buttons */
+.botomnes button{
+  width: 210px;
+   height: 40px;
+  background-color: #A03F56;
+  color: white;
+  margin: 20px 25px;
+ }
+.botomnes button:hover{
+   background-color:white;
+   color: #A03F56;
+   transition: 0.5s;
+ }
+/* Fin Menu Buttons */
+  
+/* Save Button */
+.buttong {
+  background-color: #A03F56;
+  color: white;
+}
+.buttong:hover{
+  background-color:white;
+  color: #A03F56;
+  transition: 0.5s;
+}
+/* Fin Save Button*/
+
+/* Texts */
+.texts {
+  margin-left: 20px;
+}
+
+/* Discount img */
+.logos {
+  width: 17px;
+  height: 17px;
+}
+/* Fin Discount img */
+
+/*Table Borders*/
 .calendar_buttons {
   margin-left: 8vw;
 }
 
+/* Buttons Marca */ 
 .calendar_buttons button {
   background-color: #A03F56;
   color: white;
@@ -209,82 +206,57 @@ input{
     color: #A03F56;
     transition: 0.5s;
 }
+/* Fin Buttons Marca */ 
 
-  .table_border {
-    border: 1px solid black;
-    width: 100%;
-    padding: 10px;
-  }
-  .magia td, .magia th{
-    border: 1px solid black;
-    width: 10vw;
-  }
-  .calendario_border {
-    border: 1px solid #790a24;
-    width: 80%;
-    margin-top: 2vw;
-    margin-left: 8vw;
-    border-spacing: 0;
-  }
-  
-  .calendario_border td{
-    text-align: center;
-    border: 1px solid #790a24;
-    width: 15vw;
-    padding-left: 10px;
-  }
+.magia td, .magia th{
+  border: 1px solid black;
+  width: 10vw;
+}
 
-  .sch_title {
-    margin-left: 8vw;
-  }
+.sch_title {
+  margin-left: 8vw;
+}
 
-  .scrolling {
-    overflow-y: scroll;
-    width: 90vw;
-    height: 55vh;
-    margin-left: 5vw;
-  }
+#teodioaquamugre {
+  border: 1px solid black;
+  width: 4vw !important;
+  padding: 10px;
+  align-items: center;
+}
 
-  #teodioaquamugre {
-    border: 1px solid black;
-    width: 4vw !important;
-    padding: 10px;
-    align-items: center;
-  }
-
-  /* Tooltip container */
-  .tooltip {
-    position: relative;
-    display: inline-block;
-    opacity: 1 !important;
-    font-size: medium !important;
-  }
-  /* Tooltip text */
-  .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 150px;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -60px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    /* Position the tooltip text*/
-    position: absolute;
-    z-index: 1;
-  }
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-  }
-/* Eventos móviles*/
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  opacity: 1 !important;
+  font-size: medium !important;
+}
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  /* Position the tooltip text*/
+  position: absolute;
+  z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 /*Cosas que no he usado*/
 
 .textarea_modal {
   resize: none;
 }
 
+/* Input que muestra los datos traidos por la Dase de Batos */ 
 .inputs input{
   border:0;
   outline:none;
@@ -299,10 +271,28 @@ input{
   align-items: center;
 }
 
+/* Fin Input que muestra los datos traidos por la Dase de Batos */ 
+
  #dia, #mes, #año {
    width:30px;
  }
 
- .input_birth input{
-  width: 20px !important;
+ .input_birth{
+  width: 60px ;
+}
+
+
+.input_birth input{
+  width: 30px ;
+}
+
+
+
+
+
+.scrolling {
+  overflow-y: scroll;
+  width: 90vw;
+  height: 55vh;
+  margin-left: 5vw;
 }

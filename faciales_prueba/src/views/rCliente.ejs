@@ -9,6 +9,13 @@
 
   <link rel="icon" href="/img/ftk-blanco_solo_logo.png">
   <link rel="stylesheet" href="/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
 
 </head>
 
@@ -27,7 +34,7 @@
   <br />
   <!--Fin navbar-->
   <!--Contenido-->
-    <button onclick="back();" class="btnMenu">Menú</button>
+  <button onclick="back();" class="btnMenu">Menú</button>
   <div class="titulo">
     <h1>Registrar Cliente</h1>
   </div>
@@ -70,7 +77,7 @@
         </select>
         <br>
         <br>
-  
+
         <input name="Nombre" id="Nombre" type="text" placeholder="Nombre" required>
         <br />
         <br />
@@ -82,9 +89,9 @@
         <br />
         <div class="tratamientoBox">
           <label for="Día">Día:</label>&nbsp;<input name="Dia" type="text" id="Día">
-  
+
           <label for="Mes">Mes:</label>&nbsp;<input name="Mes" type="text" id="Mes" required>
-  
+
           <label for="Año">Año:</label>&nbsp;<input name="Año" type="text" id="Año">
         </div>
         <br />
@@ -100,43 +107,32 @@
           <input type="date" onload="getDate()" class="form-control" id="Fecha_Registro" name="Fecha_Registro">
         </div>
         <br>
-        <input name="Notas" type="textarea" placeholder="Notas" required>
+        <input name="Notas" id="Notas" type="textarea" placeholder="Notas" required>
         <br>
         <br>
         <div>
-          
-          <button class="buttonis" type="submit">Guardar</button>
-          <a href="/agendarC">
-          <button class="buttonis" type="submit"> Guardar&nbsp;y&nbsp;Registrar<br>Membresia</button>
-          </a>
         </div>
-      </form>
-      <br>
-      <button class="buttonis" id="myBtn">Resumen</button>
-      <br><br>
+
+        <br>
+
     </div>
     <!-- The Modal -->
     <div id="myModal" class="modal">
-  
+
       <!-- Modal content -->
-      <div align="center" class="modal-content">
+      <div align="center" class="modal-content" id="modal_cliente">
         <span class="close">&times;</span>
-        <h2>RESUMEN</h2>
-        <p>Asesor:_____________________________________</p>
-        <p>Marca:______________________________________</p>
-        <p>Sucursal:____________________________________</p>
-        <p>Nombre:____________________________________ </p>
-        <p>Apellidos:__________________________________</p>
-        <p>Cumpleaños:________________________________</p>
-        <p>Teléfono:___________________________________</p>
-        <p>Correo:_____________________________________ </p>
-        <p>Fecha:______________________________________</p>
-        <p>Notas:______________________________________ </p>
-        <button class="buttonis">Guardar</button>
+        <p id="modal-cliente"></p>
+        <button type="submit" class="buttonis">Guardar</button>
         <button id="cancel" class="buttonis">Cancelar</button>
       </div>
-  
+
     </div>
+    </form>
+    <div align="center">
+      <button class="buttonis" id="myBtn" data-target="#modal_cliente">Resumen</button>
+    </div>
+    <br><br>
   </div>
 
   <div id="VV" class="schedule" style="display:none">
@@ -175,7 +171,7 @@
         </select>
         <br>
         <br>
-  
+
         <input name="Nombre" id="Nombre" type="text" placeholder="Nombre" required>
         <br />
         <br />
@@ -187,9 +183,9 @@
         <br />
         <div class="tratamientoBox">
           <label for="Día">Día:</label>&nbsp;<input name="Dia" type="text" id="Día">
-  
+
           <label for="Mes">Mes:</label>&nbsp;<input name="Mes" type="text" id="Mes" required>
-  
+
           <label for="Año">Año:</label>&nbsp;<input name="Año" type="text" id="Año">
         </div>
         <br />
@@ -209,10 +205,10 @@
         <br>
         <br>
         <div>
-          
+
           <button class="buttonis" type="submit">Guardar</button>
           <a href="/agendarC">
-          <button class="buttonis" type="submit"> Guardar&nbsp;y&nbsp;Registrar<br>Membresia</button>
+            <button class="buttonis" type="submit"> Guardar&nbsp;y&nbsp;Registrar<br>Membresia</button>
           </a>
         </div>
       </form>
@@ -222,7 +218,7 @@
     </div>
     <!-- The Modal -->
     <div id="myModal" class="modal">
-  
+
       <!-- Modal content -->
       <div align="center" class="modal-content">
         <span class="close">&times;</span>
@@ -240,7 +236,7 @@
         <button class="buttonis">Guardar</button>
         <button id="cancel" class="buttonis">Cancelar</button>
       </div>
-  
+
     </div>
   </div>
 
@@ -276,7 +272,7 @@
         </select>
         <br>
         <br>
-  
+
         <input name="Nombre" id="Nombre" type="text" placeholder="Nombre" required>
         <br />
         <br />
@@ -288,9 +284,9 @@
         <br />
         <div class="tratamientoBox">
           <label for="Día">Día:</label>&nbsp;<input name="Dia" type="text" id="Día">
-  
+
           <label for="Mes">Mes:</label>&nbsp;<input name="Mes" type="text" id="Mes" required>
-  
+
           <label for="Año">Año:</label>&nbsp;<input name="Año" type="text" id="Año">
         </div>
         <br />
@@ -310,10 +306,10 @@
         <br>
         <br>
         <div>
-          
+
           <button class="buttonis" type="submit">Guardar</button>
           <a href="/agendarC">
-          <button class="buttonis" type="submit"> Guardar&nbsp;y&nbsp;Registrar<br>Membresia</button>
+            <button class="buttonis" type="submit"> Guardar&nbsp;y&nbsp;Registrar<br>Membresia</button>
           </a>
         </div>
       </form>
@@ -323,7 +319,7 @@
     </div>
     <!-- The Modal -->
     <div id="myModal" class="modal">
-  
+
       <!-- Modal content -->
       <div align="center" class="modal-content">
         <span class="close">&times;</span>
@@ -341,7 +337,7 @@
         <button class="buttonis">Guardar</button>
         <button id="cancel" class="buttonis">Cancelar</button>
       </div>
-  
+
     </div>
   </div>
 
@@ -377,7 +373,7 @@
         </select>
         <br>
         <br>
-  
+
         <input name="Nombre" id="Nombre" type="text" placeholder="Nombre" required>
         <br />
         <br />
@@ -389,9 +385,9 @@
         <br />
         <div class="tratamientoBox">
           <label for="Día">Día:</label>&nbsp;<input name="Dia" type="text" id="Día">
-  
+
           <label for="Mes">Mes:</label>&nbsp;<input name="Mes" type="text" id="Mes" required>
-  
+
           <label for="Año">Año:</label>&nbsp;<input name="Año" type="text" id="Año">
         </div>
         <br />
@@ -411,10 +407,10 @@
         <br>
         <br>
         <div>
-          
+
           <button class="buttonis" type="submit">Guardar</button>
           <a href="/agendarC">
-          <button class="buttonis" type="submit"> Guardar&nbsp;y&nbsp;Registrar<br>Membresia</button>
+            <button class="buttonis" type="submit"> Guardar&nbsp;y&nbsp;Registrar<br>Membresia</button>
           </a>
         </div>
       </form>
@@ -424,7 +420,7 @@
     </div>
     <!-- The Modal -->
     <div id="myModal" class="modal">
-  
+
       <!-- Modal content -->
       <div align="center" class="modal-content">
         <span class="close">&times;</span>
@@ -442,10 +438,39 @@
         <button class="buttonis">Guardar</button>
         <button id="cancel" class="buttonis">Cancelar</button>
       </div>
-  
+
     </div>
   </div>
-  
+
+  <script type="text/javascript">
+    $("#myBtn").click(function () {
+      var ases = $("#Asesor").val();
+      var marca = $("#Marca").text();
+      var suc = $("#Sucursal").text();
+      var name = $("#Nombre").val();
+      var apell = $("#Apellido").val();
+      var day = $("#Día").val();
+      var month = $("#Mes").val();
+      var year = $("#Año").val();
+      var tel = $("#Telefono").val();
+      var email = $("#Correo").val();
+      var date = $("#Fecha_Registro").val();
+      var notes = $("#Notas").val();
+
+      var str = "<h1>Datos ingresados</h1> " + '<br>'
+        + "Asesor: " + ases + '<br>'
+        + "Marca: " + marca + '<br>'
+        + "Sucursal: " + suc + '<br>'
+        + "Nombre: " + name + '<br>'
+        + "Apellidos: " + apell + '<br>'
+        + "Cumpleaños: " + day + "/" + month + "/" + year + '<br>'
+        + "Teléfono: " + tel + '<br>'
+        + "Correo: " + email + '<br>'
+        + "Fecha de Registro: " + date + '<br>'
+        + "Notas: " + notes + '<br>'
+      $("#modal-cliente").html(str);
+    });
+  </script>
   <script src="/js/modal.js"></script>
   <script src="/js/back.js"></script>
   <script src="/js/open_schedule.js"></script>
