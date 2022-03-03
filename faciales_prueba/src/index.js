@@ -31,6 +31,9 @@ const contactcRoutes = require('./routes/contactcRoute');
 const historialRoutes = require('./routes/historialRoute');
 const pendientesRoutes = require('./routes/pendientesRoute');
 const rClienteRoutes = require('./routes/rClienteRoute');
+const rCliente_vvRoutes = require('./routes/rCliente_vvRoute');
+const rCliente_ogRoutes = require('./routes/rCliente_ogRoute');
+const rCliente_rcRoutes = require('./routes/rCliente_rcRoute');
 const rVentaRoutes = require('./routes/rVentaRoute');
 
 //settings
@@ -79,6 +82,9 @@ app.use('/contactc', contactcRoutes);
 app.use('/historial', historialRoutes);
 app.use('/pendientes', pendientesRoutes);
 app.use('/rCliente', rClienteRoutes);
+app.use('/rCliente_vv', rCliente_vvRoutes);
+app.use('/rCliente_og', rCliente_ogRoutes);
+app.use('/rCliente_rc', rCliente_rcRoutes);
 app.use('/rVenta', rVentaRoutes);
 
 //Static files

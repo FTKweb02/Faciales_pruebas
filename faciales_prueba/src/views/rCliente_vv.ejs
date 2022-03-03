@@ -34,8 +34,8 @@
     <h1>Registrar Cliente</h1>
   </div>
   <div class="calendar_buttons">
-    <a href="/rCliente_vv">
-      <button>Vine Vera</button>
+    <a href="/rCliente">
+      <button>Resvera</button>
     </a>
     <a href="/rCliente_rc">
       <button>Reserve Cut</button>
@@ -45,18 +45,19 @@
     </a>
   </div>
   <br><br>
-  <div id="RS" class="schedule">
-    <h2 class="sch_title">Resvera</h2>
+
+  <div id="VV" class="schedule">
+    <h2 class="sch_title">Vine Vera</h2>
     <div align="center" class="formu">
       <form action="/rCliente/add" method="post">
         <label><b>Asesor: </b></label>
         <br>
         <select name="Asesor" id="Asesor">
           <option disabled selected>Seleccione un asesor</option>
-          <% if (rsAs) { %>
-            <% for(var i=0; i < rsAs.length; i++) { %>
-              <option value="<%= rsAs[i].Nombre %>">
-                <%= rsAs[i].Nombre %>
+          <% if (vvAs) { %>
+            <% for(var i=0; i < vvAs.length; i++) { %>
+              <option value="<%= vvAs[i].Nombre %>">
+                <%= vvAs[i].Nombre %>
               </option>
               <% } %>
                 <% } %>
@@ -64,29 +65,33 @@
         <br>
         <br>
         <label><b>Marca: </b></label>
-        <br />
-        <select name="Resvera_idResvera" id="Marca">
-          <option selected value="1">Resvera</option>
+        <br>
+        <select name="VineVera_idVineVera" id="Marca">
+          <option selected value="1">Vine Vera</option>
         </select>
         <br>
         <br>
         <label><b>Sucursal: </b></label>
-        <br />
+        <br>
         <select name="Sucursal" id="Sucursal">
-          <option selected value="RS Polanco">Polanco</option>
+          <option selected="selected" value=""></option>
+          <option value="VV Polanco">Pasaje Polanco</option>
+          <option value="VV Solesta">Solesta</option>
+          <option value="VV Manacar">Manacar</option>
+          <option value="VV insurgentes">Galerías Insurgentes</option>
         </select>
         <br>
         <br>
 
         <input name="Nombre" id="Nombre" type="text" placeholder="Nombre" required>
-        <br />
-        <br />
+        <br>
+        <br>
         <input name="Apellidos" id="Apellido" type="text" placeholder="Apellidos" required>
-        <br />
-        <br />
+        <br>
+        <br>
         <label><b>Cumpleaños: </b></label>
         <br>
-        <br />
+        <br>
         <div class="tratamientoBox">
           <label for="Día">Día:</label>&nbsp;<input name="Dia" type="text" id="Día">
 
@@ -107,14 +112,10 @@
           <input type="date" class="form-control" id="Fecha_Registro" name="Fecha_Registro">
         </div>
         <br>
-        <input name="Notas" id="Notas" type="textarea" placeholder="Notas" required>
+        <input name="Notas" type="textarea" placeholder="Notas" required>
         <br>
-        <div>
-        </div>
-
-        <br>
-
     </div>
+    <br>
     <!-- The Modal -->
     <div id="myModal" class="modal">
 
@@ -125,9 +126,9 @@
         <button type="submit" class="buttonis">Guardar</button>
         <button type="button" id="cancel" class="buttonis">Cancelar</button>
       </div>
-      
-    </form>
+
     </div>
+    </form>
     <div align="center">
       <button class="buttonis" id="myBtn" data-target="#modal_cliente">Resumen</button>
     </div>
@@ -138,7 +139,7 @@
     $("#myBtn").click(function () {
       var ases = $("#Asesor").val();
       var marca = $("#Marca").text();
-      var suc = $("#Sucursal").text();
+      var suc = $("#Sucursal").val();
       var name = $("#Nombre").val();
       var apell = $("#Apellido").val();
       var day = $("#Día").val();

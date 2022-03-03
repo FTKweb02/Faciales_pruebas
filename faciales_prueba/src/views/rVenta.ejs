@@ -38,7 +38,6 @@
     <button class="" onclick="openSchedule('OG')">Oro Gold</button>
   </div>
   <br>
-
   <!-- Inicia Formulario Resvera -->
 
   <div id="RS" class="schedule">
@@ -70,16 +69,16 @@
             <select name="Nombre_T" type="text" id="nombre" required>
               <option disabled selected>Seleccione un tratamiento</option>
               <!--% console.log(JSON.stringify(datars)); %-->
-                <% if (datars) { %>
-                  <% for(var i=0; i < datars.length; i++) { %>
-                    <option value="<%= datars[i].Nombre %>">
-                      <%= datars[i].Nombre %> /
-                        <%= datars[i].Categoria %> /
+              <% if (datars) { %>
+                <% for(var i=0; i < datars.length; i++) { %>
+                  <option value="<%= datars[i].Nombre %>">
+                    <%= datars[i].Nombre %> /
+                      <%= datars[i].Categoria %> /
                         <%= datars[i].Precio %> /
-                        <%= datars[i].Duracion %> 
-                    </option>
+                          <%= datars[i].Duracion %>
+                  </option>
+                  <% } %>
                     <% } %>
-                      <% } %>
             </select>
             <!--label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" value="" readonly>&nbsp;
             <label for="precio">Precio:</label><input name="Precio_T" value="" readonly>
@@ -156,16 +155,16 @@
             <select name="Nombre_T" type="text" id="nombre" required>
               <option disabled selected>Seleccione un tratamiento</option>
               <!--% console.log(JSON.stringify(datavv)); %-->
-                <% if (datavv) { %>
-                  <% for(var i=0; i < datavv.length; i++) { %>
-                    <option value="<%= datavv[i].Nombre %>">
-                      <%= datavv[i].Nombre %> /
-                        <%= datavv[i].Categoria %> /
-                        <%= datavv[i].Precio %> / 
-                        <%= datavv[i].Duracion %>
-                    </option>
+              <% if (datavv) { %>
+                <% for(var i=0; i < datavv.length; i++) { %>
+                  <option value="<%= datavv[i].Nombre %>">
+                    <%= datavv[i].Nombre %> /
+                      <%= datavv[i].Categoria %> /
+                        <%= datavv[i].Precio %> /
+                          <%= datavv[i].Duracion %>
+                  </option>
+                  <% } %>
                     <% } %>
-                      <% } %>
             </select>
             <!--label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" value="" readonly>&nbsp;
             <label for="precio">Precio:</label><input name="Precio_T" value="" readonly>
@@ -246,15 +245,15 @@
             <select name="Nombre_T" type="text" id="nombre" required>
               <option disabled selected>Seleccione un tratamiento</option>
               <!--% console.log(JSON.stringify(datarc)); %-->
-                <% if (datarc) { %>
-                  <% for(var i=0; i < datarc.length; i++) { %>
-                    <option value="<%= datarc[i].Nombre %>">
-                      <%= datarc[i].Nombre %> / 
+              <% if (datarc) { %>
+                <% for(var i=0; i < datarc.length; i++) { %>
+                  <option value="<%= datarc[i].Nombre %>">
+                    <%= datarc[i].Nombre %> /
                       <%= datarc[i].Precio %> /
-                      <%= datarc[i].Duracion %>
-                    </option>
+                        <%= datarc[i].Duracion %>
+                  </option>
+                  <% } %>
                     <% } %>
-                      <% } %>
             </select>
             <!--label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" value="" readonly>&nbsp;
             <label for="precio">Precio:</label><input name="Precio_T" value="" readonly>
@@ -331,16 +330,16 @@
             <select name="Nombre_T" type="text" id="nombre" required>
               <option disabled selected>Seleccione un tratamiento</option>
               <!--% console.log(JSON.stringify(dataog)); %-->
-                <% if (dataog) { %>
-                  <% for(var i=0; i < dataog.length; i++) { %>
-                    <option value="<%= dataog[i].Nombre %>">
-                      <%= dataog[i].Nombre %> /
+              <% if (dataog) { %>
+                <% for(var i=0; i < dataog.length; i++) { %>
+                  <option value="<%= dataog[i].Nombre %>">
+                    <%= dataog[i].Nombre %> /
                       <%= dataog[i].Categoria %> /
-                      <%= dataog[i].Precio %> /
-                      <%= dataog[i].Duracion %>
-                    </option>
+                        <%= dataog[i].Precio %> /
+                          <%= dataog[i].Duracion %>
+                  </option>
+                  <% } %>
                     <% } %>
-                      <% } %>
             </select>
             <!--label for="cat">Categoría:</label>&nbsp;<input name="Categoria_T" value="" readonly>&nbsp;
             <label for="precio">Precio:</label><input name="Precio_T" value="" readonly>
@@ -384,8 +383,6 @@
       <br />
     </form>
   </div>
-
-
 
   <script src="/js/folio_membresia.js"></script>
   <script src="/js/back.js"></script>

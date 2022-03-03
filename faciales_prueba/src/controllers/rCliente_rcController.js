@@ -2,13 +2,13 @@ const controller = {};
 
 controller.rcliente = (req, res) => {
     req.getConnection((err, conn) => {
-        conn.query('SELECT usuarios_rs.Nombre FROM usuarios_rs INNER JOIN usuarios_rs_has_rol_rs ON usuarios_rs_has_rol_rs.Usuarios_RS_idUsuarios_RS = usuarios_rs.idUsuarios_RS INNER JOIN rol_rs ON rol_rs.idRol_RS = usuarios_rs_has_rol_rs.Rol_RS_idRol_RS WHERE rol_rs.idRol_RS = "2";', (err, asesor_rs) => {
+        conn.query('SELECT usuarios_rc.Nombre FROM usuarios_rc INNER JOIN usuarios_rc_has_rol_rc ON usuarios_rc_has_rol_rc.Usuarios_RC_idUsuarios_RC = usuarios_rc.idUsuarios_RC INNER JOIN rol_rc ON rol_rc.idRol_RC = usuarios_rc_has_rol_rc.Rol_RC_idRol_RC WHERE rol_rc.idRol_RC = "2";', (err, asesor_rc) => {
             if (err) {
-                res.json(err)
+                res.json(err);
             }
-            console.log(asesor_rs);
-            res.render('rCliente', {
-                rsAs : asesor_rs
+            console.log(asesor_rc);;
+            res.render('rCliente_rc', {
+                rcAs: asesor_rc,
             });
         });
     });
@@ -24,7 +24,7 @@ controller.save = (req, res) => {
                 res.json(err);
             }else{
                 console.log(clientes);
-                res.redirect('/rCliente');
+                res.redirect('/rCliente_rc');
             }
         });
     })

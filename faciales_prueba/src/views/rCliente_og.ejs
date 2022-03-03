@@ -40,23 +40,24 @@
     <a href="/rCliente_rc">
       <button>Reserve Cut</button>
     </a>
-    <a href="/rCliente_og">
-      <button>Oro Gold</button>
+    <a href="/rCliente">
+      <button>Resvera</button>
     </a>
   </div>
   <br><br>
-  <div id="RS" class="schedule">
-    <h2 class="sch_title">Resvera</h2>
+
+  <div id="OG" class="schedule">
+    <h2 class="sch_title">Oro Gold</h2>
     <div align="center" class="formu">
       <form action="/rCliente/add" method="post">
         <label><b>Asesor: </b></label>
         <br>
         <select name="Asesor" id="Asesor">
           <option disabled selected>Seleccione un asesor</option>
-          <% if (rsAs) { %>
-            <% for(var i=0; i < rsAs.length; i++) { %>
-              <option value="<%= rsAs[i].Nombre %>">
-                <%= rsAs[i].Nombre %>
+          <% if (ogAs) { %>
+            <% for(var i=0; i < ogAs.length; i++) { %>
+              <option value="<%= ogAs[i].Nombre %>">
+                <%= ogAs[i].Nombre %>
               </option>
               <% } %>
                 <% } %>
@@ -64,29 +65,29 @@
         <br>
         <br>
         <label><b>Marca: </b></label>
-        <br />
-        <select name="Resvera_idResvera" id="Marca">
-          <option selected value="1">Resvera</option>
+        <br>
+        <select name="OroGold_idOroGold" id="Marca">
+          <option selected value="1">OroGold</option>
         </select>
         <br>
         <br>
         <label><b>Sucursal: </b></label>
-        <br />
+        <br>
         <select name="Sucursal" id="Sucursal">
-          <option selected value="RS Polanco">Polanco</option>
+          <option selected value="OG Angelópolis">Angelópolis</option>
         </select>
         <br>
         <br>
 
         <input name="Nombre" id="Nombre" type="text" placeholder="Nombre" required>
-        <br />
-        <br />
+        <br>
+        <br>
         <input name="Apellidos" id="Apellido" type="text" placeholder="Apellidos" required>
-        <br />
-        <br />
+        <br>
+        <br>
         <label><b>Cumpleaños: </b></label>
         <br>
-        <br />
+        <br>
         <div class="tratamientoBox">
           <label for="Día">Día:</label>&nbsp;<input name="Dia" type="text" id="Día">
 
@@ -107,31 +108,26 @@
           <input type="date" class="form-control" id="Fecha_Registro" name="Fecha_Registro">
         </div>
         <br>
-        <input name="Notas" id="Notas" type="textarea" placeholder="Notas" required>
-        <br>
-        <div>
+        <input name="Notas" type="textarea" placeholder="Notas" required>
+        <br><br>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div align="center" class="modal-content" id="modal_cliente">
+            <span class="close">&times;</span>
+            <p id="modal-cliente"></p>
+            <button type="submit" class="buttonis">Guardar</button>
+            <button type="button" id="cancel" class="buttonis">Cancelar</button>
+          </div>
+
         </div>
-
-        <br>
-
-    </div>
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-
-      <!-- Modal content -->
-      <div align="center" class="modal-content" id="modal_cliente">
-        <span class="close">&times;</span>
-        <p id="modal-cliente"></p>
-        <button type="submit" class="buttonis">Guardar</button>
-        <button type="button" id="cancel" class="buttonis">Cancelar</button>
+      </form>
+      <div align="center">
+        <button class="buttonis" id="myBtn" data-target="#modal_cliente">Resumen</button>
       </div>
-      
-    </form>
+      <br><br>
     </div>
-    <div align="center">
-      <button class="buttonis" id="myBtn" data-target="#modal_cliente">Resumen</button>
-    </div>
-    <br><br>
   </div>
 
   <script type="text/javascript">

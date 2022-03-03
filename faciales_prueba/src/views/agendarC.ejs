@@ -34,7 +34,7 @@
     <form action="agendarC/consult/" method="get">
       <select id="telefonito" type="text" name="Telefono" required>
       <option disabled selected>Seleccione una opción</option>
-        <% console.log(JSON.stringify(data)); %>
+        <!--% console.log(JSON.stringify(data)); %-->
           <% if (data) { %>
             <% for(var i=0; i < data.length; i++) { %>
               <option value="<%= data[i].Telefono %>">
