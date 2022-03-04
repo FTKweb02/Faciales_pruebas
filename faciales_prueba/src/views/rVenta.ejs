@@ -44,8 +44,21 @@
     <h2 class="sch_title">Resvera</h2>
     <form action="/rVenta/addm" method="post">
       <div align="center">
-
-        <input size="30" type="search" name="Cliente_idCliente" id="id_Cliente" placeholder="ID Cliente" required>
+        <label for="id_Cñiente"><b>Cliente:</b></label><br>
+        <input list="nombres" name="Cliente_idCliente" type="search" id="id_Cliente" required>
+        <datalist id="nombres">
+          <!--% console.log(JSON.stringify(datars)); %-->
+          <% if (datac_rs) { %>
+            <% for(var i=0; i < datac_rs.length; i++) { %>
+              <option value="<%= datac_rs[i].idCliente %>">
+                <%= datac_rs[i].Nombre %> 
+                <%= datac_rs[i].Apellidos %> 
+                <%= datac_rs[i].Telefono %>
+              </option>
+              <% } %>
+                <% } %>
+            </datalist>
+        <!--input size="30" type="search" name="Cliente_idCliente" id="id_Cliente" placeholder="ID Cliente" required-->
         <br><br>
         <label><b>Marca: </b></label>
         <br />
@@ -129,8 +142,18 @@
     <h2 class="sch_title">Vine Vera</h2>
     <form action="/rVenta/addvv" method="post">
       <div align="center">
-
-        <input size="30" type="search" name="Cliente_idCliente" id="id_Cliente" placeholder="ID Cliente" required>
+        <select name="Cliente_idCliente" type="search" id="id_Cliente" required>
+          <option disabled selected>Seleccione Cliente</option>
+          <!--% console.log(JSON.stringify(datars)); %-->
+          <% if (datac_vv) { %>
+            <% for(var i=0; i < datac_vv.length; i++) { %>
+              <option value="<%= datac_vv[i].idCliente %>">
+                <%= datac_vv[i].Nombre %>
+              </option>
+              <% } %>
+                <% } %>
+        </select>
+        <!--input size="30" type="search" name="Cliente_idCliente" id="id_Cliente" placeholder="ID Cliente" required-->
         <br><br>
         <label><b>Marca: </b></label>
         <br />
@@ -219,8 +242,18 @@
     <h2 class="sch_title">Reserve Cut</h2>
     <form action="/rVenta/addrc" method="post">
       <div align="center">
-
-        <input size="30" type="search" name="Cliente_idCliente" id="id_Cliente" placeholder="ID Cliente" required>
+        <select name="Cliente_idCliente" type="search" id="id_Cliente" required>
+          <option disabled selected>Seleccione Cliente</option>
+          <!--% console.log(JSON.stringify(datars)); %-->
+          <% if (datac_rc) { %>
+            <% for(var i=0; i < datac_rc.length; i++) { %>
+              <option value="<%= datac_rc[i].idCliente %>">
+                <%= datac_rc[i].Nombre %>
+              </option>
+              <% } %>
+                <% } %>
+        </select>
+        <!--input size="30" type="search" name="Cliente_idCliente" id="id_Cliente" placeholder="ID Cliente" required-->
         <br><br>
         <label><b>Marca: </b></label>
         <br />
@@ -304,8 +337,18 @@
     <h2 class="sch_title">OroGold</h2>
     <form action="/rVenta/addog" method="post">
       <div align="center">
-
-        <input size="30" type="search" name="Cliente_idCliente" id="id_Cliente" placeholder="ID Cliente" required>
+        <select name="Cliente_idCliente" type="search" id="id_Cliente" required>
+          <option disabled selected>Seleccione Cliente</option>
+          <!--% console.log(JSON.stringify(datars)); %-->
+          <% if (datac_og) { %>
+            <% for(var i=0; i < datac_og.length; i++) { %>
+              <option value="<%= datac_og[i].idCliente %>">
+                <%= datac_og[i].Nombre %>
+              </option>
+              <% } %>
+                <% } %>
+        </select>
+        <!--input size="30" type="search" name="Cliente_idCliente" id="id_Cliente" placeholder="ID Cliente" required-->
         <br><br>
         <label><b>Marca: </b></label>
         <br />

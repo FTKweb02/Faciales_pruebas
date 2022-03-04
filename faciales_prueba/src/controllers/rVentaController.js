@@ -10,6 +10,14 @@ controller.rventa = (req, res) => {
                 //console.log(datars);
             }
         });
+        conn.query('SELECT * FROM cliente WHERE Resvera_idResvera = 1', (err, clienters) => {
+            if (err) {
+                res.json(err)
+            }else {
+                datac_rs = clienters;
+                //console.log(datars);
+            }
+        });
         conn.query('SELECT * FROM servicio_vv', (err, servvv) => {
             if (err) {
                 res.json(err)
@@ -18,12 +26,36 @@ controller.rventa = (req, res) => {
                 //console.log(datavv);
             }
         });
+        conn.query('SELECT * FROM cliente WHERE VineVera_idVineVera = 1', (err, clientevv) => {
+            if (err) {
+                res.json(err)
+            }else {
+                datac_vv = clientevv;
+                //console.log(datars);
+            }
+        });
         conn.query('SELECT * FROM servicio_rc', (err, servrc) => {
             if (err) {
                 res.json(err)
             }else {
                 datarc = servrc
                 //console.log(datarc);
+            }
+        });
+        conn.query('SELECT * FROM cliente WHERE ReserveCut_idReserveCut = 1', (err, clienterc) => {
+            if (err) {
+                res.json(err)
+            }else {
+                datac_rc = clienterc;
+                //console.log(datars);
+            }
+        });
+        conn.query('SELECT * FROM cliente WHERE OroGold_idOroGold = 1', (err, clienteog) => {
+            if (err) {
+                res.json(err)
+            }else {
+                datac_og = clienteog;
+                //console.log(datars);
             }
         });
         conn.query('SELECT * FROM servicio_og', (err, servog) => {
