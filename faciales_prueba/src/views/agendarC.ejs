@@ -32,9 +32,20 @@
   <br />
   <div align="center">
     <form action="agendarC/consult/" method="get">
-      <select id="telefonito" type="text" name="Telefono" required>
+      <input list="nombres" name="Telefono" type="search" id="telefonito" required>
+        <datalist id="nombres">
+          <!--% console.log(JSON.stringify(datars)); %-->
+          <% if (data) { %>
+            <% for(var i=0; i < data.length; i++) { %>
+              <option value="<%= data[i].Telefono %>">
+                <%= data[i].Nombre %>
+              </option>
+              <% } %>
+                <% } %>
+            </datalist>
+      <!--select id="telefonito" type="text" name="Telefono" required>
       <option disabled selected>Seleccione una opción</option>
-        <!--% console.log(JSON.stringify(data)); %-->
+        <--% console.log(JSON.stringify(data)); %->
           <% if (data) { %>
             <% for(var i=0; i < data.length; i++) { %>
               <option value="<%= data[i].Telefono %>">
@@ -43,7 +54,7 @@
               </option>
               <% } %>
                 <% } %>
-            </select>
+            </select-->
       <!--input id="telefonito" type="search" name="Telefono" placeholder="Buscar Cliente" required-->
       <button class="buttong" type="submit">Buscar</button>
       <!--a href="agendarC/consult" class="btn buttong">Botoncito</a-->

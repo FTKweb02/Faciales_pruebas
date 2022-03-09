@@ -76,6 +76,26 @@ nav input{
 }
 /*Fin Modal*/
 
+/*Modal_marcas*/
+.modal_marca {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  margin-top: 30vh; /* Location of the box */
+  margin-left: 45vw;
+  top: 0;
+}
+
+/* Modal Content */
+.modal_marca-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 3px solid #5E1224;
+  width: 20vw;
+}
+
+/*Fin Modal_marcas*/
+
 /*Titulo y su boton*/
 .titulo{
   text-align: center;
@@ -189,6 +209,14 @@ nav input{
   height: 17px;
 }
 /* Fin Discount img */
+.home_logo {
+  width: 4vw;
+  height: 7.5vh;
+  padding-top: 2vh;
+  padding-left: 2vh;
+  margin-left: 3vw;
+  
+}
 
 /*Table Borders*/
 .calendar_buttons {
@@ -293,4 +321,18 @@ nav input{
   width: 90vw;
   height: 55vh;
   margin-left: 5vw;
+}
+
+.comoquieras {
+  position: absolute;
+  right: 0;
+}
+
+.comoquieras img {
+  width: 33vw;
+  height: 90.30vh;
+}
+
+.todo_marca a{
+  cursor: pointer;
 }

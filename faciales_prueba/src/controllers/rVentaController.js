@@ -10,7 +10,7 @@ controller.rventa = (req, res) => {
                 //console.log(datars);
             }
         });
-        conn.query('SELECT * FROM cliente WHERE Resvera_idResvera = 1', (err, clienters) => {
+        conn.query('SELECT * FROM cliente WHERE Resvera_idResvera = 1 ORDER BY Nombre ASC', (err, clienters) => {
             if (err) {
                 res.json(err)
             }else {
