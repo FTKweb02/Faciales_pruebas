@@ -347,7 +347,11 @@ nav input{
   margin: 0 !important;
 }
 
-.add_form input{
+.columnas_add a{
+  color: blue;
+}
+
+.add_form input, .add_form select{
   width: 45vw;
   height: 7.5vh;
   border-radius: 10px;
@@ -355,6 +359,30 @@ nav input{
 
 .add_form input::placeholder{
   padding-left: 20px;
+}
+
+.add_form_tec input, .add_form_tec select{
+  height: 7.5vh;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.add_tec input{
+  height: 5vh;
+  border-radius: 10px;
+}
+#check_add{
+  height: auto;
+  width: auto;
+}
+
+#clock{
+  width: 13vw;
+  height: 5vh;
+}
+
+.colorcito{
+  color: grey;
 }
 
 .other input{
