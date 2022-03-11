@@ -1,5 +1,6 @@
 body{
   margin: 0;
+  overflow-x: hidden;
 }
 h1, b{
   font-family: Arial;
@@ -94,6 +95,20 @@ nav input{
   width: 20vw;
 }
 
+/* The Close Button */
+.close2 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
 /*Fin Modal_marcas*/
 
 /*Titulo y su boton*/
