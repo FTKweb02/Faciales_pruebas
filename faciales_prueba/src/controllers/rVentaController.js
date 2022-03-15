@@ -26,7 +26,7 @@ controller.rventa = (req, res) => {
                 //console.log(datavv);
             }
         });
-        conn.query('SELECT * FROM cliente WHERE VineVera_idVineVera = 1', (err, clientevv) => {
+        conn.query('SELECT * FROM cliente WHERE VineVera_idVineVera = 1 ORDER BY Nombre ASC', (err, clientevv) => {
             if (err) {
                 res.json(err)
             }else {
@@ -42,7 +42,7 @@ controller.rventa = (req, res) => {
                 //console.log(datarc);
             }
         });
-        conn.query('SELECT * FROM cliente WHERE ReserveCut_idReserveCut = 1', (err, clienterc) => {
+        conn.query('SELECT * FROM cliente WHERE ReserveCut_idReserveCut = 1 ORDER BY Nombre ASC', (err, clienterc) => {
             if (err) {
                 res.json(err)
             }else {
@@ -50,7 +50,7 @@ controller.rventa = (req, res) => {
                 //console.log(datars);
             }
         });
-        conn.query('SELECT * FROM cliente WHERE OroGold_idOroGold = 1', (err, clienteog) => {
+        conn.query('SELECT * FROM cliente WHERE OroGold_idOroGold = 1 ORDER BY Nombre ASC', (err, clienteog) => {
             if (err) {
                 res.json(err)
             }else {

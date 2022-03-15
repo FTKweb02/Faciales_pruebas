@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/bootstrap-4.0.0/dist/css/bootstrap-grid.css">
 </head>
-
+<style>
+    .col-1{
+        padding: 0;
+    }
+</style>
 <body>
 
     <!--Navbar-->
@@ -44,7 +48,7 @@
                                 </div>
                                 <div class="col-6">
                                     <a href="/add_marca">
-                                        <button>AGREGAR MARCA</button>
+                                        <button>*AGREGAR MARCA</button>
                                     </a>
                                 </div>
                             </div>
@@ -55,9 +59,9 @@
                         <div class="container">
                             <div class="row" style="padding-left: 10vw">
                                 <div class="col-3 inputs">
-                                    <input type="text" placeholder="Nombre marca">
-                                    <br><br>
-                                    <input type="text" placeholder="# Sucursales">
+                                    <input type="text" placeholder="Resvera">
+                                    <br>
+                                    <input type="text" placeholder="No. Sucursales: 1">
                                 </div>
                                 <div class="col-1">
                                     <a id="myBtn">Detalles</a>
@@ -71,9 +75,9 @@
                         <div class="container">
                             <div class="row" style="padding-left: 10vw">
                                 <div class="col-3 inputs">
-                                    <input type="text" placeholder="Nombre marca">
-                                    <br><br>
-                                    <input type="text" placeholder="# Sucursales">
+                                    <input type="text" placeholder="Reserve Cut">
+                                    <br>
+                                    <input type="text" placeholder="No. Sucursales: 1">
                                 </div>
                                 <div class="col-1">
                                     <a id="myBtn2">Detalles</a>
@@ -84,6 +88,43 @@
                             </div>
                         </div>
                         <br>
+                        <div class="container">
+                            <div class="row" style="padding-left: 10vw">
+                                <div class="col-3 inputs">
+                                    <input type="text" placeholder="Vine Vera">
+                                    <br>
+                                    <input type="text" placeholder="No. Sucursales: 4">
+                                </div>
+                                <div class="col-1">
+                                    <a id="myBtn3">Detalles</a>
+                                </div>
+                                <div class="col-1">
+                                    <a href="/add_marca">Editar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="container">
+                            <div class="row" style="padding-left: 10vw">
+                                <div class="col-3 inputs">
+                                    <input type="text" placeholder="OroGold">
+                                    <br>
+                                    <input type="text" placeholder="No. Sucursales: 1">
+                                </div>
+                                <div class="col-1">
+                                    <a id="myBtn4">Detalles</a>
+                                </div>
+                                <div class="col-1">
+                                    <a href="/add_marca">Editar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+                        *PROBLEMA: El sistema solo se relizo para las cuatro marcas actuales, <br>no existe forma, dada la estructura de la base de datos, para agregar otra.
+                        <br>
+                        Se quitaría el botón y la plantilla de formulario sería solo la pantalla de editar.
+                        <br><br><br><br>
+                        NOTA: Los detalles de la marca si se obtienen de la DB.
                     </div>
                     <!-- The Modal -->
                     <div id="myModal" class="modal_marca">
@@ -93,14 +134,14 @@
                             <span class="close">&times;</span>
                             <br><br>
                             <div class="eldisquemodal">
-                                <p><b>Marca</b></p>
-                                <p>55 0000 0000</p>
-                                <p>marca@gmail.com</p>
-                                <p>www.marca.com</p>
-                                <p>@facebook</p>
-                                <p>@instagram</p>
-                                <p>Sucursal 1</p>
-                                <p>Sucursal 2</p>
+                                <p><b>RESVERA</b></p>
+                                <hr>
+                                <p><i>Teléfono:</i></p>
+                                <p>55 8946 9745</p>
+                                <hr>
+                                <p><i>Sucursal:</i></p>
+                                <p>Arquimedes 198, Polanco</p>
+                                <hr>
                             </div>
                         </div>
                     </div>
@@ -111,14 +152,54 @@
                             <span class="close2">&times;</span>
                             <br><br>
                             <div class="eldisquemodal">
-                                <p><b>Marca 2</b></p>
-                                <p>55 0000 0000</p>
-                                <p>marca@gmail.com</p>
-                                <p>www.marca.com</p>
-                                <p>@facebook</p>
-                                <p>@instagram</p>
-                                <p>Sucursal 1</p>
-                                <p>Sucursal 2</p>
+                                <p><b>RESERVE CUT</b></p>
+                                <hr>
+                                <p><i>Teléfono:</i></p>
+                                <p>55 8946 9744</p>
+                                <hr>
+                                <p><i>Sucursal:</i></p>
+                                <p>Pasaje Polanco</p>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="myModal3" class="modal_marca">
+        
+                        <!-- Modal content -->
+                        <div align="left" class="modal_marca-content" id="modal_cliente">
+                            <span class="close3">&times;</span>
+                            <br><br>
+                            <div class="eldisquemodal">
+                                <p><b>VINE VERA</b></p>
+                                <hr>
+                                <p><i>Teléfono:</i></p>
+                                <p>55 5531 5438 (CDMX)</p>
+                                <p>22 2980 1234 (Puebla)</p>
+                                <hr>
+                                <p><i>Sucursales:</i></p>
+                                <p>Insurgentes</p>
+                                <p>Pasaje Polanco</p>
+                                <p>Manacar</p>
+                                <p>Solesta</p>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="myModal4" class="modal_marca">
+        
+                        <!-- Modal content -->
+                        <div align="left" class="modal_marca-content" id="modal_cliente">
+                            <span class="close4">&times;</span>
+                            <br><br>
+                            <div class="eldisquemodal">
+                                <p><b>OROGOLD</b></p>
+                                <hr>
+                                <p><i>Teléfono:</i></p>
+                                <p>22 2980 1234</p>
+                                <hr>
+                                <p><i>Sucursal:</i></p>
+                                <p>Angelópolis</p>
+                                <hr>
                             </div>
                         </div>
                     </div>

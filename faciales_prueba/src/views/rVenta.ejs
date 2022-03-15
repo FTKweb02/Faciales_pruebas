@@ -245,17 +245,20 @@
     <h2 class="sch_title">Reserve Cut</h2>
     <form action="/rVenta/addrc" method="post">
       <div align="center">
-        <select name="Cliente_idCliente" type="search" id="id_Cliente" required>
-          <option disabled selected>Seleccione Cliente</option>
+        <label for="id_Cliente"><b>Cliente:</b></label><br>
+        <input list="nombres" name="Cliente_idCliente" type="search" id="id_Cliente" required>
+        <datalist id="nombres">
           <!--% console.log(JSON.stringify(datars)); %-->
           <% if (datac_rc) { %>
             <% for(var i=0; i < datac_rc.length; i++) { %>
               <option value="<%= datac_rc[i].idCliente %>">
-                <%= datac_rc[i].Nombre %>
+                <%= datac_rc[i].Nombre %> 
+                <%= datac_rc[i].Apellidos %> 
+                <%= datac_rc[i].Telefono %>
               </option>
               <% } %>
                 <% } %>
-        </select>
+            </datalist>
         <!--input size="30" type="search" name="Cliente_idCliente" id="id_Cliente" placeholder="ID Cliente" required-->
         <br><br>
         <label><b>Marca: </b></label>
@@ -340,17 +343,20 @@
     <h2 class="sch_title">OroGold</h2>
     <form action="/rVenta/addog" method="post">
       <div align="center">
-        <select name="Cliente_idCliente" type="search" id="id_Cliente" required>
-          <option disabled selected>Seleccione Cliente</option>
+        <label for="id_Cliente"><b>Cliente:</b></label><br>
+        <input list="nombres" name="Cliente_idCliente" type="search" id="id_Cliente" required>
+        <datalist id="nombres">
           <!--% console.log(JSON.stringify(datars)); %-->
           <% if (datac_og) { %>
             <% for(var i=0; i < datac_og.length; i++) { %>
-              <option value="<%= datac_og[i].idCliente %>">
-                <%= datac_og[i].Nombre %>
+              <option value="<%= datac_vv[i].idCliente %>">
+                <%= datac_og[i].Nombre %> 
+                <%= datac_og[i].Apellidos %> 
+                <%= datac_og[i].Telefono %>
               </option>
               <% } %>
                 <% } %>
-        </select>
+            </datalist>
         <!--input size="30" type="search" name="Cliente_idCliente" id="id_Cliente" placeholder="ID Cliente" required-->
         <br><br>
         <label><b>Marca: </b></label>

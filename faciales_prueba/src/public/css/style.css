@@ -109,6 +109,34 @@ nav input{
   text-decoration: none;
   cursor: pointer;
 }
+
+.close3 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close3:hover,
+.close3:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close4 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close4:hover,
+.close4:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
 /*Fin Modal_marcas*/
 
 /*Titulo y su boton*/
@@ -357,6 +385,10 @@ nav input{
   height: 40vh;
 }
 
+.eldisquemodal hr{
+  width: 95%;
+}
+
 .columnas_add{
   width: 100vw !important; 
   margin: 0 !important;
@@ -372,8 +404,8 @@ nav input{
   border-radius: 10px;
 }
 
-.add_form input::placeholder{
-  padding-left: 20px;
+.add_form input::placeholder, .add_form input{
+  padding-left: 2%;
 }
 
 .add_form_tec input, .add_form_tec select{
@@ -397,9 +429,17 @@ nav input{
 }
 
 .colorcito{
+  color: grey !important;
+}
+
+select .colorcito{
   color: grey;
 }
 
 .other input{
   width: 21vw;
+}
+
+.numeritoC::placeholder, .numeritoC{
+  padding-left: 20%;
 }
