@@ -1,0 +1,28 @@
+INDEX
+
+const calendariovvRoutes = require('./routes/calendariovvRoute');
+const calendariovv_insurgentesRoutes = require('./routes/calendariovv_insurgentesRoute');
+const calendariovv_manacarRoutes = require('./routes/calendariovv_manacarRoute');
+const calendariovv_solestaRoutes = require('./routes/calendariovv_solestaRoute');
+const calendarioogRoutes = require('./routes/calendarioogRoute');
+const calendariorcRoutes = require('./routes/calendariorcRoute');
+const fac_sucursal_vvRoutes = require('./routes/fac_sucursal_vvRoute');
+const fac_sucursal_ogRoutes = require('./routes/fac_sucursal_ogRoute');
+const fac_sucursal_rcRoutes = require('./routes/fac_sucursal_rcRoute');
+const addmarcaRoutes = require('./routes/add_marcaRoute');
+const rCliente_vvRoutes = require('./routes/rCliente_vvRoute');
+const rCliente_ogRoutes = require('./routes/rCliente_ogRoute');
+const rCliente_rcRoutes = require('./routes/rCliente_rcRoute');
+app.use('/vvcalendar', calendariovvRoutes);
+app.use('/vvcalendar_insurgentes', calendariovv_insurgentesRoutes);
+app.use('/vvcalendar_manacar', calendariovv_manacarRoutes);
+app.use('/vvcalendar_solesta', calendariovv_solestaRoutes);
+app.use('/ogcalendar', calendarioogRoutes);
+app.use('/rccalendar', calendariorcRoutes);
+app.use('/fac_sucursal_vv', fac_sucursal_vvRoutes);
+app.use('/fac_sucursal_og', fac_sucursal_ogRoutes);
+app.use('/fac_sucursal_rc', fac_sucursal_rcRoutes);
+app.use('/add_marca', addmarcaRoutes);
+app.use('/rCliente_vv', rCliente_vvRoutes);
+app.use('/rCliente_og', rCliente_ogRoutes);
+app.use('/rCliente_rc', rCliente_rcRoutes);
