@@ -2,7 +2,7 @@ const controller = {};
 
 controller.list = (req, res) => {
     req.getConnection((err, conn) => {
-      conn.query('SELECT calendario_rs.start, calendario_rs.end, facialista_rs.title, cabina_rs.Nombre FROM calendario_rs  INNER JOIN facialista_rs ON calendario_rs.title = facialista_rs.title INNER JOIN cabina_rs ON calendario_rs.resourceId = cabina_rs.idCabina_RS WHERE facialista_rs.title = "Brenda"', (err, citfac) => {
+      conn.query('SELECT calendario.start, calendario.end, especialista.title, cabina.Nombre FROM calendario  INNER JOIN especialista ON calendario.title = especialista.title INNER JOIN cabina ON calendario.resourceId = cabina.idCabina', (err, citfac) => {
         if (err) {
             res.json(err)
         }else {
@@ -10,7 +10,7 @@ controller.list = (req, res) => {
             console.log(datafac);
         }
     });
-      conn.query('SELECT horario_facialista_vv.startTime, horario_facialista_vv.endTime, horario_facialista_vv.daysOfWeek, facialista_vv.title FROM horario_facialista_vv INNER JOIN facialista_vv ON horario_facialista_vv.Facialista_VV_idFacialista_VV = facialista_vv.id', (err, events) => {
+      conn.query('SELECT horario_especialista.startTime, horario_especialista.endTime, horario_especialista.daysOfWeek, especialista.title FROM horario_especialista INNER JOIN especialista ON horario_especialista.especialista_idespecialista = especialista.id', (err, events) => {
        if (err) {
         res.json(err);
        }
@@ -24,7 +24,7 @@ controller.list = (req, res) => {
 
   controller.mostrar = (req, res) => {
     req.getConnection((err, connection) => {
-      conn.query('SELECT calendario_rs.start, calendario_rs.end, facialista_rs.title, cabina_rs.Nombre FROM calendario_rs  INNER JOIN facialista_rs ON calendario_rs.title = facialista_rs.title INNER JOIN cabina_rs ON calendario_rs.resourceId = cabina_rs.idCabina_RS WHERE facialista_rs.title = "?"', (err, result) => {
+      conn.query('SELECT calendario.start, calendario.end, especialista.title, cabina.Nombre FROM calendario  INNER JOIN especialista ON calendario.title = especialista.title INNER JOIN cabina ON calendario.resourceId = cabina.idCabina WHERE especialista.title = "?"', (err, result) => {
         if (err) {
           res.json(err);
         }else {

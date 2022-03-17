@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RS</title>
 
-  <!--link rel="icon" href="/img/ftk-blanco_solo_logo.png"-->
-  <link rel="icon" href="/img/tem.ico">
+  <link rel="icon" href="/img/ftk-blanco_solo_logo.png">
   <link rel="stylesheet" href="/css/style.css">
   <link type="text/css" href='/fullcalendar_scheduler/lib/main.css' rel='stylesheet' />
   <script src='/fullcalendar_scheduler/lib/main.js'></script>
@@ -31,82 +30,69 @@
   <br />
   <!--Fin navbar-->
   <!--Contenido-->
-    <button onclick="back();" class="btnMenu">Menú</button>
-  <div style="margin-left: 10vw;" class="calendar_buttons">
-    <a href="/vvcalendar">
-      <button type="button">Vine Vera</button>
-    </a>
-    <a href="/rccalendar">
-      <button>Reserve Cut</button>
-    </a>
-    <a href="/ogcalendar">
-      <button class="" onclick="openSchedule('OG')">Oro Gold</button>
-    </a>
-  </div>
+  <button onclick="back();" class="btnMenu">Menú</button>
   <div id="RS" class="schedule">
-    <h2 align="center" class="sch_title">Resvera</h2><button style="margin-right:42.5%" class="btnCerrar"
-      id="myBtn">Nueva
-      Cita</button>
+    <h2 class="sch_title">Resvera</h2>
+    <button style="margin-right:42.5%" class="btnCerrar" id="myBtn">Nueva Cita</button>
     <br>
     <div id='calendar-container'>
       <div style="margin-top:20vw" id='calendar' data="<%= data %>"></div>
     </div>
 
-  <br><br>
-  <div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div align="center" class="modal-content">
-      <span class="close">&times;</span>
-      <h2>NUEVA CITA</h2>
-      <br>
-      <form action="/calendario/add" method="post">
-        <select name="title" type="text" id="" required>
-              <option disabled selected>Seleccione facialista</option>
-              <!--% console.log(JSON.stringify(datars)); %-->
-                <% if (datars) { %>
-                  <% for(var i=0; i < datars.length; i++) { %>
-                    <option value="<%= datars[i].title %>">
-                      <%= datars[i].title %>
-                    </option>
-                    <% } %>
-                      <% } %>
-            </select>
-        <br><br>
-        <select name="Resvera_idResvera" id="">
-          <option selected value="1">Resvera</option>
-        </select>
-        <br><br>
-        <select name="Sucursal_RS_idSucursal_RS" id="">
-          <option selected value="1">Arquimedes 198, Polanco</option>
-        </select>
-        <br><br>
-        <label for="Cabina"><b>Cabina: </b></label><br>
-        <select name="resourceId" id="Cabina" required>
-          <option selected="selected" value=""></option>
-          <option value="1">Saphire</option>
-          <option value="2">Emerald</option>
-          <option value="3">Ruby</option>
-          <option value="4">Starlight</option>
-          <option value="5">Opal</option>
-          <option value="6">Pearl</option>
-        </select>
-        <br><br>
-        <input name="start" style="width:220px" id="adddate" type="datetime-local" required>
-        <br><br>
-        <!--input name="end" style="width:220px" id="adddate" type="datetime-local" required-->
-        <br><br>
-        <!--textarea placeholder="Detalles" class="textarea_modal" type="text" rows="5" cols="28" required></textarea-->
-        <br><br>
-        <button class="buttonis" type="submit">Agendar</button>
-        <button id="cancel" class="buttonis">Cancelar</button>
-      </form>
-    </div>
+    <br><br>
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div align="center" class="modal-content">
+        <span class="close">&times;</span>
+        <h2>NUEVA CITA</h2>
+        <br>
+        <form action="/calendario/add" method="post">
+          <select name="title" type="text" id="" required>
+            <option disabled selected>Seleccione especialista</option>
+            <!--% console.log(JSON.stringify(datars)); %-->
+            <% if (data_e) { %>
+              <% for(var i=0; i < data_e.length; i++) { %>
+                <option value="<%= data_e[i].title %>">
+                  <%= data_e[i].title %>
+                </option>
+                <% } %>
+                  <% } %>
+          </select>
+          <br><br>
+          <select name="Resvera_idResvera" id="">
+            <option selected value="1">Resvera</option>
+          </select>
+          <br><br>
+          <select name="Sucursal_idSucursal" id="">
+            <option selected value="1">Arquimedes 198, Polanco</option>
+          </select>
+          <br><br>
+          <label for="Cabina"><b>Cabina: </b></label><br>
+          <select name="resourceId" id="Cabina" required>
+            <option selected="selected" value=""></option>
+            <option value="1">Saphire</option>
+            <option value="2">Emerald</option>
+            <option value="3">Ruby</option>
+            <option value="4">Starlight</option>
+            <option value="5">Opal</option>
+            <option value="6">Pearl</option>
+          </select>
+          <br><br>
+          <input name="start" style="width:220px" id="adddate" type="datetime-local" required>
+          <br><br>
+          <!--input name="end" style="width:220px" id="adddate" type="datetime-local" required-->
+          <br><br>
+          <!--textarea placeholder="Detalles" class="textarea_modal" type="text" rows="5" cols="28" required></textarea-->
+          <br><br>
+          <button class="buttonis" type="submit">Agendar</button>
+          <button id="cancel" class="buttonis">Cancelar</button>
+        </form>
+      </div>
 
-  </div>
-  <script src="/js/modal.js"></script>
-  <script src="/js/calendar.js"></script>
-  <script src="/js/open_schedule.js"></script>
-  <script src="/js/back.js"></script>
+    </div>
+    <script src="/js/modal.js"></script>
+    <script src="/js/calendar.js"></script>
+    <script src="/js/back.js"></script>
 
 </body>
 

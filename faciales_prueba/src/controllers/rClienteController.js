@@ -2,13 +2,13 @@ const controller = {};
 
 controller.rcliente = (req, res) => {
     req.getConnection((err, conn) => {
-        conn.query('SELECT usuarios_rs.Nombre FROM usuarios_rs INNER JOIN usuarios_rs_has_rol_rs ON usuarios_rs_has_rol_rs.Usuarios_RS_idUsuarios_RS = usuarios_rs.idUsuarios_RS INNER JOIN rol_rs ON rol_rs.idRol_RS = usuarios_rs_has_rol_rs.Rol_RS_idRol_RS WHERE rol_rs.idRol_RS = "2";', (err, asesor_rs) => {
+        conn.query('SELECT usuarios.Nombre FROM usuarios INNER JOIN usuarios_has_rol ON usuarios_has_rol.Usuarios_idUsuarios = usuarios.idUsuarios INNER JOIN rol ON rol.idRol = usuarios_has_rol.Rol_idRol WHERE rol.idRol = "2";', (err, asesor) => {
             if (err) {
                 res.json(err)
             }
-            console.log(asesor_rs);
+            console.log(asesor);
             res.render('rCliente', {
-                rsAs : asesor_rs
+                rsAs : asesor
             });
         });
     });

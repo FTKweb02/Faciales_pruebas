@@ -25,7 +25,6 @@ const tecnologiasRoutes = require('./routes/tecnologiasRoute');
 const addtecRoutes = require('./routes/add_tecRoute');
 const addcabinaRoutes = require ('./routes/add_cabinaRoute');
 const contactcRoutes = require('./routes/contactcRoute');
-const pendientesRoutes = require('./routes/pendientesRoute');
 const rClienteRoutes = require('./routes/rClienteRoute');
 const rVentaRoutes = require('./routes/rVentaRoute');
 
@@ -47,7 +46,7 @@ app.use(myConnection(mysql, {
   user: 'Admin_02',
   password: 'L5u9aA-@m/C3DgsK',
   port: 3306,
-  database: 'mydb'
+  database: 'database_app'
 }, 'single'));
 app.use(express.urlencoded({extended: false}));
 
@@ -69,7 +68,6 @@ app.use('/tecnologias', tecnologiasRoutes);
 app.use('/add_tec', addtecRoutes);
 app.use('/add_cabina', addcabinaRoutes);
 app.use('/contactc', contactcRoutes);
-app.use('/pendientes', pendientesRoutes);
 app.use('/rCliente', rClienteRoutes);
 app.use('/rVenta', rVentaRoutes);
 

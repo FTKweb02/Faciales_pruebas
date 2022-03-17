@@ -33,20 +33,8 @@
   <div class="titulo">
     <h1>Registrar Cliente</h1>
   </div>
-  <div class="calendar_buttons">
-    <a href="/rCliente_vv">
-      <button>Vine Vera</button>
-    </a>
-    <a href="/rCliente_rc">
-      <button>Reserve Cut</button>
-    </a>
-    <a href="/rCliente_og">
-      <button>Oro Gold</button>
-    </a>
-  </div>
   <br><br>
   <div id="RS" class="schedule">
-    <h2 class="sch_title">Resvera</h2>
     <div align="center" class="formu">
       <form action="/rCliente/add" method="post">
         <label><b>Asesor: </b></label>
@@ -104,7 +92,7 @@
         <br>
         <div class="col">
           <label for="Fecha_registro"><b>Fecha de Registro:</b></label><br>
-          <input value="date_t();" type="date" class="form-control" id="Fecha_Registro" name="Fecha_Registro">
+          <input type="date" class="form-control" id="Fecha_Registro" name="Fecha_Registro">
         </div>
         <br>
         <input name="Notas" id="Notas" type="textarea" placeholder="Notas" required>
@@ -166,8 +154,6 @@
 
   <script src="/js/modal.js"></script>
   <script src="/js/back.js"></script>
-  <script src="/js/date.js"></script>
-  <script src="/js/open_schedule.js"></script>
 
 </body>
 

@@ -19,7 +19,7 @@ controller.consult = (req, res) => {
     const params = new URLSearchParams(req.url.split("?")[1]);
     const telefonoA = params.get("Telefono");
     req.getConnection((err, conn) => {
-        conn.query("SELECT cliente.idCliente, cliente.Nombre, cliente.Apellidos, cliente.Telefono, cliente.Email, cliente.Dia, cliente.Mes, cliente.Año, cliente.Asesor, cliente.Sucursal, membresia_rs.Folio_membresia, membresia_rs.Fecha_compra, membresia_rs.Nombre_t, membresia_rs.Categoria_t, membresia_rs.Precio_t, membresia_rs.Duracion_t, membresia_rs.Ticket, membresia_rs.Notas, sucursal_rs.idSucursal_RS FROM cliente INNER JOIN membresia_rs ON cliente.idCliente=membresia_rs.Cliente_idCliente INNER JOIN resvera ON resvera.idResvera = cliente.Resvera_idResvera INNER JOIN sucursal_rs ON sucursal_rs.Resvera_idResvera = resvera.idResvera WHERE cliente.Telefono = ?", telefonoA, (err, rows) => {
+        conn.query("SELECT cliente.idCliente, cliente.Nombre, cliente.Apellidos, cliente.Telefono, cliente.Email, cliente.Dia, cliente.Mes, cliente.Año, cliente.Asesor, cliente.Sucursal, membresia.Folio_membresia, membresia.Fecha_compra, membresia.Nombre_t, membresia.Categoria_t, membresia.Precio_t, membresia.Duracion_t, membresia.Ticket, membresia.Notas, sucursal.idSucursal FROM cliente INNER JOIN membresia ON cliente.idCliente=membresia.Cliente_idCliente INNER JOIN marca ON marca.idMarca = cliente.Marca_idMarca INNER JOIN sucursal ON sucursal.Marca_idMarca = marca.idMarca WHERE cliente.Telefono = ?", telefonoA, (err, rows) => {
             if (err) {
                 res.json(err);
             } else {

@@ -2,25 +2,15 @@ const controller = {};
 
 controller.list = (req, res) => {
     req.getConnection((err, conn) => {
-        conn.query('SELECT * FROM facialista_rs', (err, servrs) => {
+        conn.query('SELECT * FROM especialista', (err, serv_e) => {
             if (err) {
                 res.json(err)
             } else {
-                datars = servrs;
+                data_e = serv_e;
                 //console.log(datars);
             }
         });
-        conn.query('SELECT * FROM facialista_vv', (err, servvv) => {
-            if (err) {
-                res.json(err)
-            }else {
-                datavv = servvv
-                //console.log(datavv);
-            }
-        });
-        
-        
-        conn.query('SELECT * FROM calendario_rs', (err, events) => {
+        conn.query('SELECT * FROM calendario', (err, events) => {
             if (err) {
                 res.json(err);
             }
@@ -35,7 +25,7 @@ controller.agendar = (req, res) => {
     const data = req.body;
     console.log(req.body);
     req.getConnection((err, conn) => {
-        conn.query('INSERT INTO calendario_rs set ?', data, (err, eventos) => {
+        conn.query('INSERT INTO calendario set ?', data, (err, eventos) => {
             if (err) {
                 console.log(err);
                 res.json(err);

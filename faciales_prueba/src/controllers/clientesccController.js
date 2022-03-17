@@ -13,7 +13,7 @@ controller.clientescc = (req, res) => {
         });
     });
 };
-
+//No se para que se creo el consult en este controlador
 controller.consult = (req, res) => {
     req.getConnection((err, conn) => {
         conn.query("SELECT * FROM cliente WHERE idCliente = 4", (err, clientescc) => {

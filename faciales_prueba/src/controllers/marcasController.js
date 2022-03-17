@@ -1,7 +1,7 @@
 const controller = {};
 
 controller.config = (req, res) => {req.getConnection((err, conn) => {
-    conn.query('SELECT * FROM Resvera', (err, clientes) => {
+    conn.query('SELECT * FROM marca', (err, clientes) => {
         if (err) {
             res.json(err);
         }

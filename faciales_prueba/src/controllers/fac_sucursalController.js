@@ -2,7 +2,8 @@ const controller = {};
 
 controller.list = (req, res) => {
     req.getConnection((err, conn) => {
-      conn.query('SELECT horario_facialista_rs.resourceId, horario_facialista_rs.startTime, horario_facialista_rs.endTime, horario_facialista_rs.daysOfWeek, facialista_rs.title, facialista_rs.id, sucursal_rs.Nombre FROM horario_facialista_rs INNER JOIN facialista_rs ON facialista_rs.id=horario_facialista_rs.Facialista_RS_idFacialista INNER JOIN usuarios_rs ON usuarios_rs.idUsuarios_RS=facialista_rs.Usuarios_RS_idUsuarios_RS INNER JOIN sucursal_rs ON usuarios_rs.Sucursal_RS_idSucursal_RS = sucursal_rs.idSucursal_RS;', (err, suc) => {
+      //Esta consulta debe revisarse ya que puede que haya un detalle al encontrar las tablas****
+      conn.query('SELECT horario_especialista.resourceId, horario_especialista.startTime, horario_especialista.endTime, horario_especialista.daysOfWeek, especialista.title, especialista.id, especialista.Nombre FROM horario_especialista INNER JOIN especialista ON especialista.id=horario_especialista.Especialista_idEspecialista INNER JOIN usuarios ON usuarios.idUsuarios=especialista.Usuarios_idUsuarios INNER JOIN sucursal ON usuarios.Sucursal_idSucursal = sucursal.idSucursal;', (err, suc) => {
        if (err) {
         res.json(err);
        }
