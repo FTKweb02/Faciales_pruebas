@@ -45,6 +45,11 @@
                                 <div class="col-6 inputs">
                                     <h1>DETALLES</h1>
                                 </div>
+                                <div class="col-6 botomnes">
+                                    <a href="/add_marca">
+                                      <button>AGREGAR MARCA</button>  
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -52,10 +57,11 @@
                     <div align="center">
                         <div class="container">
                             <div class="row" style="padding-left: 10vw">
-                                <div class="col-3 inputs">
-                                    <input type="text" placeholder="Resvera">
+                                <div class="col-3 inputs" style="text-align:left;">
+                                    <input readonly type="text" name="Nombre" value="<%= data[0].Nombre %>">
                                     <br>
-                                    <input type="text" placeholder="No. Sucursales: 1">
+                                    <label>No. Sucursales:</label>
+                                    <input style="width: 2vw;" readonly type="text" placeholder= "1">
                                 </div>
                                 <div class="col-1">
                                     <a id="myBtn">Detalles</a>
@@ -72,14 +78,14 @@
                     <div id="myModal" class="modal_marca">
         
                         <!-- Modal content -->
-                        <div align="left" class="modal_marca-content" id="modal_cliente">
+                        <div align="left" class="modal_marca-content inputs" id="modal_cliente">
                             <span class="close">&times;</span>
                             <br><br>
                             <div class="eldisquemodal">
                                 <p><b>RESVERA</b></p>
                                 <hr>
                                 <p><i>Teléfono:</i></p>
-                                <p>55 8946 9745</p>
+                                <input readonly type="text" value="<%= data[0].Telefono %>" id="">
                                 <hr>
                                 <p><i>Sucursal:</i></p>
                                 <p>Arquimedes 198, Polanco</p>

@@ -17,6 +17,7 @@
         height: 150vh;
     }
 </style>
+
 <body>
 
     <!--Navbar-->
@@ -42,24 +43,23 @@
                 <h1 style="padding-left:10vw">SUCURSAL</h1>
                 <br>
                 <div align="center" class="add_form">
-                    <select name="" id="marcas">
-                        <option class="colorcito" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seleccione marca</option>
-                        <option value="">Resvera</option>
-                        <option value="">Reserve Cut</option>
-                        <option value="">Vine Vera</option>
-                        <option value="">OroGold</option>
-                    </select>
-                    <br><br>
-                    <input type="text" placeholder="Nombre">
+                    <form action="/add_sucursal/add" method="post">
+                        <!--select name="Sucursal_idSucursal" id="marcas">
+                            <option class="colorcito" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seleccione marca
+                            </option>
+                            <option value="1">Resvera</option>
+                        </select>
+                        <br><br>
+                        <input type="text" placeholder="Nombre">
                     <br><br>
                     <input type="text" placeholder="Dirección">
                     <br><br>
                     <input type="text" placeholder="Teléfono">
                     <br><br>
                     <input type="text" placeholder="Encargado">
-                    <br><br>
-                    <div style="margin-left:8vw" class="container">
-                        <div class="row date_inputs  colorcito">
+                    <br><br-->
+                        <div style="margin-left:8vw" class="container">
+                            <div class="row   colorcito">
                                 <div class="col-1 ">
                                     Cerrado
                                 </div>
@@ -72,126 +72,128 @@
                                 <div class="col-3">
                                     Cierre
                                 </div>
-                        </div>
-                        <br>
-                        <div class="row date_inputs">
-                            <div class="col-1 ">
-                                <input id="check_add" type="checkbox">
                             </div>
-                            <div class="col-2">
-                                Domingo
-                            </div>
-                            <div class="col-3">
-                                <input id="clock" type="time">
-                            </div>
-                            <div class="col-3">
-                                <input id="clock" type="time">
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row date_inputs">
-                            <div class="col-1 ">
-                                <input id="check_add" type="checkbox">
-                            </div>
-                            <div class="col-2">
-                                Lunes
-                            </div>
-                            <div class="col-3">
-                                <input id="clock" type="time">
-                            </div>
-                            <div class="col-3">
-                                <input id="clock" type="time">
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row date_inputs">
-                            <div class="col-1 ">
-                                <input id="check_add" type="checkbox">
-                            </div>
-                            <div class="col-2">
-                                Martes
-                            </div>
-                            <div class="col-3">
-                                <input id="clock" type="time">
-                            </div>
-                            <div class="col-3">
-                                <input id="clock" type="time">
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row date_inputs">
-                            <div class="col-1 ">
-                                <input id="check_add" type="checkbox">
-                            </div>
-                            <div class="col-2">
-                                Miércoles
-                            </div>
-                            <div class="col-3">
-                                <input id="clock" type="time">
-                            </div>
-                            <div class="col-3">
-                                <input id="clock" type="time">
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row date_inputs">
-                            <div class="col-1 ">
-                                <input id="check_add" type="checkbox">
-                            </div>
-                            <div class="col-2">
-                                Jueves
-                            </div>
-                            <div class="col-3">
-                                <input id="clock" type="time">
-                            </div>
-                            <div class="col-3">
-                                <input id="clock" type="time">
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row date_inputs">
-                            <div class="col-1 ">
-                                <input id="check_add" type="checkbox">
-                            </div>
-                            <div class="col-2">
-                                Viernes
-                            </div>
-                            <div class="col-3">
-                                <input id="clock" type="time">
-                            </div>
-                            <div class="col-3">
-                                <input id="clock" type="time">
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row date_inputs">
-                            <div class="col-1 ">
-                                <input id="check_add" type="checkbox">
-                            </div>
-                            <div class="col-2">
-                                Sábado
-                            </div>
-                            <div class="col-3">
-                                <input id="clock" type="time">
-                            </div>
-                            <div class="col-3">
-                                <input id="clock" type="time">
-                            </div>
-                        </div>
-                        <br>
-                        <div align="left">
-                            <a>Agregar fecha especial</a>
-                        </div>
-                    </div>
+                            <br>
 
-                    <div align="left" style="padding-left:8.5vw" class="botomnes">
-                        <a href="/tecnologias">
-                            <button style="margin-right:0.5vw">GUARDAR</button>
-                        </a>
-                        <a href="/sucursales">
-                            <button>CANCELAR</button>
-                        </a>
-                    </div>
+                            <div class="row ">
+                                <div class="col-1 ">
+                                    <input value="7" id="check_add" class="daysOfWeek" checked type="checkbox">
+                                </div>
+                                <div class="col-2">
+                                    Domingo
+                                </div>
+                                <div class="col-3">
+                                    <input class="starTime" id="clock" type="time">
+                                </div>
+                                <div class="col-3">
+                                    <input class="endTime" id="clock" type="time">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row ">
+                                <div class="col-1 ">
+                                    <input value="1" id="check_add" class="daysOfWeek" checked type="checkbox">
+                                </div>
+                                <div class="col-2">
+                                    Lunes
+                                </div>
+                                <div class="col-3">
+                                    <input class="starTime" id="clock" type="time">
+                                </div>
+                                <div class="col-3">
+                                    <input class="endTime" id="clock" type="time">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row ">
+                                <div class="col-1 ">
+                                    <input value="2" id="check_add" class="daysOfWeek" checked type="checkbox">
+                                </div>
+                                <div class="col-2">
+                                    Martes
+                                </div>
+                                <div class="col-3">
+                                    <input class="starTime" id="clock" type="time">
+                                </div>
+                                <div class="col-3">
+                                    <input class="endTime" id="clock" type="time">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row ">
+                                <div class="col-1 ">
+                                    <input value="3" id="check_add" class="daysOfWeek" checked type="checkbox">
+                                </div>
+                                <div class="col-2">
+                                    Miércoles
+                                </div>
+                                <div class="col-3">
+                                    <input class="starTime" id="clock" type="time">
+                                </div>
+                                <div class="col-3">
+                                    <input class="endTime" id="clock" type="time">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row ">
+                                <div class="col-1 ">
+                                    <input value="4" id="check_add" class="daysOfWeek" checked type="checkbox">
+                                </div>
+                                <div class="col-2">
+                                    Jueves
+                                </div>
+                                <div class="col-3">
+                                    <input class="starTime" id="clock" type="time">
+                                </div>
+                                <div class="col-3">
+                                    <input class="endTime" id="clock" type="time">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row ">
+                                <div class="col-1 ">
+                                    <input value="5" id="check_add" class="daysOfWeek" checked type="checkbox">
+                                </div>
+                                <div class="col-2">
+                                    Viernes
+                                </div>
+                                <div class="col-3">
+                                    <input class="starTime" id="clock" type="time">
+                                </div>
+                                <div class="col-3">
+                                    <input class="endTime" id="clock" type="time">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row ">
+                                <div class="col-1 ">
+                                    <input value="6" id="check_add" class="daysOfWeek" checked type="checkbox">
+                                </div>
+                                <div class="col-2">
+                                    Sábado
+                                </div>
+                                <div class="col-3">
+                                    <input class="starTime" id="clock" type="time">
+                                </div>
+                                <div class="col-3">
+                                    <input class="endTime" id="clock" type="time">
+                                </div>
+                            </div>
+                            <br>
+                            <div align="left">
+                                <a>Agregar fecha especial</a>
+                            </div>
+                        </div>
+
+                        <div align="left" style="padding-left:8.5vw" class="botomnes">
+                            <a href="/tecnologias">
+                                <button type="submit" style="margin-right:0.5vw">GUARDAR</button>
+                            </a>
+                            <a href="/sucursales">
+                                <button type="button">CANCELAR</button>
+                            </a>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="col-4">

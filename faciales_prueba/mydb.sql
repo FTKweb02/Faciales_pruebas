@@ -26,8 +26,10 @@ DROP TABLE IF EXISTS `Database_App`.`Marca` ;
 CREATE TABLE IF NOT EXISTS `Database_App`.`Marca` (
   `idMarca` INT NOT NULL AUTO_INCREMENT,
   `Nombre` VARCHAR(50) NOT NULL,
+  `Telefono` VARCHAR(50) NOT NULL,
+  `Correo` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`idMarca`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
 
 
 -- -----------------------------------------------------
@@ -82,6 +84,25 @@ CREATE TABLE IF NOT EXISTS `Database_App`.`Sucursal` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `Database_App`.`Sucursal`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `Database_App`.`Horario_Sucursal` ;
+
+CREATE TABLE IF NOT EXISTS `Database_App`.`Horario_Sucursal` (
+  `idHorario_Sucursal` INT NOT NULL,
+  `daysOfWeek` VARCHAR(25) NOT NULL,
+  `startTime` TIME NOT NULL,
+  `endTime` TIME NOT NULL,
+  `Sucursal_idSucursal` INT NOT NULL,
+  PRIMARY KEY (`idHorario_Sucursal`),
+  INDEX `fk_Horario_Sucursal_Sucursal1_idx` (`Sucursal_idSucursal` ASC),
+  CONSTRAINT `fk_Horario_Sucursal_Sucursal1`
+    FOREIGN KEY (`Sucursal_idSucursal`)
+    REFERENCES `Database_App`.`Sucursal` (`idSucursal`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
 -- -----------------------------------------------------
 -- Table `Database_App`.`Membresia`
 -- -----------------------------------------------------

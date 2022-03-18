@@ -61,11 +61,11 @@
                             <div class="row" style="padding-left: 10vw">
                                 <div class="col-3 inputs" style="text-align:left;">
                                     <input readonly type="text" name="Nombre" placeholder="Sucursal"
-                                        value="<%= datars[0].Nombre %>">
+                                        value="<%= datars.Nombre %>">
                                     <br>
                                     <label>No. Cabinas: </label>
                                     <input style="width: 2vw;" readonly type="text" name="idCabina"
-                                        value="<%= datars[0].idCabina %>">
+                                        value="<%= datars.idCabina %>">
                                 </div>
                                 <div class="col-1">
                                     <a id="myBtn">Detalles</a>
@@ -76,66 +76,6 @@
                             </div>
                         </div>
                         <br>
-                        <div class="container">
-                            <div class="row" style="padding-left: 10vw">
-                                <div class="col-3 inputs" style="text-align:left;">
-                                    <input readonly type="text" placeholder="Sucursal" name="Nombre"
-                                        value="<%= datarc[0].Nombre %> ">
-                                    <br>
-                                    <label>No. Cabinas: </label>
-                                    <input style="width: 2vw;" readonly type="text" name="idCabina_RC"
-                                        value="<%= datarc[0].idCabina_RC %>">
-                                </div>
-                                <div class="col-1">
-                                    <a id="myBtn2">Detalles</a>
-                                </div>
-                                <div class="col-1">
-                                    <a href="/add_sucursal">Editar</a>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <% if (datavv) { %>
-                            <% for(var i=0; i < datavv.length; i++) { %>
-                                <div class="container">
-                                    <div class="row" style="padding-left: 10vw">
-                                        <div class="col-3 inputs" style="text-align:left;">
-                                            <input name="Nombre" readonly type="text" value="<%= datavv[i].Nombre %>">
-                                            <br>
-                                            <label>No. Cabinas: </label>
-                                            <input style="width: 2vw;" readonly type="text" name="idCabina_VV"
-                                                value="<%= datavv[i].idCabina_VV %>">
-                                        </div>
-                                        <div class="col-1">
-                                            <a id="myBtn">Detalles</a>
-                                        </div>
-                                        <div class="col-1">
-                                            <a href="/add_sucursal">Editar</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                                <% } %>
-                                    <% } %>
-                                    <div class="container">
-                                        <div class="row" style="padding-left: 10vw">
-                                            <div class="col-3 inputs" style="text-align:left;">
-                                                <input readonly type="text" placeholder="Sucursal" name="Nombre"
-                                                    value="<%= dataog[0].Nombre %> ">
-                                                <br>
-                                                <label>No. Cabinas: </label>
-                                                <input style="width: 2vw;" readonly type="text" name="idCabina_OG"
-                                                    value="<%= dataog[0].idCabina_OG %>">
-                                            </div>
-                                            <div class="col-1">
-                                                <a id="myBtn2">Detalles</a>
-                                            </div>
-                                            <div class="col-1">
-                                                <a href="/add_sucursal">Editar</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                        <br>
                     </div>
                     <!-- The Modal -->
                     <div style="display:none" id="myModal" class="modal_marca">
