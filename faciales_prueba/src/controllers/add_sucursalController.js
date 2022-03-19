@@ -6,14 +6,14 @@ controller.addsucursal = (req, res) => {
 
 controller.save = (req, res) => {
     const data = req.body;
-    console.log(req.body);
+    console.log(data);
     req.getConnection((err, conn) => {
-        conn.query('INSERT INTO horario_sucursal(idHorario_Sucursal, daysOfWeek, startTime, endTime, Sucursal_idSucursal) VALUES set ?', data, (err, marcas) => {
+        conn.query('INSERT INTO horario_sucursal (daysOfWeek, startTime, endTime) VALUES ?', data, (err, horarios) => {
             if(err){
                 console.log(err);
                 res.json(err);
             }else{
-                console.log(marcas);
+                console.log(horarios);
                 res.redirect('/marcas');
             }
         });
