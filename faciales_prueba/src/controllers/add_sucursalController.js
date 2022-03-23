@@ -1,7 +1,17 @@
 const controller = {};
 
 controller.addsucursal = (req, res) => {
-    res.render('add_sucursal.ejs');
+    req.getConnection((err, conn) => {
+        conn.query('SELECT * FROM marca', (err, marca) => {
+            if (err) {
+                res.json(err);
+            }
+            res.render('add_sucursal', {
+                datam: marca
+
+            });
+        });
+    });
 };
 
 controller.save = (req, res) => {

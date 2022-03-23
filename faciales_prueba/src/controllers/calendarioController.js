@@ -10,6 +10,22 @@ controller.list = (req, res) => {
                 //console.log(datars);
             }
         });
+        conn.query('SELECT * FROM marca', (err, marca) => {
+            if (err) {
+                res.json(err)
+            } else {
+                datam = marca;
+                //console.log(datars);
+            }
+        });
+        conn.query('SELECT * FROM cabina', (err, cabina) => {
+            if (err) {
+                res.json(err)
+            } else {
+                datacab = cabina;
+                //console.log(datars);
+            }
+        });
         conn.query('SELECT * FROM calendario', (err, events) => {
             if (err) {
                 res.json(err);

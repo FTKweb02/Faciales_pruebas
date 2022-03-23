@@ -52,8 +52,14 @@
         <br><br>
         <label><b>Marca: </b></label>
         <br />
-        <select name="Resvera_idResvera" id="Marca">
-          <option selected value="1">Resvera</option>
+        <select name="Marca_idMarca" id="Marca">
+          <% if (datam) { %>
+            <% for(var i=0; i < datam.length; i++) { %>
+              <option value="1">
+                <%= datam[i].Nombre %> 
+              </option>
+              <% } %>
+                <% } %>
         </select>
         <br>
         <br>
@@ -87,8 +93,15 @@
           <br><br>
           <label><b>Sucursal: </b></label>
           <br />
-          <select name="Sucursal" id="Sucursal">
-            <option selected value="1">Polanco</option>
+          <select style="width:20vw" name="Sucursal" id="Sucursal">
+            <option disabled selected>Seleccione sucursal</option>
+            <% if (datasuc) { %>
+              <% for(var i=0; i < datasuc.length; i++) { %>
+                <option value="<%= datasuc[i].Nombre %>">
+                  <%= datasuc[i].Direccion %>
+                </option>
+                <% } %>
+                  <% } %>
           </select>
           <br><br>
         </div>

@@ -32,14 +32,15 @@
   <!--Contenido-->
   <button onclick="back();" class="btnMenu">Menú</button>
   <div id="RS" class="schedule">
-    <h2 class="sch_title">Resvera</h2>
-    <button style="margin-right:42.5%" class="btnCerrar" id="myBtn">Nueva Cita</button>
+    <div align="center" class="sch_title inputs"><input readonly style="font-size:xx-large; font-weight:bold"
+        type="text" value="<%= datam[0].Nombre %>"></div>
+    <div style="text-align:center; width:100vw;">
+      <button class="btnCerrar" id="myBtn" style="float:inherit">Nueva Cita</button>
+    </div>
     <br>
     <div id='calendar-container'>
       <div style="margin-top:20vw" id='calendar' data="<%= data %>"></div>
     </div>
-
-    <br><br>
     <div id="myModal" class="modal">
       <!-- Modal content -->
       <div align="center" class="modal-content">
@@ -59,7 +60,7 @@
                   <% } %>
           </select>
           <br><br>
-          <select name="Resvera_idResvera" id="">
+          <select name="Marca_idMarca" id="">
             <option selected value="1">Resvera</option>
           </select>
           <br><br>
@@ -69,13 +70,14 @@
           <br><br>
           <label for="Cabina"><b>Cabina: </b></label><br>
           <select name="resourceId" id="Cabina" required>
-            <option selected="selected" value=""></option>
-            <option value="1">Saphire</option>
-            <option value="2">Emerald</option>
-            <option value="3">Ruby</option>
-            <option value="4">Starlight</option>
-            <option value="5">Opal</option>
-            <option value="6">Pearl</option>
+            <option disabled selected value="">Seleccione cabina</option>
+            <% if (datacab) { %>
+              <% for(var i=0; i < datacab.length; i++) { %>
+                <option value="<%= datacab[i].idCabina %>">
+                  <%= datacab[i].Nombre %>
+                </option>
+                <% } %>
+                  <% } %>
           </select>
           <br><br>
           <input name="start" style="width:220px" id="adddate" type="datetime-local" required>

@@ -44,10 +44,16 @@
                 <br>
                 <div align="center" class="add_form">
                     <form action="/add_sucursal/add" method="post">
-                        <!--select name="Sucursal_idSucursal" id="marcas">
+                        <select name="Sucursal_idSucursal" id="marcas">
                             <option class="colorcito" disabled selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seleccione marca
                             </option>
-                            <option value="1">Resvera</option>
+                            <% if (datam) { %>
+                                <% for(var i=0; i < datam.length; i++) { %>
+                                  <option value="<%= datam[i].idMarca %>">
+                                    <%= datam[i].Nombre %>
+                                  </option>
+                                  <% } %>
+                                    <% } %>
                         </select>
                         <br><br>
                         <input type="text" placeholder="Nombre">
@@ -57,7 +63,7 @@
                     <input type="text" placeholder="Teléfono">
                     <br><br>
                     <input type="text" placeholder="Encargado">
-                    <br><br-->
+                    <br><br>
                         <div style="margin-left:8vw" class="container">
                             <div class="row   colorcito">
                                 <div class="col-1 ">

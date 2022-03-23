@@ -53,15 +53,22 @@
         <br>
         <label><b>Marca: </b></label>
         <br />
-        <select name="" id="Marca">
-          <option selected value="<% data.Nombre %>"></option>
+        <select name="Marca_idMarca" id="Marca">
+          <option selected value="<%= data[0].idMarca %>"><%= data[0].Nombre %></option>
         </select>
         <br>
         <br>
         <label><b>Sucursal: </b></label>
         <br />
-        <select name="Sucursal" id="Sucursal">
-          <option selected value="RS Polanco">Polanco</option>
+        <select style="width:20vw" name="Sucursal" id="Sucursal">
+          <option disabled selected>Seleccione sucursal</option>
+          <% if (datasuc) { %>
+            <% for(var i=0; i < datasuc.length; i++) { %>
+              <option value="<%= datasuc[i].Nombre %>">
+                <%= datasuc[i].Direccion %>
+              </option>
+              <% } %>
+                <% } %>
         </select>
         <br>
         <br>
@@ -125,8 +132,8 @@
   <script type="text/javascript">
     $("#myBtn").click(function () {
       var ases = $("#Asesor").val();
-      var marca = $("#Marca").text();
-      var suc = $("#Sucursal").text();
+      var marca = $("#Marca").val();
+      var suc = $("#Sucursal").val();
       var name = $("#Nombre").val();
       var apell = $("#Apellido").val();
       var day = $("#Día").val();

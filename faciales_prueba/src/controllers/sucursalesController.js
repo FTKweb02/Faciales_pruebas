@@ -6,6 +6,7 @@ controller.sucursal = (req, res) => {
             if (err) {
                 res.json(err);
             }
+            console.log(events);
             res.render('sucursales.ejs', {
                 datars : events
             });

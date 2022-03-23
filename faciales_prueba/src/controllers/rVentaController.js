@@ -10,6 +10,22 @@ controller.rventa = (req, res) => {
                 //console.log(datars);
             }
         });
+        conn.query('SELECT * FROM marca ', (err, marca) => {
+            if (err) {
+                res.json(err)
+            }else {
+                datam = marca;
+                console.log(datam);
+            }
+        });
+        conn.query('SELECT * FROM sucursal ', (err, sucursal) => {
+            if (err) {
+                res.json(err)
+            }else {
+                datasuc = sucursal;
+                console.log(datasuc);
+            }
+        });
         conn.query('SELECT * FROM servicio', (err, servrs) => {
             if (err) {
                 res.json(err)

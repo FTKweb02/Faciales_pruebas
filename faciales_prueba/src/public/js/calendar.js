@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     nowIndicator: true,
     allDaySlot: false,
-    editable:true
   });
 
   calendar.render();

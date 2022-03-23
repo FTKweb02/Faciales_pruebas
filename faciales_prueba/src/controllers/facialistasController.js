@@ -2,7 +2,7 @@ const controller = {};
 
 controller.list = (req, res) => {
     req.getConnection((err, conn) => {
-      conn.query('SELECT calendario.start, calendario.end, especialista.title, cabina.Nombre FROM calendario  INNER JOIN especialista ON calendario.title = especialista.title INNER JOIN cabina ON calendario.resourceId = cabina.idCabina', (err, citfac) => {
+      conn.query('SELECT calendario.start, calendario.end, especialista.title, cabina.Nombre FROM calendario INNER JOIN especialista ON calendario.title = especialista.title INNER JOIN cabina ON calendario.resourceId = cabina.idCabina', (err, citfac) => {
         if (err) {
             res.json(err)
         }else {
