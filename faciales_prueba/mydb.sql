@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `Database_App`.`Marca` ;
 
 CREATE TABLE IF NOT EXISTS `Database_App`.`Marca` (
   `idMarca` INT NOT NULL AUTO_INCREMENT,
-  `Nombre` VARCHAR(50) NOT NULL,
+  `Nombre_m` VARCHAR(50) NOT NULL,
   `Telefono` VARCHAR(50) NOT NULL,
   `Correo` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`idMarca`))
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `Database_App`.`Cliente` (
   `Año` VARCHAR(45) NOT NULL,
   `Telefono` VARCHAR(50) NOT NULL,
   `Email` VARCHAR(100) NOT NULL,
-  `Fecha_registro` DATE NOT NULL,
+  `Fecha_registro` VARCHAR(100) NOT NULL,
   `Notas` VARCHAR(255) NOT NULL,
   `Marca_idMarca` INT NOT NULL,
   PRIMARY KEY (`idCliente`),
@@ -69,7 +69,7 @@ DROP TABLE IF EXISTS `Database_App`.`Sucursal` ;
 
 CREATE TABLE IF NOT EXISTS `Database_App`.`Sucursal` (
   `idSucursal` INT NOT NULL AUTO_INCREMENT,
-  `Nombre` VARCHAR(100) NOT NULL,
+  `Nombre_s` VARCHAR(100) NOT NULL,
   `Direccion` VARCHAR(255) NOT NULL,
   `Telefono` VARCHAR(50) NOT NULL,
   `Email` VARCHAR(100) NOT NULL,
@@ -163,18 +163,18 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `Database_App`.`Tecnologia` ;
 
-CREATE TABLE IF NOT EXISTS `Database_App`.`Tecnologia` (
-  `idTecnologia` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `Database_App`.`Cabina` (
   `Nombre` VARCHAR(255) NOT NULL,
-  `Cabina_idCabina` INT NOT NULL,
-  PRIMARY KEY (`idTecnologia`),
-  INDEX `fk_Tecnologia_Cabina1_idx` (`Cabina_idCabina` ASC),
-  CONSTRAINT `fk_Tecnologia_Cabina1`
-    FOREIGN KEY (`Cabina_idCabina`)
-    REFERENCES `Database_App`.`Cabina` (`idCabina`)
+  `idCabina` INT NOT NULL AUTO_INCREMENT,
+  `Sucursal_idSucursal` INT NOT NULL,
+  PRIMARY KEY (`idCabina`),
+  INDEX `fk_Cabina_Sucursal1_idx` (`Sucursal_idSucursal` ASC),
+  CONSTRAINT `fk_Cabina_Sucursal1`
+    FOREIGN KEY (`Sucursal_idSucursal`)
+    REFERENCES `Database_App`.`Sucursal` (`idSucursal`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
 
 
 -- -----------------------------------------------------
@@ -188,8 +188,8 @@ CREATE TABLE IF NOT EXISTS `Database_App`.`Servicio` (
   `Precio` VARCHAR(255) NOT NULL,
   `Duracion` VARCHAR(255) NOT NULL,
   `idServicio` INT NOT NULL AUTO_INCREMENT,
-  `Tecnologia_idTecnologia` INT NOT NULL,
-  `Cabina_idCabina` INT NOT NULL,
+  `Tecnologia_idTecnologia` INT NULL,
+  `Cabina_idCabina` INT NULL,
   `Marca_idMarca` INT NOT NULL,
   PRIMARY KEY (`idServicio`),
   INDEX `fk_Servicio_Tecnologia1_idx` (`Tecnologia_idTecnologia` ASC),
@@ -210,7 +210,7 @@ CREATE TABLE IF NOT EXISTS `Database_App`.`Servicio` (
     REFERENCES `Database_App`.`Marca` (`idMarca`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
 
 
 -- -----------------------------------------------------
@@ -223,6 +223,7 @@ CREATE TABLE IF NOT EXISTS `Database_App`.`Usuarios` (
   `Nombre` VARCHAR(255) NOT NULL,
   `Usuario` VARCHAR(45) NOT NULL,
   `Contraseña` VARCHAR(100) NOT NULL,
+  `Telefono` VARCHAR(100) NOT NULL,
   `Sucursal_idSucursal` INT NOT NULL,
   `Marca_idMarca` INT NOT NULL,
   PRIMARY KEY (`idUsuarios`),
@@ -288,8 +289,8 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `Database_App`.`Especialista` ;
 
 CREATE TABLE IF NOT EXISTS `Database_App`.`Especialista` (
-  `idEspecialista` INT NOT NULL AUTO_INCREMENT,
-  `Nombre` VARCHAR(100) NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(100) NOT NULL,
   `RS_FH` VARCHAR(45) NULL,
   `RS_FL` VARCHAR(45) NULL,
   `RS_FPP` VARCHAR(45) NULL,
@@ -300,7 +301,7 @@ CREATE TABLE IF NOT EXISTS `Database_App`.`Especialista` (
   `RS_ME` VARCHAR(45) NULL,
   `RS_DP` VARCHAR(45) NULL,
   `RS_SL` VARCHAR(45) NULL,
-  `RS` VARCHAR(45) NULL,
+  `RS_RS` VARCHAR(45) NULL,
   `RS_VF` VARCHAR(45) NULL,
   `RS_R` VARCHAR(45) NULL,
   `RS_SG` VARCHAR(45) NULL,
@@ -309,14 +310,21 @@ CREATE TABLE IF NOT EXISTS `Database_App`.`Especialista` (
   `RS_LR` VARCHAR(45) NULL,
   `RS_NB` VARCHAR(45) NULL,
   `Rol_idRol` INT NOT NULL,
-  PRIMARY KEY (`idEspecialista`),
+  `Usuarios_idUsuarios` INT NOT NULL,
+  PRIMARY KEY (`id`),
   INDEX `fk_Especialista_Rol1_idx` (`Rol_idRol` ASC),
+  INDEX `fk_Especialista_Usuarios1_idx` (`Usuarios_idUsuarios` ASC),
   CONSTRAINT `fk_Especialista_Rol1`
     FOREIGN KEY (`Rol_idRol`)
     REFERENCES `Database_App`.`Rol` (`idRol`)
     ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Especialista_Usuarios1`
+    FOREIGN KEY (`Usuarios_idUsuarios`)
+    REFERENCES `Database_App`.`Usuarios` (`idUsuarios`)
+    ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
 
 
 -- -----------------------------------------------------
@@ -326,7 +334,7 @@ DROP TABLE IF EXISTS `Database_App`.`Horario_Especialista` ;
 
 CREATE TABLE IF NOT EXISTS `Database_App`.`Horario_Especialista` (
   `idHorario_Especialista` INT NOT NULL AUTO_INCREMENT,
-  `id` INT NOT NULL,
+  `resourceId` INT NOT NULL,
   `startTime` TIME NOT NULL,
   `endTime` TIME NOT NULL,
   `daysOfWeek` INT NOT NULL,

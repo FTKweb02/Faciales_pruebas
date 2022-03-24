@@ -43,21 +43,7 @@
               <% } %>
                 <% } %>
             </datalist>
-      <!--select id="telefonito" type="text" name="Telefono" required>
-      <option disabled selected>Seleccione una opción</option>
-        <--% console.log(JSON.stringify(data)); %->
-          <% if (data) { %>
-            <% for(var i=0; i < data.length; i++) { %>
-              <option value="<%= data[i].Telefono %>">
-                <%= data[i].Telefono %>
-                <%= data[i].Nombre %>
-              </option>
-              <% } %>
-                <% } %>
-            </select-->
-      <!--input id="telefonito" type="search" name="Telefono" placeholder="Buscar Cliente" required-->
       <button class="buttong" type="submit">Buscar</button>
-      <!--a href="agendarC/consult" class="btn buttong">Botoncito</a-->
     </form>
     <br><br>
     <div class="inputs">
@@ -115,15 +101,24 @@
           <td>Notas</td>
         </tr>
         <tr>
-          <td id="teodioaquamugre"><input name="citas" class="chckbox" type="radio"></td>
+          <td id="teodioaquamugre"><input style="width:3.5vw" name="citas" class="chckbox" type="radio"></td>
           <td> <input type="text" name="Folio_membresia" value="<%= data.Folio_membresia %>" readonly></td>
           <td><input type="text" name="Fecha_compra" value="<%= data.Fecha_compra %>" readonly></td>
           <td>
-            <div class="tooltip input_tooltip"> <input style="color:black" type="text" name="Nombre_t" value="<%= data.Nombre_t %>" readonly>
-              <span class="tooltiptext"><b>Detalles</b> <br>
-                Categoría: <input type="text" name="Categoria_t" value="<%= data.Categoria_t %>" readonly> <br>Precio:
-                <input type="text" name="Precio_T" value="<%= data.Precio_t %>" readonly><br>
-                Duración: <input type="text" name="Duracion_t" value="<%= data.Duracion_t %>" readonly> </span>
+            <div class="tooltip input_tooltip"> <input style="color:black" type="text" name="Nombre_t" value="<%= data.Nombre_t%>" readonly>
+              <span class="tooltiptext">
+                <b>Categoría: </b>
+                <% if (data) { %>
+                  <input style="margin-left:3.5vw" type="text" name="Categoria_t" value="<%= data.Nombre_t %>" readonly>
+                      <% } %> <br>
+                <b>Precio: </b>
+                <% if (data) { %>
+                  <input style="margin-left:3.5vw" type="text" name="Precio_t" value="<%= data.Nombre_t %>" readonly>
+                      <% } %> <br>
+                <b>Duración: </b><br>
+                <% if (data) { %>
+                  <input style="width:4.5vw" type="text" name="Duracion_t" value="<%= data.Nombre_t %>" readonly>min.</span>
+                      <% } %> <br>
             </div>
             <br>
           </td>
@@ -141,7 +136,7 @@
     <br><br>
     <label><b>Sucursal: </b></label>
     <br />
-    <input type="text" name="Sucursal" value="<%= data.Sucursal %>" readonly/>
+    <input type="text" name="Sucursal" readonly/>
     <br><br>
     <label for="fechacita"><b>Fecha: </b></label><br />
     <input type="date" name="Fecha" id="fechacita">
@@ -149,9 +144,9 @@
     <label for="Cabina"><b>Cabina: </b></label><br>
     <select name="Cabina" id="Cabina">
       <option selected="selected" value=""></option>
-      <option value="">Cabina: #, Horario: 00:00</option>
-      <option value="">Cabina: #, Horario: 00:00</option>
-      <option value="">Cabina: #, Horario: 00:00</option>
+      <option>Cabina: #, Horario: 00:00</option>
+      <option>Cabina: #, Horario: 00:00</option>
+      <option>Cabina: #, Horario: 00:00</option>
       <option disabled>Y el siguiente...</option>
     </select>
     <br><br>

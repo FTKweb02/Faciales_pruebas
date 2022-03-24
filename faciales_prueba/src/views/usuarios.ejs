@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+
+    <link rel="icon" href="/img/ftk-blanco_solo_logo.png">
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+    <div>
+        <nav class="color-nav">
+            <a href="/">
+                <input type="image" id="image" alt="Home" src="/img/Logo-FTK-new-blanco.png" width="150px" />
+            </a>
+            <a href="/">
+                <button role="link" class="btnCerrar" data-target="/">Cerrar Sesión</button>
+            </a>
+        </nav>
+    </div>
+    <br>
+    <div>
+        <button onclick="back();" class="btnMenu">Menú</button>
+    <br>
+    <div class="bckgc">
+        <br>
+        <h2>Usuarios</h2>
+        <a href="/add_user">
+            <button type="submit" class="buttong">Nuevo Registro</button>
+          </a>
+        <br><br>
+        <table style="width:100%">
+            <thead>
+                <tr class="magia">
+                    <th>Nombre</th>
+                    <th>Sucursal</th>
+                    <th>Usuario</th>
+                    <th>Contraseña</th>
+                    <th>Marca</th>
+                    <th>Teléfono</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody class="magia inputs">
+                <% if (data) { %>
+                    <% for(var i=0; i < data.length; i++) { %>
+                        <tr>
+                            <td><input readonly name="Nombre" value="<%= data[i].Nombre %>" type="text"></td>
+                            <td><input readonly name="Nombre_s" value="<%= data[i].Nombre_s %>" type="text"></td>
+                            <td><input readonly name="Usuario" value="<%= data[i].Usuario %>" type="text"></td>
+                            <td><input readonly name="Contraseña" value="<%= data[i].Contraseña %>" type="password"></td>
+                            <td><input readonly name="Nombre_m" value="<%= data[i].Nombre_m %>" type="text"></td>
+                            <td><input readonly name="Telefono" value="<%= data[i].Telefono %>" type="text"></td>
+                            <td>Status</td>
+                        </tr>
+                        <% } %>
+                            <% } %>
+            </tbody>
+        </table>
+    </div>
+    <br>
+
+    <script src="/js/back.js"></script>
+
+</body>
+
+</html>
