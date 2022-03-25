@@ -13,6 +13,10 @@ a {
 input{
   width: 15vw;
 }
+
+table{
+  border-spacing: 0;
+}
 /*Navbar*/
 .color-nav {
   background-color: #5E1224;
@@ -442,4 +446,30 @@ select .colorcito{
 
 .numeritoC::placeholder, .numeritoC{
   padding-left: 20%;
+}
+
+.buttoncito {
+  background-color: #A03F56;
+  color: white;
+  width: 10vw;
+  height: 5vh;
+}
+
+.buttoncito:hover{
+  background-color:white;
+  color: #A03F56;
+  transition: 0.5s;
+}
+
+.buttoncito button {
+  background-color: #A03F56;
+  color: white;
+  width: 10vw;
+  height: 5vh;
+}
+
+.buttoncito:hover button{
+  background-color:white;
+  color: #A03F56;
+  transition: 0.5s;
 }
