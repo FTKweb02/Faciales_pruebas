@@ -11,6 +11,11 @@
   <link rel="stylesheet" href="/css/style.css">
 
 </head>
+<style>
+    input {
+        text-align: center;
+    }
+</style>
 
 <body>
   <div>
@@ -34,10 +39,10 @@
       <tbody>
         <tr>
           <td width="950px">
-            <h2>Nombre Empleado</h2>
+            <h2>Menú servicios</h2>
           </td>
           <td>
-            <a href="/rCliente">
+            <a href="/add_serv">
               <button type="submit" class="buttoncito">Nuevo Registro</button>
             </a>
           </td>
@@ -49,30 +54,20 @@
       <thead>
         <tr class="magia">
           <th>Nombre</th>
-          <th>Asesor</th>
-          <th>Sucursal</th>
-          <th>Cumpleaños<br><i>(Día/Mes/Año)</i></th>
-          <th>Teléfono</th>
-          <th>Correo</th>
-          <th>Fecha&nbsp;Registro</th>
-          <th>Notas</th>
+          <th>Categoría</th>
+          <th>Precio</th>
+          <th>Duración</th>
         </tr>
       </thead>
 
       <tbody class="magia inputs">
         <% if (data) { %>
           <% for(var i=0; i < data.length; i++) { %>
-            <tr>
-              <td><input readonly name="Nombre" value="<%= data[i].Nombre %>" type="text"><input readonly name="Apellidos"
-                  value="<%= data[i].Apellidos %>" type="text"></td>
-              <td><input readonly name="Asesor" value="<%= data[i].Asesor %>" type="text"></td>
-              <td><input readonly name="Sucursal" value="<%= data[i].Sucursal %>" type="text"></td>
-              <td class="input_birth" align="center"><input readonly name="Dia" value="<%= data[i].Dia %>" type="text">/<input readonly name="Mes"
-                  value="<%= data[i].Mes %>" type="text">/<input readonly name="Año" value="<%= data[i].Año %>" type="text"></td>
-              <td><input readonly name="Telefono" value="<%= data[i].Telefono %>" type="text"></td>
-              <td><input readonly name="Email" value="<%= data[i].Email %>" type="text"></td>
-              <td><input readonly name="Fecha_registro" value="<%= data[i].Fecha_registro %>" type="text"></td>
-              <td><input readonly name="Notas" value="<%= data[i].Notas %>" type="text"></td>
+            <tr align="center">
+              <td><input readonly name="Nombre" value="<%= data[i].Nombre %>" type="text">
+              <td><input readonly name="Categoria" value="<%= data[i].Categoria %>" type="text"></td>
+              <td><input readonly name="Precio" value="<%= data[i].Precio %>" type="text"></td>
+              <td><input style="width:5vw" readonly name="Duracion" value="<%= data[i].Duracion %>" type="text">min</td>
             </tr>
             <% } %>
               <% } %>

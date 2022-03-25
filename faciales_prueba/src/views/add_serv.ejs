@@ -32,27 +32,36 @@
                         <img class="home_logo" src="/img/home.jpg" alt="home">
                     </a>
                 </div>
-                <h1 style="padding-left:10vw">USUARIO</h1>
+                <h1 style="padding-left:10vw">SERVICIO</h1>
                 <br>
                 <div align="center" class="add_form">
-                    <form action="/add_user/add" method="post">
+                    <form action="/add_serv/add" method="post">
                         <input type="text" name="Nombre" placeholder="Nombre" required>
                         <br><br>
-                        <input type="text" name="Usuario" placeholder="Usuario" required>
+                        <input type="text" name="Categoria" placeholder="Categoría" required>
                         <br><br>
-                        <div>
-                            <input id="mypsswd" type="password" name="Contraseña" placeholder="Contraseña" required><br>
-                            <input id="check_add" type="checkbox" onclick="myFunction()">Ver Contraseña
-                        </div>
-                        <br>
-                        <input type="text" name="Telefono" placeholder="Telefono" required>
+                        <input type="text" name="Precio" placeholder="Precio" required>
                         <br><br>
-                        <select name="Sucursal_idSucursal" type="text" id="sucursal" required>
-                            <option disabled selected>Seleccione sucursal</option>
+                        <input type="text" name="Duracion" placeholder="Duración" required>
+                        <br><br>
+                        <label for="tecnologia">Tecnología</label><br>
+                        <select name="Tecnologia_idTecnologia" type="text" id="tecnologia">
+                            <option disabled selected></option>
                             <!--% console.log(JSON.stringify(datars)); %-->
                             <% if (datas) { %>
                               <% for(var i=0; i < datas.length; i++) { %>
-                                <option value="<%= datas[i].idSucursal %>"> <%= datas[i].Direccion %> </option>
+                                <option value="<%= datas[i].idTecnologia %>"> <%= datas[i].Nombre %> </option>
+                                <% } %>
+                                  <% } %>
+                          </select>
+                        <br><br>
+                        <label for="cabina">Cabina</label><br>
+                        <select name="Cabina_idCabina" type="text" id="cabina">
+                            <option disabled selected></option>
+                            <!--% console.log(JSON.stringify(datars)); %-->
+                            <% if (datac) { %>
+                              <% for(var i=0; i < datac.length; i++) { %>
+                                <option value="<%= datac[i].idCabina %>"> <%= datac[i].Nombre %> </option>
                                 <% } %>
                                   <% } %>
                           </select>
@@ -64,9 +73,10 @@
                                 <% } %>
                                   <% } %>
                           </select>
+                        
                         <div align="left" style="padding-left:8.5vw" class="botomnes">
                             <button type="submit" style="margin-right:0.5vw">GUARDAR</button>
-                            <a href="/usuarios">
+                            <a href="/servicios">
                                 <button type="button">CANCELAR</button>
                             </a>
                         </div>
@@ -81,15 +91,5 @@
         </div>
     </div>
 </body>
-<script>
-    function myFunction() {
-        var x = document.getElementById("mypsswd");
-        if (x.type == "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
-        }
-    }
-</script>
 
 </html>
