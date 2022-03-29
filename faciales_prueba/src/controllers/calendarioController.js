@@ -15,7 +15,7 @@ controller.list = (req, res) => {
                 res.json(err)
             } else {
                 datam = marca;
-                //console.log(datars);
+                console.log(datam);
             }
         });
         conn.query('SELECT * FROM cabina', (err, cabina) => {

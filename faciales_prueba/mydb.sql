@@ -264,7 +264,10 @@ CREATE TABLE IF NOT EXISTS `Database_App`.`Calendario` (
   `title` VARCHAR(100) NOT NULL,
   `resourceId` VARCHAR(100) NOT NULL,
   `start` DATETIME NOT NULL,
-  `end` DATETIME NOT NULL,
+  `Nombre_c` VARCHAR(100) NOT NULL,
+  `Apellidos` VARCHAR(100) NOT NULL,
+  `Tratamiento` VARCHAR(45) NOT NULL,
+  `Notas` VARCHAR(200) NOT NULL,
   `Sucursal_idSucursal` INT NOT NULL,
   `Marca_idMarca` INT NOT NULL,
   PRIMARY KEY (`idCalendario`),
@@ -280,8 +283,7 @@ CREATE TABLE IF NOT EXISTS `Database_App`.`Calendario` (
     REFERENCES `Database_App`.`Marca` (`idMarca`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
+ENGINE = InnoDB
 
 -- -----------------------------------------------------
 -- Table `Database_App`.`Especialista`

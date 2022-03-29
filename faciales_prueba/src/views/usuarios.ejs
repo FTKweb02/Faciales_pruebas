@@ -9,6 +9,7 @@
 
     <link rel="icon" href="/img/ftk-blanco_solo_logo.png">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap-4.0.0/dist/css/bootstrap-grid.css">
 
 </head>
 
@@ -25,48 +26,72 @@
     </div>
     <br>
     <div>
-        <button onclick="back();" class="btnMenu">Menú</button>
-    <br>
-    <div class="bckgc">
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <a href="/config">
+                        <img style="margin-left:0" class="home_logo" src="/img/home.jpg" alt="home">
+                    </a>
+                </div>
+                <div class="col-5">
+                    <h2>USUARIOS</h2>
+                </div>
+                <div class="col-2">
+                    <br>
+                    <a href="/add_user">
+                        <button type="submit" class="buttoncito">Nuevo usuario</button>
+                    </a>
+                </div>
+            </div>
+        </div>
         <br>
-        <h2>Usuarios</h2>
-        <a href="/add_user">
-            <button type="submit" class="buttoncito">Nuevo Registro</button>
-          </a>
-        <br><br>
-        <table style="width:100%">
-            <thead>
-                <tr class="magia">
-                    <th>Nombre</th>
-                    <th>Sucursal</th>
-                    <th>Usuario</th>
-                    <th>Contraseña</th>
-                    <th>Marca</th>
-                    <th>Teléfono</th>
-                    <!--th>Status</th-->
-                </tr>
-            </thead>
+        <div class="bckgc">
+            <br>
 
-            <tbody class="magia inputs">
-                <% if (data) { %>
-                    <% for(var i=0; i < data.length; i++) { %>
-                        <tr>
-                            <td><input readonly name="Nombre" value="<%= data[i].Nombre %>" type="text"></td>
-                            <td><input readonly name="Nombre_s" value="<%= data[i].Nombre_s %>" type="text"></td>
-                            <td><input readonly name="Usuario" value="<%= data[i].Usuario %>" type="text"></td>
-                            <td><input readonly name="Contraseña" value="<%= data[i].Contraseña %>" type="password"></td>
-                            <td><input readonly name="Nombre_m" value="<%= data[i].Nombre_m %>" type="text"></td>
-                            <td><input readonly name="Telefono" value="<%= data[i].Telefono %>" type="text"></td>
-                            <!--td>Status</td-->
-                        </tr>
-                        <% } %>
+            <table style="width:100%">
+                <thead>
+                    <tr class="magia">
+                        <th><b>Nombre</b></th>
+                        <th><b>Sucursal</b></th>
+                        <th><b>Usuario</b></th>
+                        <th><b>Contraseña</b></th>
+                        <th><b>Marca</b></th>
+                        <th><b>Teléfono</b></th>
+                        <!--th>Status</th-->
+                    </tr>
+                </thead>
+
+                <tbody class="magia inputs">
+                    <% if (data) { %>
+                        <% for(var i=0; i < data.length; i++) { %>
+                            <tr align="center">
+                                <td>
+                                    <%= data[i].Nombre %>
+                                </td>
+                                <td>
+                                    <%= data[i].Nombre_s %>
+                                </td>
+                                <td>
+                                    <%= data[i].Usuario %>
+                                </td>
+                                <td><input readonly name="Contraseña" value="<%= data[i].Contraseña %>" type="password">
+                                </td>
+                                <td>
+                                    <%= data[i].Nombre_m %>
+                                </td>
+                                <td>
+                                    <%= data[i].Telefono %>
+                                </td>
+                                <!--td>Status</td-->
+                            </tr>
                             <% } %>
-            </tbody>
-        </table>
-    </div>
-    <br>
+                                <% } %>
+                </tbody>
+            </table>
+        </div>
+        <br>
 
-    <script src="/js/back.js"></script>
+        <script src="/js/back.js"></script>
 
 </body>
 

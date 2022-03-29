@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RS</title>
+  <title>Calendario</title>
 
   <link rel="icon" href="/img/ftk-blanco_solo_logo.png">
   <link rel="stylesheet" href="/css/style.css">
@@ -33,66 +33,12 @@
   <button onclick="back();" class="btnMenu">Menú</button>
   <div id="RS" class="schedule">
     <div align="center" class="sch_title inputs"><input readonly style="font-size:xx-large; font-weight:bold"
-        type="text" value="<%= datam[0].Nombre %>"></div>
-    <div style="text-align:center; width:100vw;">
-      <button class="btnCerrar" id="myBtn" style="float:inherit">Nueva Cita</button>
-    </div>
+        type="text" value="<%= datam[0].Nombre_m %>"></div>
     <br>
     <div id='calendar-container'>
       <div style="margin-top:20vw" id='calendar' data="<%= data %>"></div>
     </div>
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div align="center" class="modal-content">
-        <span class="close">&times;</span>
-        <h2>NUEVA CITA</h2>
-        <br>
-        <form action="/calendario/add" method="post">
-          <select name="title" type="text" id="" required>
-            <option disabled selected>Seleccione especialista</option>
-            <!--% console.log(JSON.stringify(datars)); %-->
-            <% if (data_e) { %>
-              <% for(var i=0; i < data_e.length; i++) { %>
-                <option value="<%= data_e[i].title %>">
-                  <%= data_e[i].title %>
-                </option>
-                <% } %>
-                  <% } %>
-          </select>
-          <br><br>
-          <select name="Marca_idMarca" id="">
-            <option selected value="1">Resvera</option>
-          </select>
-          <br><br>
-          <select name="Sucursal_idSucursal" id="">
-            <option selected value="1">Arquimedes 198, Polanco</option>
-          </select>
-          <br><br>
-          <label for="Cabina"><b>Cabina: </b></label><br>
-          <select name="resourceId" id="Cabina" required>
-            <option disabled selected value="">Seleccione cabina</option>
-            <% if (datacab) { %>
-              <% for(var i=0; i < datacab.length; i++) { %>
-                <option value="<%= datacab[i].idCabina %>">
-                  <%= datacab[i].Nombre %>
-                </option>
-                <% } %>
-                  <% } %>
-          </select>
-          <br><br>
-          <input name="start" style="width:220px" id="adddate" type="datetime-local" required>
-          <br><br>
-          <!--input name="end" style="width:220px" id="adddate" type="datetime-local" required-->
-          <br><br>
-          <!--textarea placeholder="Detalles" class="textarea_modal" type="text" rows="5" cols="28" required></textarea-->
-          <br><br>
-          <button class="buttonis" type="submit">Agendar</button>
-          <button id="cancel" class="buttonis">Cancelar</button>
-        </form>
-      </div>
-
-    </div>
-    <script src="/js/modal.js"></script>
+   
     <script src="/js/calendar.js"></script>
     <script src="/js/back.js"></script>
 

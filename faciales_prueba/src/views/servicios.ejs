@@ -64,10 +64,10 @@
         <% if (data) { %>
           <% for(var i=0; i < data.length; i++) { %>
             <tr align="center">
-              <td><input readonly name="Nombre" value="<%= data[i].Nombre %>" type="text">
-              <td><input readonly name="Categoria" value="<%= data[i].Categoria %>" type="text"></td>
-              <td><input readonly name="Precio" value="<%= data[i].Precio %>" type="text"></td>
-              <td><input style="width:5vw" readonly name="Duracion" value="<%= data[i].Duracion %>" type="text">min</td>
+              <td><%= data[i].Nombre %></td>
+              <td><%= data[i].Categoria %></td>
+              <td><%= data[i].Precio %></td>
+              <td><%= data[i].Duracion %> min.</td>
             </tr>
             <% } %>
               <% } %>

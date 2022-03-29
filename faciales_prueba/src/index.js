@@ -6,6 +6,7 @@ const express = require('express'),
       flash = require('connect-flash');
       session = require('express-session');
 
+var session = require('express-session');
 
 const app = express();
 

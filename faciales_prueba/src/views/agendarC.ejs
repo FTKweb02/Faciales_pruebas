@@ -9,6 +9,8 @@
 
   <link rel="icon" href="/img/ftk-blanco_solo_logo.png">
   <link rel="stylesheet" href="/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
 
 </head>
 
@@ -33,16 +35,16 @@
   <div align="center">
     <form action="agendarC/consult/" method="get">
       <input list="nombres" name="Telefono" type="search" id="telefonito" required>
-        <datalist id="nombres">
-          <!--% console.log(JSON.stringify(datars)); %-->
-          <% if (data) { %>
-            <% for(var i=0; i < data.length; i++) { %>
-              <option value="<%= data[i].Telefono %>">
-                <%= data[i].Nombre %>
-              </option>
+      <datalist id="nombres">
+        <!--% console.log(JSON.stringify(datars)); %-->
+        <% if (data) { %>
+          <% for(var i=0; i < data.length; i++) { %>
+            <option value="<%= data[i].Telefono %>">
+              <%= data[i].Nombre %>
+            </option>
+            <% } %>
               <% } %>
-                <% } %>
-            </datalist>
+      </datalist>
       <button class="buttong" type="submit">Buscar</button>
     </form>
     <br><br>
@@ -54,12 +56,12 @@
       <br>
       <div>
         <label type="text">Nombre: </label>
-        <input type="text" name="Nombre" value="<%= data.Nombre %>" readonly>
+        <input type="text" name="Nombre" value="<%= data.Nombre %>" id="Nombre" readonly>
       </div>
       <br>
       <div>
         <label type="text">Apellidos: </label>
-        <input type="text" name="Apellidos" value="<%= data.Apellidos %>" readonly>
+        <input type="text" name="Apellidos" value="<%= data.Apellidos %>" id="Apellidos" readonly>
       </div>
       <br>
       <div>
@@ -95,6 +97,7 @@
         <tr>
           <td id="teodioaquamugre">Agendar</td>
           <td>Folio Membresia</td>
+          <td>Marca</td>
           <td>Fecha Compra</td>
           <td>Tratamiento</td>
           <td>Ticket</td>
@@ -102,83 +105,102 @@
         </tr>
         <tr>
           <td id="teodioaquamugre"><input style="width:3.5vw" name="citas" class="chckbox" type="radio"></td>
-          <td> <input type="text" name="Folio_membresia" value="<%= data.Folio_membresia %>" readonly></td>
-          <td><input type="text" name="Fecha_compra" value="<%= data.Fecha_compra %>" readonly></td>
+          <td><%= data.Folio_membresia %></td>
           <td>
-            <div class="tooltip input_tooltip"> <input style="color:black" type="text" name="Nombre_t" value="<%= data.Nombre_t%>" readonly>
-              <span class="tooltiptext">
-                <b>Categoría: </b>
-                <% if (data) { %>
-                  <input style="margin-left:3.5vw" type="text" name="Categoria_t" value="<%= data.Nombre_t %>" readonly>
-                      <% } %> <br>
-                <b>Precio: </b>
-                <% if (data) { %>
-                  <input style="margin-left:3.5vw" type="text" name="Precio_t" value="<%= data.Nombre_t %>" readonly>
-                      <% } %> <br>
-                <b>Duración: </b><br>
-                <% if (data) { %>
-                  <input style="width:4.5vw" type="text" name="Duracion_t" value="<%= data.Nombre_t %>" readonly>min.</span>
-                      <% } %> <br>
+            <input style="width:0.5vw" type="text" name="Nombre_m" value="<%= data.idMarca %>" id="Marca" readonly>
+            . <%= data.Nombre_m %>
+          </td>
+          <td><%= data.Fecha_compra %></td>
+          <td>
+            <div class="tooltip input_tooltip"> <input style="color:black" type="text" name="Nombre_t"
+                value="<%= data.Nombre_t%>" id="Tratamiento" readonly>/<%= data.Nombre_t %>
+              
             </div>
             <br>
           </td>
           <td><input type="text" name="Ticket" value="<%= data.Ticket %>" readonly></td>
-          <td>
-            <div class="tooltip input_tooltip">Notas de Cita
-              <span class="tooltiptext"><b>Detalles de la cita</b><br> <input type="text" name="Notas"
-                  value="<%= data.Notas %>" readonly> </span>
-            </div>
-            <br>
-          </td>
+          <td><%= data.Notas %></td>
         </tr>
       </tbody>
     </table>
     <br><br>
     <label><b>Sucursal: </b></label>
     <br />
-    <input type="text" name="Sucursal" readonly/>
+    <select name="Sucursal_idSucursal" type="text" id="Sucursal" required>
+      <!--% console.log(JSON.stringify(datars)); %-->
+      <% if (datas) { %>
+        <% for(var i=0; i < datas.length; i++) { %>
+          <option value="<%= datas[i].idSucursal %>">
+            <%= datas[i].Nombre_s %>
+          </option>
+          <% } %>
+            <% } %>
+    </select>
+    <br><br>
+    <label for="especialista"><b>Especialista: </b></label><br />
+    <input type="text" name="title" id="Especialista">
     <br><br>
     <label for="fechacita"><b>Fecha: </b></label><br />
-    <input type="date" name="Fecha" id="fechacita">
+    <input style="width:17vw" type="datetime-local" name="Fecha" id="Fecha">
     <br><br>
     <label for="Cabina"><b>Cabina: </b></label><br>
-    <select name="Cabina" id="Cabina">
-      <option selected="selected" value=""></option>
-      <option>Cabina: #, Horario: 00:00</option>
-      <option>Cabina: #, Horario: 00:00</option>
-      <option>Cabina: #, Horario: 00:00</option>
-      <option disabled>Y el siguiente...</option>
+    <select id="Cabina" name="resourceId" type="text" required>
+      <!--% console.log(JSON.stringify(datars)); %-->
+      <% if (datac) { %>
+        <% for(var i=0; i < datac.length; i++) { %>
+          <option value="<%= datac[i].idCabina %>">
+            <%= datac[i].Nombre %>
+          </option>
+          <% } %>
+            <% } %>
     </select>
     <br><br>
     <label for="notas"><b>Notas:</b></label><br>
-    <input type="textarea" id="notas" name="notas">
+    <input type="textarea" id="Notas" name="notas">
     <br><br>
-    <button class="buttong" type="submit" name="agendar">Agendar</button>
-
-    <br>
-    <button class="buttonis" id="myBtn">Resumen</button>
-
+    <button class="buttong"  id="myBtn" type="button" data-target="#modal_cliente">Agendar</button>
     <br><br>
   </div>
   <!-- The Modal -->
   <div id="myModal" class="modal">
-
+    <form action="/agendarC/save" method="post">
     <!-- Modal content -->
-    <div align="center" class="modal-content inputs">
+    <div align="center" class="modal-content inputs" id="modal_cliente">
       <span class="close">&times;</span>
-      <h2>RESUMEN</h2>
-      <p>Nombre: <input type="text" name="Nombre" value="<%= data.Nombre %>" readonly></p>
-      <p>Apellidos: <input type="text" name="Apellidos" value="<%= data.Apellidos %>" readonly></p>
-      <p>Tratamiento:<input type="text" name="Nombre_t" value="<%= data.Nombre_t %>" readonly></p>
-      <p>Sucursal:______________________________________ </p>
-      <p>Fecha:________________________________________</p>
-      <p>Cabina:_______________________________________</p>
-      <p>Notas:________________________________________</p>
-      <button class="buttonis">Guardar</button>
-      <button id="cancel" class="buttonis">Cancelar</button>
+      <p id="modal-cliente"></p>
+      <button type="submit" class="buttonis">Guardar</button>
+      <button type="button" id="cancel" class="buttonis">Cancelar</button>
     </div>
-
+    
+  </form>
   </div>
+  
+  <script type="text/javascript">
+    $("#myBtn").click(function () {
+      var nombre = $("#Nombre").val();
+      var apellidos = $("#Apellidos").val();
+      var tratamiento = $("#Tratamiento").val();
+      var marca = $("#Marca").val();
+      var sucursal = $("#Sucursal").val();
+      var especialista = $("#Especialista").val();
+      var cabina = $("#Cabina").val();
+      var fecha = $("#Fecha").val();
+      var notas = $("#Notas").val();
+
+      var str = "<h2>VERIFICACIÓN</h2> " + '<br>'
+        + '<b>Nombre:</b>' + ' ' + '<input type="text" name="Nombre_c" value = "' + nombre + '" />' + '<br><br>'
+        + '<b>Apellidos:</b>' + ' ' + '<input type="text" name="Apellidos" value = "' + apellidos + '" />' + '<br><br>'
+        + '<b>Tratamiento:</b>' + ' ' + '<input type="text" name="Tratamiento" value = "' + tratamiento + '" />' + '<br><br>'
+        + '<b>Marca:</b>' + ' ' + '<input type="text" name="Marca_idMarca" value = "' + marca + '" />' + '<br><br>'
+        + '<b>Sucursal:</b>' + ' ' + '<input type="text" name="Sucursal_idSucursal" value = "' + sucursal + '" />' + '<br><br>'
+        + '<b>Especialista:</b>' + ' ' + '<input type="text" name="title" value = "' + especialista + '" />' + '<br><br>'
+        + '<b>Cabina:</b>' + ' ' + '<input type="text" name="resourceId" value = "' + cabina + '" />' + '<br><br>'
+        + '<b>Fecha:</b>' + ' ' + '<input type="text" name="start" value = "' + fecha + '" />' + '<br><br>'
+        + '<b>Notas:</b>' + ' ' + '<input type="text" name="Notas" value = "' + notas + '" />' + '<br><br>'
+      $("#modal-cliente").html(str);
+    });
+  </script>
+  
   <script src="/js/modal.js"></script>
   <script src="/js/back.js"></script>
 

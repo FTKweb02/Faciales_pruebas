@@ -1,3 +1,5 @@
+const { json } = require("express");
+
 const controller = {};
 
 controller.addrol = (req, res) => {
@@ -25,6 +27,7 @@ controller.save = (req, res) => {
         conn.query('INSERT INTO usuarios_has_rol set ?', data, (err, marcas) => {
             if(err){
                 console.log(err);
+                res.json(err);
                 req.flash('info', 'Mensaje de flash');
                 res.redirect('/add_rol')
             }else{
